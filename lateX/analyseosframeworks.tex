@@ -1,46 +1,14 @@
 \chapter{Analyse von Open-Source Frameworks}
 \label{chap:Abbildungen}
-In diesem Abschnitt erfolgt die Analyse der unterschiedlichen Opensource Frameworks hinsichtlich der CCD Kriterien es sollten dabei folgende Frameworks betrachtet werden:
+In diesem Abschnitt erfolgt die Analyse der unterschiedlichen Opensource Frameworks hinsichtlich der CCD Kriterien. Wie bereits erläutert, wird es bei dieser Analyse in erster Linie um beispielhafte Verbesserungen gehen, die an diesen Frameworks vorgenommen werden können. Dabei wird jedem der analysierten Frameworks ein kleiner Abschnitt gewidmet in dem mehrere Aspekte analysiert werden. Es wird dabei auch die Struktur des Projektes im Allgemeinen betrachtet werden und am Schluss des Abschnitts wird ein kurzes Fazit Aufschluss darüber geben, welche Teile des Frameworks besonders positiv, bzw. besonders negativ herausgestochen sind. 
+
+\SuperPar Es sollten folgende Frameworks näher betrachtet werden:
 
 \begin{itemize}
 	\item Log4net (.NET)
 	\item Hibernate (Java)
-	\item Git (C)
+	\item Roslyn (.NET)
 \end{itemize}
 
-Es werden zur Analyse gewisse Code Abschnitte aus diesen Frameworks entnommen, die entweder besonders gut zeigen, wie ein Refactoring zur Erfüllung der CCD Kriterien zu lesbareren Code führen kann, oder Code beinhalten der bereits den Kriterien entspricht. 
-\section{Log4net}
-\subsection{Allgemeines}
-Log4net ist wohl eines der bekanntesten Logging Frameworks für .NET und wird als solches von zahlreichen Programmierern verwendet. Es ist eine Portierung des im Java Bereich bekannten Log4j Das Framwork an sich steht unter der Apache License 2.0 bereit. Log4net ist dabei ein Teil der Apache Logging Services und somit auch ein Teil der Apache Software Foundation. 
-
-\subsection{Überflüssige Kommentare}
-Eines der wohl am meisten diskutierten Themen hinsichtlich CCD ist das entfernen von überflüssigen Kommentaren. Auch in Log4net lassen sich diese finden. Da dies ein sehr heikles Thema ist, werde ich mich hier speziell nur auf die Kommentare beziehen, die keinen wirklichen Mehrwert hinsichtlich automatisiert generierter Dokumentation liefern. Wenn wir uns den Konstruktor aus der Klasse \textit{ConfigurationChangedEventArgs} im Namespace \textit{log4net.Repository}ansehen können wir sofort feststellen, dass die Kommentare im Prinzip redundant sind.
-
-\lstset{style=sharpc}
-\begin{lstlisting}
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="configurationMessages"></param>
-        public ConfigurationChangedEventArgs(ICollection configurationMessages)
-        {
-            this.configurationMessages = configurationMessages;
-        }
-\end{lstlisting}
-
-Er bringt für den Programmierer keinen wirklichen Mehrwert. Was genau in der übergebenen \textit{Collection} übertragen wird, wird auch durch den redundanten Kommentar nicht näher erläutert. Da der <summary> Abschnitt sowieso leer ist, könnte man diesen getrost entfernen, da er nur den Quelltext aufbläht. Bei dem Konstruktor hätte man sich auch durch eine bessere Namensgebung für den Parameter behelfen können. Ein wohl viel besserer Name für die \textit{configurationMessages} wäre \textit{}. Mit diesem Namen dürfte bei einer Änderung, oder auch bei einer Verwendung dieser Klasse sofort klar sein, welchen Nutzen dieser Parameter hat.
-
-\subsection{Schlecht gewählter Klassenname}
-
-
-\subsection{Fazit}
-Im großen und ganzen lässt sich sagen, dass bei der Entwicklung von Log4net sehr darauf geachtet wurde, die Codebasis so zu gestalten, dass man sich sehr leicht einarbeiten kann. Die Bibliothek ist sehr logisch aufgebaut und die Klassen bzw. Namespacenamen sind so gewählt, dass man sich gut zurecht findet. Es sollte also für keinen Programmierer ein gröberes Problem sein, sich in diese Bibliothek einzuarbeiten. Einige Dinge sind auf Grund des Alters von Log4net mit den modernen IDEs nicht mehr nötig, wie z.B. die Präfixe für Variablen, jedoch wird dies meist über Coding Conventions festgelegt und sollte daher auch so im ganzen Projekt durchgezogen werden.
-
-\section{Hibernate}
-\subsection{Allgemeines}
-Die Bibliothek Hibernate ist einer der bekanntesten OR-Mapper für Java. Mit ihm ist es möglich ein relationales Datenbankmodell auf ein objektorientiertes Datenmodell zu mappen. ------------------------
-
-\subsection{Fazit}
-
-\section{Git}
-Das von Linus Torvalds und anderen Entwicklern entwickelte dezentrale Versionsverwaltungsprogramm Git ist ein in C programmiertes Tool zur 
+Nach der ersten Analyse und einer Beschreibung der Problematik des aktuellen Codestückes wird eine verbesserte Variante des Codes erläutert. 
+\newpage

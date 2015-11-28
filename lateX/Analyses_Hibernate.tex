@@ -1,0 +1,82 @@
+
+\section{Hibernate}
+\subsection{Allgemeines}
+Die Bibliothek Hibernate ist der wohl bekannteste OR-Mapper für Java. Mit Hibernate ist es möglich ein objektorientiertes Datenmodell  auf ein relationales Datenbankmodell zu mappen. Die Bibliothek ist mittlerweile über 10 Jahre alt und wurde unter anderem nach .NET portiert und heißt dort NHibernate. Entwickelt wird sie von Red Hat und steht unter der GNU LGPL zur verfügung. Das Repository lässt sich auf GitHub unter https://github.com/hibernate/hibernate-orm finden.
+
+\subsection{Auskommentierter Code}
+\begin{itemize}
+	\item Betreffende Klasse: \textit{BindHelper}
+	\item Betreffendes Paket: \textit{org.hibernate.cfg}
+\end{itemize}
+
+
+\SuperPar Ein sehr häufig gesehenes Missachten der CCD Kriterien ist das Auskommentieren von Code der nicht mehr benötigt wird. Dies war vor vielen Jahren noch nötig, da es nicht die Versionsverwaltungssysteme hatte die es heute gibt. Sei es SVN, Git oder irgendein beliebiges Versionsverwaltungssystem. All diese Programme bieten zahlreiche Features zum wiederherstellen, oder zum Auffinden alter Versionen, es ist daher nicht notwendig die Codedateien als History zu verwenden. Code der nicht mehr benötigt wird sollte daher nicht auskommentiert werden, sondern einfach gelöscht werden und mit einer vernünftigen Commit Message versehen werden. Im Hibernate Framework ist eine Klasse welche dieses Kriterium missachtet die BindHelper Klasse. Hier gibt es zahlreiche Codeabschnitte die auskommentiert sind und eigentlich gelöscht werden könnten oder zumindest geändert gehören. Eine sehr problematische Stelle befindet sich in dieser Klasse in Zeile 421. Dort gibt es folgenden Codeausschnitt:
+
+\begin{lstlisting}[language=Java, caption=Beispiele für die Verwendung von \textit{GetByPredicate}, label=lst:GetByPredicate]
+/*FIXME cannot use subproperties becasue the caller needs top level properties
+//if (property.isComposite()) {
+//	Iterator subProperties = ((Component)property.getValue()).getPropertyIterator();
+// 	while (subProperties.hasNext()) {
+//  	matchColumnsByProperty(((Property)subProperties.next()), columnsToProperty);
+// 	}
+}*/ 
+\end{lstlisting}
+
+Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden muss. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach ein einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt, da er auch nicht mehr auftreten wird. Hier sollte entweder in einem Issue Tracking System genau mitdokumentiert werden, wo der Fehler auftritt und welche Möglichkeiten es gibt diesen zu beheben. 
+ 
+\subsection{Unleserliche boolsche Ausdrücke}
+\label{cha:BadBoolStatements}
+\begin{itemize}
+	\item Betreffende Klasse: \textit{AbstractPropertyHolder}
+	\item Betreffendes Paket: \textit{org.hibernate.cfg}
+\end{itemize}
+
+\SuperPar Ein weiteres sehr oft auftretendes Problem sind sehr komplexe boolsche Ausdrücke. Oft wird auf Grund ihrer Komplexität ein Kommentar geschrieben, welcher Aufschluss darüber geben sollte, was genau gewünscht ist. Jedoch ist die Komplexität meist nicht das einzige Problem. Hierzu ist die \textit{AbstractPropertyHolder} Klasse ein sehr gutes Beispiel.
+
+\begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 1 Zeile 255 - 264, label=lst:GetByPredicate]
+	@Override
+	public JoinColumn[] getOverriddenJoinColumn(String propertyName) {
+		JoinColumn[] result = getExactOverriddenJoinColumn( propertyName );
+		if ( result == null && propertyName.contains( ".collection&&element." ) ) {
+			//support for non map collections where no prefix is needed
+			//TODO cache the underlying regexp
+			result = getExactOverriddenJoinColumn( propertyName.replace( ".collection&&element.", "."  ) );
+		}
+		return result;
+	}
+\end{lstlisting}
+
+Ein paar Zeilen weiter in derselben Klasse findet sich folgende Methode:
+
+\begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 2 Zeile 305 - 313, label=lst:GetByPredicate]
+public JoinTable getOverriddenJoinTable(String propertyName) {
+	JoinTable result = getExactOverriddenJoinTable(propertyName);
+	if(result == null 
+		&& propertyName.contains(".collection&&element.")){
+		//support for non map collections where no prefix is needed
+		//TODO cache the underlying regexp
+		result = getExactOverriddenJoinTable( propertyName.replace( ".collection&&element.", "."  ) );
+	}
+	return result;
+}
+\end{lstlisting}
+
+Konkret geht es in diesem Beispiel um folgenden boolschen Ausdruck, welcher in dieser Klasse insgesamt drei mal verwendet wird.
+
+\begin{lstlisting}[language=Java, caption=Boolscher Audruck, label=lst:GetByPredicate]
+result == null && propertyName.contains(".collection&&element.")
+\end{lstlisting}
+
+Wie man anhand dieser beiden Methoden leicht erkennen kann, wird dieser Ausdruck in beiden Methoden verwendet. Das heißt, es handelt sich hier im Grunde genommen um Code Duplizierung, eines der problematischten Dinge in der Programmierung. Ein weiteres Problem ergibt sich hier, dies sollte aber in einem der folgenden Abschnitte über Magic String geklärt werden. %Todo einfügen der Abschnittnummer für Magic strings
+Ein weiters Problem, welches sich hier wie bereits oben beschrieben ergibt, ist die Tatsache, dass dieser boolsche Kommentar ohne einen Kommentar oder ein genaues Lesen nicht sehr leicht zu verstehen ist. Man könnte hier beide Probleme beseitigen, in dem man aus dem boolschen Audruck eine eigene Methode extrahiert. Dabei wird hier nur der zweite Teil des boolschen Ausdrucks extrahiert, da der erste Teil mit dem Nullcheck spezifisch für die einzelnen Methoden verwendet werden muss. Ein Beispiel für diese Methode könnte folgendermaßen aussehen:
+
+\begin{lstlisting}[language=Java, caption=Boolscher Ausdruck neu, label=lst:GetByPredicate]
+private bool isPlaceholderForCollectionAndElementInPropertyName(String propertyName) {
+	return propertyName.contains(".collection&&element.");
+}
+\end{lstlisting}
+
+Durch ein Extrahieren der Überprüfung des Parameters \textit{propertyName} kann für diese Überprüfung ein eigener Name gewählt werden, der klar machen sollte, welchen Zweck diese Überprüfung hat. Durch diese eigene Methode werden außerdem die Codeduplizierungen eliminiert und es bleibt nur noch die Sicherheitsüberprüfung auf null.
+
+\subsection{Fazit}
+Auch beim Hibernate Framework merkt man, dass es bereits seit einigen Jahren entwickelt wird. Im Grunde genommen wirkt es sehr ausgereift und auch sehr durchdacht. Einige Dinge, vor allem hinsichtlich überflüssiger Kommentare und auskommentierter Codeabschnitte, aber auch Codeduplizierungen könnten vermieden werden, in dem man kleinere Refactorings vornimmt. Wie in \label{cha:BadBoolStatements} erläutert könnten einige dieser Duplizierungen und Unklarheiten durch solche Refactorings behoben werden. Was besonders positiv auffällt ist, dass selbst die Testsuite sehr sauber gehalten wurde und das auch dort auf Clean Code Richtlinien geachtet wurde. Die Struktur ist für einen Programmierer der aus der .NET Welt kommt nicht sehr übersichtlich, dies liegt aber eher in den Unterschieden in der Projektstruktur zwischen .NET Projekten und Java Projekten.

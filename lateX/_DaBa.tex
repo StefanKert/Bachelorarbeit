@@ -1,13 +1,52 @@
 \documentclass[bachelor,german]{hgbthesis}
-\usepackage{listings}
 \usepackage{xcolor}
-\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+
+\lstdefinestyle{Java} { language=Java}
+\lstdefinestyle{[Sharp]C} {language=[Sharp]C}
+
+\lstset{language=[Sharp]C,
+	captionpos=b,
+	showspaces=false,
+	showtabs=false,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	escapeinside={(*@}{@*)},
+	commentstyle=\color{greencomments},
+	morekeywords={partial, var, value, get, set},
+	keywordstyle=\color{bluekeywords},
+	stringstyle=\color{redstrings},
+	basicstyle=\ttfamily\small,
+}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{greencomments},
+  keywordstyle=\color{bluekeywords},
+  stringstyle=\color{redstrings},
+  basicstyle=\ttfamily,
+  moredelim=[il][\textcolor{xmlcomments}]{$$},
+  moredelim=[is][\textcolor{xmlcomments}]{\%\%}{\%\%}
+}
 \RequirePackage[utf8]{inputenc}		
 \graphicspath{{images/}}    
 \logofile{logo}						
 \bibliography{literatur}  
 \begin{document}
-\title{Clean Code Development}
+\title{Clean Code Development - Analyse von Opensource Frameworks auf die CCD Kriterien}
 \author{Stefan Kert}
 \studiengang{Software Engneering}
 \studienort{Hagenberg}
@@ -17,6 +56,7 @@
 \frontmatter
 \maketitle
 \tableofcontents
+
 \include{vorwort}		% ggfs. weglassen
 \include{kurzfassung}		
 \include{abstract}			
@@ -27,10 +67,12 @@
 \include{einfuehrungccd}
 \include{grundlagenccd}
 \include{analyseosframeworks}
+\include{Analyses_Log4Net}
+\include{Analyses_Hibernate}
+\include{Analyses_Roslyn}
 \include{schluss}
 
 \appendix
-
 
 \MakeBibliography
 \end{document}

@@ -1,0 +1,38 @@
+\section{Log4net}
+\subsection{Allgemeines}
+Log4net ist wohl eines der bekanntesten Logging Frameworks für .NET und wird als solches von zahlreichen Programmierern verwendet. Es ist eine Portierung des im Java Bereich bekannten Log4j und ist mittlerweile über 10 Jahre alt. Das Framwork an sich steht unter der Apache License 2.0 bereit und ist dabei ein Teil der Apache Logging Services und somit auch ein Teil der Apache Software Foundation. Das Repository auf welches sich im Folgenden bezogen wird lässt sich auf GitHub unter https://github.com/apache/log4net finden.
+
+\subsection{Kommentare}
+\begin{itemize}
+	\item Betreffende Klasse: \textit{ConfigurationChangedEventArgs}
+	\item Betreffender Namespace: \textit{log4net.Repository}
+\end{itemize}
+
+Eines der wohl am meisten diskutierten Themen hinsichtlich CCD ist das entfernen von nicht benötigten Kommentaren. Dabei gehen die Meinungen sehr stark außeinander, was jetzt als, nicht mehr benötigter, oder als wichtiger Kommentar durchgeht. Robert C. Martin schreibt ist in dieser Hinsicht sehr pragmatisch. Alle Kommentare die nicht unbedingt nötig sind werden gelöscht. Zu den unbedingt notwendigen gehören für ihn dabei rechtliche Kommentare die auf eine Lizenze verweisen, oder auch Kommentare die erläutern, warum etwas genau so implementiert wurde. Zu überflüssigen Kommentaren zählt er dabei vor allem redundanten Kommentare. Auch in Log4net lassen sich solche Kommentare finden. Wenn man sich den Konstruktor aus der Klasse ConfigurationChangedEventArgs ansehen kann man feststellen, dass die Kommentare im Prinzip redundant sind.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für überflüssige Kommentare, label=lst:RedundantComment]
+/// <summary>
+/// 
+/// </summary>
+/// <param name="configurationMessages"></param>
+public ConfigurationChangedEventArgs(ICollection configurationMessages)
+{
+		this.configurationMessages = configurationMessages;
+}
+\end{lstlisting}
+
+Er bringt für den Programmierer keinen wirklichen Mehrwert. Was genau in der übergebenen \textit{Collection} übertragen wird, wird auch durch den redundanten Kommentar nicht näher erläutert. Da der <summary> Abschnitt sowieso leer ist, könnte man diesen getrost entfernen, da er nur den Quelltext aufbläht. 
+
+\subsection{Namensgebung - Klassen}
+\begin{itemize}
+	\item Betreffende Klasse: \textit{LogLog}
+	\item Betreffender Namespace: \textit{log4net.Util}
+\end{itemize}
+
+Bei der Namensgebung kommt es immer wieder zu Unklarheiten und Problemen. Oft werden Kommentare geschrieben, um dem Leser zu vermitteln, wofür genau diese Methode, Klasse oder auch Variable verwendet wird. Dabei sind diese Probleme umso größer, je größer der Kontext ist in dem diese Namen gültig sind. Bei Klassen zum Beispiel , kann dies zu einem sehr großen Problem werden. In Log4net gibt es die Klasse \textit{LogLog}. Dieser Name ist nicht nur unglücklich gewählt, er lässt auch eine gewisse Redundanz vermuten. Die Aufgabe dieser Klasse lässt sich nach einem näheren Betrachten dieser ergründen. Sie besteht darin das interne Logging im Log4net Framework zu realisieren. Im Kommentar wird dem Leser erklärt, dass es für Log4net Komponenten nicht möglich ist Log4net Aufrufe zu tätigen. Daher auch der Name. Die Klasse stellt einen Log für den Log dar. Ein Blick in den Quelltext von Log4j lässt darauf schließen, dass diese Klasse einfach übernommen wurde und für .NET angepasst wurde. Die Kommentare sind sehr ähnlich und auch der Aufbau ist sehr ähnlich. Wahrscheinlich wäre durch ein Refactoring des Frameworks und der Verwendungen dieser Klasse eine bessere Variante möglich, jedoch sollte sich hier nur auf kleine Änderungen konzentriert werden. Daher sollte an dieser Stelle nur ein besserer Name für dies Klasse gefunden werden, welcher auch Aufschluss darüber gibt, dass diese Klasse nur zum internen Logging in Log4net verwendet wird. \textit{AssemblyInternalLogging} wäre ein besser Name für diese Klasse. Ein weiterer Punkt der hier anzumerken ist: Die Klasse ist als \textit{public} gekennzeichnet und so ist sie für alle Verwender der Bibliothek zugänglich. Aus dem Kommentar lässt sich darauf schließen, dass dies nicht gewünscht ist, wodurch eine Änderung der Sichtbarkeit in \textit{internal} vernünftig wäre, da es dadurch nur im aktuellen Assembly zugänglich gemacht wird.
+
+\subsection{Gute Projektstruktur}
+Beim ersten Blick auf das GitHub Repository finden man eine sehr übersichtliche, gut strukturierte Projektanordnung. Die Gliederung des Projektes in die einzelnen Abschnitte ist dabei sehr gelungen und es ermöglicht ein leichtes Auffinden der gesuchten Aspekte der Bibliothek. Besonders die sehr gering gehaltene Anzahl an Elementen im Root Namespace sollte hier hervorgehoben werden. Man findet dort nur die wichtigsten Klassen die auch für den Verwender dieser Bibliothek von enormer Wichtigkeit sind. Dies sind vor allem die Klasse \textit{LogManager} und das Interface \textit{ILog}.
+
+\subsection{Fazit}
+Im Großen und Ganzen lässt sich sagen, dass bei der Entwicklung von Log4net sehr darauf geachtet wurde, die Codebasis so zu gestalten, dass man sich sehr leicht einarbeiten kann. Die Bibliothek ist sehr logisch aufgebaut und die Klassen bzw. Namespacenamen sind so gewählt, dass man sich gut zurecht findet. Es sollte also für keinen Programmierer ein gröberes Problem sein, sich in diese Bibliothek einzuarbeiten. Einige Dinge sind auf Grund des Alters von Log4net mit den modernen IDEs nicht mehr nötig, wie z.B. die Präfixe für Variablen, jedoch wird dies meist über Coding Conventions festgelegt und sollte daher auch so im ganzen Projekt durchgezogen werden. Bei zahlreichen Klassen in Log4net merkt man außerdem die Verwandtschaft zu Log4j. Einige Implementierungen oder Strukturierungen würde man in .net anders vornehmen, jedoch kann dies auch dem wie bereits angemerkten Alter der Bibliothek geschuldet sein.

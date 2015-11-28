@@ -12,7 +12,7 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
 Document=einleitung.tex
 
@@ -30,13 +30,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=einfuehrungccd.tex
+Document=analyseosframeworks.tex
 
 [Frame1_View0,0]
 TopLine=0
-Cursor=1614
+Cursor=1036
 
 [Frame2]
 Flags=0
@@ -48,13 +48,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=analyseosframeworks.tex
+Document=_DaBa.tex
 
 [Frame2_View0,0]
-TopLine=8
-Cursor=2045
+TopLine=18
+Cursor=689
 
 [Frame3]
 Flags=0
@@ -66,9 +66,9 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=abstract.tex
+Document=vorwort.tex
 
 [Frame3_View0,0]
 TopLine=0
@@ -84,13 +84,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=_DaBa.tex
+Document=Analyses_Log4Net.tex
 
 [Frame4_View0,0]
-TopLine=0
-Cursor=86
+TopLine=12
+Cursor=4441
 
 [Frame5]
 Flags=0
@@ -102,13 +102,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=grundlagenccd.tex
+Document=Analyses_Roslyn.tex
 
 [Frame5_View0,0]
-TopLine=0
-Cursor=2740
+TopLine=33
+Cursor=3168
 
 [Frame6]
 Flags=0
@@ -120,69 +120,18 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1562
-NormalPos.bottom=539
+NormalPos.bottom=659
 Class=LaTeXView
-Document=vorwort.tex
+Document=Analyses_Hibernate.tex
 
 [Frame6_View0,0]
 TopLine=0
-Cursor=0
-
-[Frame7]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1562
-NormalPos.bottom=539
-Class=LaTeXView
-Document=kurzfassung.tex
-
-[Frame7_View0,0]
-TopLine=0
-Cursor=0
-
-[Frame8]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1562
-NormalPos.bottom=539
-Class=LaTeXView
-Document=schluss.tex
-
-[Frame8_View0,0]
-TopLine=0
-Cursor=0
-
-[Frame9]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1562
-NormalPos.bottom=539
-Class=BibTeXView
-Document=literatur.bib
-
-[Frame9_View0,0]
-TopLine=0
-Cursor=0
+Cursor=630
 
 [SessionInfo]
-FrameCount=10
-ActiveFrame=2
+FrameCount=7
+ActiveFrame=6
+
+[Bookmarks]
+grundlagenccd.tex=19 
 

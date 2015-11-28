@@ -1,0 +1,69 @@
+\section{Roslyn}
+\subsection{Allgemeines}
+Der von Microsoft als Opensource veröffentlichte Compiler mit dem Codenamen Roslyn ist wie viele Teile des .NET Frameworks seit dem Jahr 2014 auf GitHub verfügbar. In diesem Abschnitt sollte der Quellcode näher betrachtet werden. 
+
+\subsection{Kapseln von Errorhandling in eigene Methoden}
+\begin{itemize}
+	\item Betreffende Klasse: \textit{MetadataAndSymbolCache}, \textit{FileKey}
+	\item Betreffender Namespace: \textit{Microsoft.CodeAnalysis.CompilerServer}, \textit{Roslyn.Utilities}
+\end{itemize}
+
+Das behandeln von Fehlern und Ausnahmen ist ein sehr zentraler Aspekt eines jeden Frameworks. Eine richige und gut implementierte Strategie zur Fehlerbehandlung kann sehr viel Einfluss auf die Wartbarkeit eines Programmes haben. Oft gibt es dabei aber ein Problem. Die Fehlerbehandlung vermischt sich mit der Logik und trägt daher nicht sehr zur besseren Lesbarkeit dieser bei. Da es bei der Fehlerbehandlung um einen eigenen Aspekt geht könnte man sagen, man lagert die Fehlerbehandlung in eine eigene Methode aus, welche als Wrapper für die zu behandelte Methode fungiert. Hier ein Beispiel dazu:
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für getrennten Aspket der Fehlerbehandlung, label=lst:AspectedErrorhandling]
+private FileKey? GetUniqueFileKey(string filePath)
+{
+	try
+	{
+		return FileKey.Create(filePath);
+	}
+	catch (Exception)
+	{
+		// There are several exceptions that can occur 
+		// here: NotSupportedException or 
+		// PathTooLongException
+		// for a bad path, UnauthorizedAccessException 
+		// for access denied, etc. Rather than listing
+		// them all, just catch all exceptions.
+		return null;
+	}
+}
+\end{lstlisting}
+
+Um sich auf den wesentlichen Punkt in diesem Abschnitt, die Fehlerbehandlung, zu konzentrieren, wird der redundante Kommentar und die Rückgabe eiens null-Wertes ignoriert. Dies sollte in einem anderen Abschnitt näher behandelt werden. % TOODOO ADD Null value return descripton %
+Was man aber an diesem Beispiel schön sehen kann, ist die Trennung der Aspekte. Es wird eine Methode zum Erstellen eines \textit{FileKey} Objektes aufgerufen. Anstatt die Fehlerbehandlung in der \textit{Create} Methode zu erledigen, wird sie außerhalb dieser Methode implementiert und führt daher zu keiner Vermischung der Aspekte. Natürlich ergibt sich hier ein weiteres Problem. Beim Aufruf der Methode \textit{Create} kann auf die Fehlerbehandlung vergessen werden, was im schlimmsten Fall zu einer unbehandelten Ausnahme führen kann. Es wäre daher vernünftiger die Fehlerbehandlung direkt in einen Wrapper in der Klasse \textit{FileKey} zu implementieren, der die Fehlerbehandlung vornimmt und danach die Methode \textit{Create} aufruft.
+
+Dies würde in folgender Codeänderung in der Klasse \textit{FileKey} resultieren.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey vorher, label=lst:AspectedErrorhandling]
+public static FileKey Create(string fullPath)
+{
+	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey nachher, label=lst:AspectedErrorhandling]
+private static FileKey CreateKey(string fullPath)
+{
+	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
+}
+				
+public static FileKey? Create(string fullPath)
+{
+	try
+	{
+		return Create(filePath);
+	}
+	catch (Exception)
+	{
+		return null;
+	}
+}
+\end{lstlisting}
+
+Der Aufruf würde der gleiche bleiben, da nur die \textit{Create} Methode im öffentlichen Gültigkeitsbereich zugänglich ist, jedoch könnte sichergestellt werden, dass eine Fehlerbehandlung stattfindet. Auf Grund der Tatsache, dass im Fehlerfall \textit{null} zurückgegeben werden sollte, gibt es eine kleine Änderungen an der Signatur, sodass mit dieser Variante ein \textit{FileKey?} zurückgegeben wird, was einem Strukturdatentyp entspricht, welcher den Wert null annehmen kann. 
+
+\subsection{Rückgabe von Nullwerten}
+
+
+\subsection{Fazit}

@@ -9,8 +9,7 @@ Eine der häufigsten Aufgaben eines Programmierers ist das vergeben von Namen. V
 
 \SuperPar Im CCD gibt es für die Namensgebung eine grundlegende Regel: Der Name sollte der Größe des Gültigkeitsbereich entsprechen. Wenn man z.B. eine Methode, die in einem globalen Kontext gültig ist, sollte einen dementsprechend deskriptiven Namen aufweisen. Zu beachten ist natürlich auch der Kontext in dem sich diese  befinden, wofür die Methode verwendet werden sollte. Hier nun ein kleines Beispiel. In einem fiktiven Projekt gibt es folgende zentrale Klasse mit einer globalen Property.
 
-\lstset{style=sharpc}
-\begin{lstlisting}
+\begin{lstlisting}[caption=Beispiele für die Verwendung von \textit{GetByPredicate}, label=lst:GetByPredicate]
 public static class Globals {
 		public static string Information {get; set;}
 }
@@ -18,8 +17,7 @@ public static class Globals {
 
 Trotz der Kürze dieser Klasse ergibt sich bereits ein Problem. Aus dem Namen der Property kann man die Aufgabe dieser in keinster Weise ablesen. Es wird irgendeine Information gespeichert, doch welche Information genau wird gespeichert und wozu wird diese verwendet? Ein Blick auf die Verwendungen dieser Variable, führt zu der Erkenntnis, dass die Information die Version des Programmes darstellt. Der Programmierer hätte diese Verwirrung vermeiden können indem er die Namen anders gewählt hätte. Hier ein Beispiel zu einer besseren Variante:
 
-\lstset{style=sharpc}
-\begin{lstlisting}
+\begin{lstlisting}[caption=Beispiele für die Verwendung von \textit{GetByPredicate}, label=lst:GetByPredicate]
 public static class ApplicationInformation {
 		public static string Version {get; set;}
 }
@@ -27,8 +25,7 @@ public static class ApplicationInformation {
 
 Durch eine Umbenennung der Klasse wird es auch um einiges klarer, auf welchen Teil des Programmes sich die Version bezieht. Man könnte jetzt noch den Datentyp Version implementieren, welcher die z.B. die Major-, Minor- und Patchnummer beinhaltet:
 
-\lstset{style=sharpc}
-\begin{lstlisting}
+\begin{lstlisting}[caption=Beispiele für die Verwendung von \textit{GetByPredicate}, label=lst:GetByPredicate]
 public static class ApplicationInformation {
 		public static Version Version {get; set;}
 }
