@@ -52,9 +52,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.3}Namensgebung - Klassen}{8}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Gute Projektstruktur}{8}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.4}Gute Projektstruktur}{9}{subsection.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}Fazit}{8}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.5}Fazit}{9}{subsection.4.1.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Hibernate}{10}{section.4.2}
 \defcounter {refsection}{0}\relax 

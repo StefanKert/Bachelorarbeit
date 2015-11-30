@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  30 NOV 2015 13:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  30 NOV 2015 14:36
 entering extended mode
 **_DaBa.tex
 (_DaBa.tex
@@ -1404,30 +1404,8 @@ LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
 
 LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
 
-) (analyseosframeworks.aux) (Analyses_Log4Net.aux) (Analyses_Hibernate.aux
-
-LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
-
-
-LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
-
-
-LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
-
-
-LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
-
-
-LaTeX Warning: Label `lst:GetByPredicate' multiply defined.
-
-) (Analyses_Roslyn.aux
-
-LaTeX Warning: Label `lst:AspectedErrorhandling' multiply defined.
-
-
-LaTeX Warning: Label `lst:AspectedErrorhandling' multiply defined.
-
-) (schluss.aux))
+) (analyseosframeworks.aux) (Analyses_Log4Net.aux) (Analyses_Hibernate.aux)
+(Analyses_Roslyn.aux) (schluss.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
 LaTeX Font Info:    ... okay on input line 48.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
@@ -1442,7 +1420,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
 LaTeX Font Info:    ... okay on input line 48.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 48.
- (C:\Users\stefa\Downloads\tex\latex\base\ts1cmr.fd
+
+(C:\Users\stefa\Downloads\tex\latex\base\ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 48.
@@ -1876,24 +1855,33 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 ]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 34.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 34.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+Package csquotes Info: Input encoding change on input line 34.
+ (C:\Users\stefa\Downloads\tex\latex\base\utf8.def
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
+Overfull \hbox (17.7598pt too wide) in paragraph at lines 55--56
+\T1/cmbr/m/sc/10.95 macht wer-den. Ein Bei-spiel für einen bes-sern Na-men wä-r
+e \T1/cmbr/m/sl/10.95 Log4NetInternalLogging\T1/cmbr/m/sc/10.95 ,
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 70.
- [8]
+(babel)             in language  on input line 57.
+[8]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 57.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 57.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 60.
+)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1945,8 +1933,13 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 27.
+
+
+LaTeX Warning: Reference `BoolStatement1' on page 11 undefined on input line 34
+.
+
 Package csquotes Info: Input encoding change on input line 36.
- (C:\Users\stefa\Downloads\tex\latex\base\utf8.def
+(C:\Users\stefa\Downloads\tex\latex\base\utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package csquotes Info: Input encoding change on input line 51.
@@ -1968,8 +1961,11 @@ Package csquotes Info: Input encoding change on input line 66.
 (C:\Users\stefa\Downloads\tex\latex\base\utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 72.
 
+LaTeX Warning: Reference `BoolStatement4' on page 12 undefined on input line 70
+.
+
+Package csquotes Info: Input encoding change on input line 72.
 (C:\Users\stefa\Downloads\tex\latex\base\utf8.def
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
@@ -2040,6 +2036,15 @@ Package csquotes Info: Input encoding change on input line 45.
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+ [15]
+Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 66.
@@ -2048,15 +2053,6 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 69.
 )
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
- [15]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2153,13 +2149,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to '_DaBa.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 23201 strings out of 493673
- 348978 string characters out of 3145251
- 888701 words of memory out of 3000000
- 25791 multiletter control sequences out of 15000+200000
+ 23233 strings out of 493673
+ 349596 string characters out of 3145251
+ 889297 words of memory out of 3000000
+ 25802 multiletter control sequences out of 15000+200000
  31037 words of font info for 83 fonts, out of 3000000 for 9000
  1029 hyphenation exceptions out of 8191
- 67i,12n,96p,1900b,3502s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,12n,96p,1114b,3502s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmbright\dpi657\cmbrsy10.pk
 > <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmbright\dpi657\cmbrmi10.pk>
  <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmbright\dpi657\cmbr10.pk> <C
@@ -2183,9 +2179,9 @@ cmbright\dpi657\ebmr10.pk> <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmb
 right\dpi864\ebmr10.pk> <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmbrig
 ht\dpi720\ebmr10.pk> <C:\Users\stefa\Downloads\fonts\pk\ljfour\public\cmbright\
 dpi1037\ebbx10.pk>
-Output written on _DaBa.pdf (28 pages, 319163 bytes).
+Output written on _DaBa.pdf (28 pages, 325595 bytes).
 PDF statistics:
- 1160 PDF objects out of 1200 (max. 8388607)
- 170 named destinations out of 1000 (max. 500000)
+ 1197 PDF objects out of 1200 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
  306 words of extra memory for PDF output out of 10000 (max. 10000000)
 
