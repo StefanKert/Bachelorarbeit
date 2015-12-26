@@ -6,9 +6,13 @@ A level-1 auxiliary file: einleitung.aux
 A level-1 auxiliary file: einfuehrungccd.aux
 A level-1 auxiliary file: grundlagenccd.aux
 A level-1 auxiliary file: analyseosframeworks.aux
-A level-1 auxiliary file: Analyses_Log4Net.aux
-A level-1 auxiliary file: Analyses_Hibernate.aux
-A level-1 auxiliary file: Analyses_Roslyn.aux
+A level-1 auxiliary file: Analyses_Comments.aux
+A level-1 auxiliary file: Analyses_Naming.aux
+A level-1 auxiliary file: Analyses_ErrorHandling.aux
+A level-1 auxiliary file: Analyses_Boundaries.aux
+A level-1 auxiliary file: Analyses_Testing.aux
+A level-1 auxiliary file: Analyses_Methods.aux
+A level-1 auxiliary file: Analyses_Classes.aux
 A level-1 auxiliary file: schluss.aux
 I found no \citation commands---while reading file _DaBa.aux
 I found no \bibdata command---while reading file _DaBa.aux

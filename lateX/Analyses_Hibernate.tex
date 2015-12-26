@@ -3,26 +3,6 @@
 \subsection{Allgemeines}
 Die Bibliothek Hibernate ist einer der wohl bekannteste OR-Mapper für Java. Mit Hibernate ist es möglich ein objektorientiertes Datenmodell  auf ein relationales Datenbankmodell zu mappen. Die Bibliothek ist mittlerweile über 10 Jahre alt und wurde unter anderem nach .NET portiert und heißt dort NHibernate. Entwickelt wird sie von Red Hat und steht unter der GNU LGPL zur Verfügung. Das Repository lässt sich auf GitHub unter https://github.com/hibernate/hibernate-orm finden.
 
-\subsection{Auskommentierter Code}
-\begin{itemize}
-	\item Betreffende Klasse: \textit{BindHelper}
-	\item Betreffendes Paket: \textit{org.hibernate.cfg}
-\end{itemize}
-
-
-\SuperPar Code der nicht mehr benötigt wird, wird häufig einfach auskommentiert und bleibt danach über lange Zeit im Quellcode bestehen. Dies wäre jedoch bei den modernen Versionsverwaltungssystemen gar nicht mehr notwendig, da diese eine genaue Auflistung der gelöschten, geänderten oder hinzugefügten Abschnitte anbieten. Es ist mit diesen auch leicht möglich Abschnitte, die man gelöscht hat, wieder aufzufinden, sowie diese wiederherzustellen. Code der nicht mehr benötigt wird sollte daher einfach gelöscht werden und mit einer vernünftigen Commit Message versehen werden. Im Hibernate Framework ist eine Klasse die einen solchen auskommentierten Codeabschnitt enthält die \textit{BindHelper} Klasse. Eine sehr problematische Stelle befindet sich in dieser Klasse in Zeile 421. Dort gibt es den in Listing \ref{lst:CommentedCode} beschriebenen Codeabschnitt.
-
-\begin{lstlisting}[language=Java, caption=Beispiele für die Verwendung von \textit{GetByPredicate}, label=lst:CommentedCode]
-/*FIXME cannot use subproperties becasue the caller needs top level properties
-//if (property.isComposite()) {
-//	Iterator subProperties = ((Component)property.getValue()).getPropertyIterator();
-// 	while (subProperties.hasNext()) {
-//  	matchColumnsByProperty(((Property)subProperties.next()), columnsToProperty);
-// 	}
-}*/ 
-\end{lstlisting}
-
-Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden müsste. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder in einem Issue Tracking System genau mitdokumentiert werden, wo der Fehler auftritt und Möglichkeiten diesen zu beheben, oder den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftreten wird und er somit vergessen wird, wodurch sich vermutlich weitere Probleme ergeben.
  
 \subsection{Unleserliche boolsche Ausdrücke}
 \label{cha:BadBoolStatements}
