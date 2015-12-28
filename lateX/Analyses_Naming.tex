@@ -1,1 +1,55 @@
 \section{Namensgebung}
+
+\SuperPar Eine weiterer sehr zentraler Punkt in CCD ist die Namensgebung. Robert C. Martin vergleicht die Namensgebung in der Programmierung dabei mit
+der Namensgebung für Kinder. Damit versucht er dem Leser klar zu machen, welche Rolle die Namensgebung in der Programmierung spielt. Im
+folgenden Abschnitt werden einige wichtigen Punkte der Namensgebung aufgearbeitet.
+
+\subsection{Namensgebung - Klassen}
+\begin{itemize}
+	\item Projekt: \textit{Log4Net}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{LogLog}
+	\item Betreffender Namespace: \textit{log4net.Util}
+\end{itemize}
+
+\SuperPar Bei der Namensgebung kommt es immer wieder zu Unklarheiten und Problemen wodurch es oft nötig wird, mit Kommentaren zu beschreiben, wofür diese Komponente verwendet wird. Dabei werden diese Probleme umso größer, je größer der Gültigkeitsbereich dieses Namens ist. Ein Beispiel für eine solche schlechte Namensgebung in einem großen Gültigkeitsbereich in Log4net, ist die in Listing \ref{lst:BadName} dargestellte Klasse \textit{LogLog}. 
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für schlechte Namensgebung, label=lst:BadName]
+/// <summary>
+	/// Outputs log statements from within the log4net assembly.
+	/// </summary>
+	/// <remarks>
+	/// <para>
+	/// Log4net components cannot make log4net logging calls.
+	/// However, it is sometimes useful for the user to learn 
+	/// about what log4net is doing.
+	/// </para>
+	/// <para>
+	/// All log4net internal debug calls go to the standard output 
+	/// stream whereas internal error messages are sent to the 
+	/// standard error output stream.
+	/// </para>
+	/// </remarks>
+	/// <author>Nicko Cadell</author>
+	/// <author>Gert Driesen</author>
+	public sealed class LogLog
+\end{lstlisting}
+
+\SuperPar Grundsätzlich kann man anhand des Namens \textit{LogLog} keine genauen Aussagen machen, welche Aufgabe diese Klasse erfüllt. Ein Blick in den im Listing \ref{lst:BadName} stehenden Kommentar gibt Aufschluss darüber, dass das Logging über Log4Net für Log4Net Komponenten nicht möglich ist, wodurch es notwendig ist, eine eigene Klasse für das interne Logging zu implementieren. Der Kommentar könnte durch eine bessere Namensgebung für die Klasse überflüssig gemacht werden. Ein Beispiel für einen bessern Namen wäre \textit{Log4NetInternalLogging}, wodurch gleich klar wird, dass diese Klasse nur für das interne Logging zuständig ist. 
+
+\subsection{Aussprechbare Namen}
+\begin{itemize}
+	\item Projekt: \textit{Swift}
+	\item Programmiersprache: \textit{C++}
+	\item Betreffende Klasse: \textit{LogLog}
+	\item Betreffender Namespace: \textit{log4net.Util}
+\end{itemize}
+
+\SuperPar Die Softwareentwicklung ist ein sehr kollaborativer Prozess. Meist wird in einem Team von mehreren Leuten zusammengearbeitet, wobei die einzelnen
+Mitgliedern oft an ähnlichen Teilen des Systems arbeiten. Oft kommen dabei fragen auf, wo mit Kollegen diskutiert wird, welchen Nutzen dieses
+oder jenes hat. Dabei sind Namen, welche aussprechbar sind, sehr hilfreich, da die Kommunikation dadurch sehr stark vereinfacht wird. Ein Beispiel
+für einen unaussprechbaren Namen findet man im Quellcode der neuen Programmiersprache Swift von Apple. Dort gibt es den in Listing \ref{lst:UnspeakableName} 
+dargestellten Namen.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Unaussprechlicher Name, label=lst:UnspeakableName]
+\end{lstlisting}

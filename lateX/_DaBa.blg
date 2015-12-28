@@ -2,17 +2,13 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: _DaBa.aux
 A level-1 auxiliary file: vorwort.aux
 A level-1 auxiliary file: kurzfassung.aux
 A level-1 auxiliary file: abstract.aux
-A level-1 auxiliary file: einleitung.aux
-A level-1 auxiliary file: einfuehrungccd.aux
-A level-1 auxiliary file: grundlagenccd.aux
-A level-1 auxiliary file: analyseosframeworks.aux
-A level-1 auxiliary file: Analyses_Comments.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Introduction_CCD.aux
+A level-1 auxiliary file: Analyses_Criterias.aux
+A level-1 auxiliary file: Analyses_Duplication.aux
+A level-1 auxiliary file: Analyses_BadStructure.aux
 A level-1 auxiliary file: Analyses_Naming.aux
 A level-1 auxiliary file: Analyses_ErrorHandling.aux
-A level-1 auxiliary file: Analyses_Boundaries.aux
-A level-1 auxiliary file: Analyses_Testing.aux
-A level-1 auxiliary file: Analyses_Methods.aux
-A level-1 auxiliary file: Analyses_Classes.aux
 A level-1 auxiliary file: schluss.aux
 I found no \citation commands---while reading file _DaBa.aux
 I found no \bibdata command---while reading file _DaBa.aux
