@@ -1,10 +1,11 @@
-\section{Namensgebung}
+\section{Komplexe Strukturen und schwer verständliche Konstrukte}
 
-\SuperPar Eine weiterer sehr zentraler Punkt in CCD ist die Namensgebung. Robert C. Martin vergleicht die Namensgebung in der Programmierung dabei mit
+\SuperPar  Sehr häufig kommt es in der Softwareentwicklung zu Unklarheiten. Der Leser des Codes schließt aus dem betrachteten Quelltext auf etwas anderes, wie de
+Eine weiterer sehr zentraler Punkt in CCD ist die Namensgebung. Robert C. Martin vergleicht die Namensgebung in der Programmierung dabei mit
 der Namensgebung für Kinder. Damit versucht er dem Leser klar zu machen, welche Rolle die Namensgebung in der Programmierung spielt. Im
 folgenden Abschnitt werden einige wichtigen Punkte der Namensgebung aufgearbeitet.
 
-\subsection{Namensgebung - Klassen}
+\subsection{Schlecht gewählte Namen}
 \begin{itemize}
 	\item Projekt: \textit{Log4Net}
 	\item Programmiersprache: \textit{C\#}
@@ -37,19 +38,69 @@ folgenden Abschnitt werden einige wichtigen Punkte der Namensgebung aufgearbeite
 
 \SuperPar Grundsätzlich kann man anhand des Namens \textit{LogLog} keine genauen Aussagen machen, welche Aufgabe diese Klasse erfüllt. Ein Blick in den im Listing \ref{lst:BadName} stehenden Kommentar gibt Aufschluss darüber, dass das Logging über Log4Net für Log4Net Komponenten nicht möglich ist, wodurch es notwendig ist, eine eigene Klasse für das interne Logging zu implementieren. Der Kommentar könnte durch eine bessere Namensgebung für die Klasse überflüssig gemacht werden. Ein Beispiel für einen bessern Namen wäre \textit{Log4NetInternalLogging}, wodurch gleich klar wird, dass diese Klasse nur für das interne Logging zuständig ist. 
 
-\subsection{Aussprechbare Namen}
+
+\subsection{Kapseln von Errorhandling in eigene Methoden}
 \begin{itemize}
-	\item Projekt: \textit{Swift}
-	\item Programmiersprache: \textit{C++}
-	\item Betreffende Klasse: \textit{LogLog}
-	\item Betreffender Namespace: \textit{log4net.Util}
+	\item Projekt: \textit{Roslyn}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{MetadataAndSymbolCache}, \textit{FileKey}
+	\item Betreffender Namespace: \textit{Microsoft.CodeAnalysis.CompilerServer}, \textit{Roslyn.Utilities}
 \end{itemize}
 
-\SuperPar Die Softwareentwicklung ist ein sehr kollaborativer Prozess. Meist wird in einem Team von mehreren Leuten zusammengearbeitet, wobei die einzelnen
-Mitgliedern oft an ähnlichen Teilen des Systems arbeiten. Oft kommen dabei fragen auf, wo mit Kollegen diskutiert wird, welchen Nutzen dieses
-oder jenes hat. Dabei sind Namen, welche aussprechbar sind, sehr hilfreich, da die Kommunikation dadurch sehr stark vereinfacht wird. Ein Beispiel
-für einen unaussprechbaren Namen findet man im Quellcode der neuen Programmiersprache Swift von Apple. Dort gibt es den in Listing \ref{lst:UnspeakableName} 
-dargestellten Namen.
+\SuperPar Das behandeln von Fehlern und Ausnahmen ist ein sehr zentraler Aspekt eines jeden Programmes. Eine richige und gut implementierte Strategie zur Fehlerbehandlung kann sehr viel Einfluss auf die Wartbarkeit eines Programmes haben. Oft wird dabei Logik und Fehlerbehandlung vermischt, was meist zu einer Verschlechterung der Lesbarkeit führt. Da es bei der Fehlerbehandlung um einen eigenen Aspekt geht, sollte diese in eine eigene Methode ausgelagert werden. Diese Methode ist dabei ein Wrapper für die zu behandelte Methode. Ein Beispiel aus dem Quelltext von Roslyn ist die in Listing \ref{lst:AspectedErrorhandling1} gezeigte Methode.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Unaussprechlicher Name, label=lst:UnspeakableName]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für getrennten Aspket der Fehlerbehandlung, label=lst:AspectedErrorhandling1]
+private FileKey? GetUniqueFileKey(string filePath)
+{
+	try
+	{
+		return FileKey.Create(filePath);
+	}
+	catch (Exception)
+	{
+		// There are several exceptions that can occur 
+		// here: NotSupportedException or 
+		// PathTooLongException
+		// for a bad path, UnauthorizedAccessException 
+		// for access denied, etc. Rather than listing
+		// them all, just catch all exceptions.
+		return null;
+	}
+}
 \end{lstlisting}
+
+\SuperPar Um sich auf den wesentlichen Punkt in diesem Abschnitt, die Fehlerbehandlung, zu konzentrieren, wird der redundante Kommentar und die Rückgabe eines null-Wertes ignoriert. Dies sollte in einem anderen Abschnitt näher behandelt werden. % TOODOO ADD Null value return descripton %
+Was man an diesem Beispiel gut erkennen kann, ist die Trennung der Aspekte. Es wird eine Methode zum Erstellen eines \textit{FileKey} Objektes aufgerufen. Anstatt die Fehlerbehandlung in der \textit{Create} Methode zu erledigen, wird sie außerhalb dieser Methode implementiert und führt daher zu keiner Vermischung der Aspekte. Dabei ergibt sich ein weiters Problem. Beim Aufruf der Methode \textit{Create} kann auf die Fehlerbehandlung vergessen werden, was im schlimmsten Fall zu einer unbehandelten Ausnahme führt. Es wäre daher vernünftiger die Fehlerbehandlung direkt in einen Wrapper in der Klasse \textit{FileKey} zu implementieren, der die Fehlerbehandlung vornimmt und danach die Methode \textit{Create} aufruft.
+
+\SuperPar Dies würde in den in Listing \ref{lst:AspectedErrorhandling2} und in Listing \ref{lst:AspectedErrorhandling3} gezeigten Änderung in der Klasse \textit{FileKey} resultieren.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey vorher, label=lst:AspectedErrorhandling2]
+public static FileKey Create(string fullPath)
+{
+	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey nachher, label=lst:AspectedErrorhandling3]
+private static FileKey CreateKey(string fullPath)
+{
+	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
+}
+				
+public static FileKey? Create(string fullPath)
+{
+	try
+	{
+		return Create(filePath);
+	}
+	catch (Exception)
+	{
+		return null;
+	}
+}
+\end{lstlisting}
+
+\SuperPar Der Aufruf würde der gleiche bleiben, da nur die \textit{Create} Methode im öffentlichen Gültigkeitsbereich zugänglich ist, jedoch könnte sichergestellt werden, dass eine Fehlerbehandlung stattfindet. Auf Grund der Tatsache, dass im Fehlerfall \textit{null} zurückgegeben werden sollte, gibt es eine kleine Änderungen an der Signatur, sodass mit dieser Variante ein \textit{FileKey?} zurückgegeben wird, was einem Strukturdatentyp entspricht der den Wert null annehmen kann. 
+
+\subsection{Falsche Kommentare}
+\subsection{Verwendung von Magic Strings/Numbers}

@@ -2238,6 +2238,11 @@
     <bcf:datasource type="file" datatype="bibtex">literatur.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">CleanCode</bcf:citekey>
+    <bcf:citekey order="2">CleanCode</bcf:citekey>
+    <bcf:citekey order="3">CSHARPCoding</bcf:citekey>
+    <bcf:citekey order="4">BeckExtreme</bcf:citekey>
+    <bcf:citekey order="5">PRAG1999</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>

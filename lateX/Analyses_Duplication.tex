@@ -1,8 +1,11 @@
 \section{Duplizierungen beim Entwickeln von Software}
-\SuperPar Eines der größten Probleme bei der Entwicklung von Software stellt die Duplizierung von Code dar. Dabei ist die Duplizierung oft nicht so offensichtlich wie es bei kopierten Methoden der Fall ist. Duplizierung kann genau so in einfachen boolschen Statements auftreten, oder auch durch logische Duplizierungen, wo der Quellcode zwar verschieden ist, jedoch die gleiche Aufgabe erledigt. Die Probleme die bei der Duplizierung von Code entstehen sind sehr vielschichtig. Falls Fehler auftreten müssen diese an allen Stellen behoben werden, wo dieser Codeabschnitt dupliziert ist. Oft wird jedoch darauf vergessen den Fehler an allen Stellen zu Verbessern, wodurch der Fehler später wieder auftreten wird. Ein weiteres Problem ergibt sich durch die Tests, welche mehrfach geschrieben werden müssen und dadurch auch mehrfach gewartet werden müssen. Im Falle, dass ein weiters Feature zu einer Codestelle hinzugefügt werden muss, welche eine Duplizierung darstellt, kann wieder wie im Fehlerfall darauf vergessen werden, alle Codestellen zu ändern.
+\SuperPar Eines der größten Probleme bei der Entwicklung von Software stellt die Duplizierung dar. Dabei lässt sich Duplizierung nicht nur im Code finden, sondern auch in anderen Vorgängen die für die Softwareentwicklung von Bedeutung sind. Für jeden Entwickler gibt es zahlreiche Aufgaben, welche er immer wieder erledigen muss. Diese sollten möglichst automatisiert und mit wenig Aufwand möglich sein, da dies ansonsten eine Duplizierung der Arbeit bedeuten würde.
 
-Probleme mit Duplizierungen entstehen jedoch nicht nur bei der direkten Arbeit mit Code sondern auch beim Testen, Erzeugen oder Verteilen von Software. Auch diese Aspekte der Duplizierung sollten im folgenden Abschnitt analysiert werden.
+\SuperPar Auf Code bezogen verbirgt sich Duplizierung nicht immer nur auf Bibliothek-, oder Klassenebene, sondern auch in Methoden. Dabei muss man zwischen einfacher, und logischer Duplizierung unterscheiden. Bei der einfachen Duplizierung handelt es sich um schlichtweg gleichen Code. Meist wurde dieser kopiert und nur ein wenig angepasst. Die logische Duplizierung ist meist schwieriger zu erkennen, denn in diesem Fall sind die duplizierten Stellen vom Aufbau her unterschiedlich, sie gleichen sich aber in der Aufgabe welche diese erledigen. Oft treten solche logischen Duplizierungen, wenn bei der Benennung der vorhandenen Methoden beziehungsweise Klassen nicht auf eine ausreichend offensichtliche Namensgebung geachtet wurde. Ein sehr wichtiges Prinzip hinsichtlich Codeduplizierung ist das von Dave Thomas und Andy Hunt beschrieben DRY-Prinzip (Don´t Repeat Yourself \cite{PRAG1999}).
 
+\SuperPar Wie bereits erwähnt, ergeben sich durch die Duplizierung zahlreiche Probleme. Einerseits müssen Arbeiten doppelt erledigt werden, andererseits kann im Falle eines Fehlers auf das Beheben dieses in einem duplizierten Abschnitt vergessen werden.
+
+\SuperPar Robert C. Martin bietet in seinem Buch Clean Code einige Möglichkeiten wodurch diese Probleme vermieden werden können. Diese sollten im folgenden Abschnitt näher betrachtet werden.
 
 \subsection{Duplizierung boolscher Ausdrücke}
 \label{cha:BadBoolStatements}
@@ -13,7 +16,7 @@ Probleme mit Duplizierungen entstehen jedoch nicht nur bei der direkten Arbeit m
 	\item Betreffendes Paket: \textit{org.hibernate.cfg}
 \end{itemize}
 
-\SuperPar Wie bereits beschrieben treten Codeduplizierungen sehr oft in boolschen Ausdrücken auf. Dies ist oft ein sehr subtiles Problem und kann nicht so leicht festgestellt werden. Meist ist dies bei komplexen boolschen Ausdrücken der Fall. Diese werden oft von mehreren Funktionen benötigt und daher einfach in den einzelnen Funktionen verwendet. Ein Beispiel für so einen boolschen Ausdruck befindet sich in Listing \ref{BoolStatement1}.
+\SuperPar Wie bereits erwähnt, treten Codeduplizierungen nicht nur auf Bibliothek-, bzw. Klassenebene auf, sonder meist in einem viel kleineren Kontext. Bei boolschen Ausdrücken ist dies sehr oft der Fall. Eine logische Verzweigung, welche auf zum Beispiel die Validität einer Eingabe prüft, könnte Dies ist oft ein sehr subtiles Problem und kann nicht so leicht festgestellt werden. Meist ist dies bei komplexen boolschen Ausdrücken der Fall. Diese werden oft von mehreren Funktionen benötigt und daher einfach in den einzelnen Funktionen verwendet. Ein Beispiel für so einen boolschen Ausdruck befindet sich in Listing \ref{BoolStatement1}.
 
 \begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 1 Zeile 255 - 264, label=lst:BoolStatement1]
 	@Override
@@ -96,4 +99,3 @@ public ConfigurationChangedEventArgs(ICollection configurationMessages)
 		this.configurationMessages = configurationMessages;
 }
 \end{lstlisting}
-

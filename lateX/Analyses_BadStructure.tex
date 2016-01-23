@@ -1,4 +1,4 @@
-\section{Komplexe Strukturen und schwer zu verstehende Konstrukte}
+\section{Legacy Code}
 
 \SuperPar Sehr oft kommt es in der Softwareentwicklung zu einer sehr komplexen Struktur der einzelnen Komponenten. Klassen mit sehr vielen Funktionen. Funktionen, welche mehr als eine Aufgabe erfüllen und daher oft sehr lange werden. Nicht mehr benötigte Codeabschnitte, welche aus Angst vor einem Verlust dieser nicht gelöscht werden. Dies sind nur einige der Probleme, welche in der Softwareentwicklung auftreten können. Viele dieser Probleme sind leicht zu lösen. Durch moderne Versionsverwaltungssysteme ist es nicht mehr nötig Codeabschnitte, die nicht mehr benötigt werden auszukommentieren. Diese können einfach gelöscht werden. Einige Probleme, welche sich zum Beispiel bei Klassen mit sehr vielen Methoden ergeben, können nur durch Erfahrung und Übung erkannt werden. Es sollte bei Klassen und Funktionen vor allem darauf geachtet werden, dass diese nur genau einen Zweck erfüllen. Ein weiterer wichtiger Indikator, ob eine Komponente gut programmiert ist, ist die Testbarkeit dieser. Bei schlecht programmierten beziehungsweise geplante Klassen ist es nur sehr schwer - oder gar nicht - möglich diese zu Testen. Im folgenden Abschnitt werden die häufigsten Probleme für komplexe Strukturen beziehungsweise schwer zu verstehende Konstrukte aufgearbeitet.
 
@@ -24,69 +24,6 @@
 \end{lstlisting}
 
 \SuperPar Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden müsste. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder in einem Issue Tracking System genau mitdokumentiert werden, wo der Fehler auftritt und Möglichkeiten diesen zu beheben, oder den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftreten wird und er somit vergessen wird, wodurch sich vermutlich weitere Probleme ergeben. Auch Robert C. Martin schlägt in seinem Buch eine sehr pragmatische Lösung vor: Auskommentierter Code sollte immer gelöscht werden, da er zusätzlich zu den genannten Gründen auch den Quellcode unnötig aufbläht.
-
-\subsection{Kapseln von Errorhandling in eigene Methoden}
-\begin{itemize}
-	\item Projekt: \textit{Roslyn}
-	\item Programmiersprache: \textit{C\#}
-	\item Betreffende Klasse: \textit{MetadataAndSymbolCache}, \textit{FileKey}
-	\item Betreffender Namespace: \textit{Microsoft.CodeAnalysis.CompilerServer}, \textit{Roslyn.Utilities}
-\end{itemize}
-
-\SuperPar Das behandeln von Fehlern und Ausnahmen ist ein sehr zentraler Aspekt eines jeden Programmes. Eine richige und gut implementierte Strategie zur Fehlerbehandlung kann sehr viel Einfluss auf die Wartbarkeit eines Programmes haben. Oft wird dabei Logik und Fehlerbehandlung vermischt, was meist zu einer Verschlechterung der Lesbarkeit führt. Da es bei der Fehlerbehandlung um einen eigenen Aspekt geht, sollte diese in eine eigene Methode ausgelagert werden. Diese Methode ist dabei ein Wrapper für die zu behandelte Methode. Ein Beispiel aus dem Quelltext von Roslyn ist die in Listing \ref{lst:AspectedErrorhandling1} gezeigte Methode.
-
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für getrennten Aspket der Fehlerbehandlung, label=lst:AspectedErrorhandling1]
-private FileKey? GetUniqueFileKey(string filePath)
-{
-	try
-	{
-		return FileKey.Create(filePath);
-	}
-	catch (Exception)
-	{
-		// There are several exceptions that can occur 
-		// here: NotSupportedException or 
-		// PathTooLongException
-		// for a bad path, UnauthorizedAccessException 
-		// for access denied, etc. Rather than listing
-		// them all, just catch all exceptions.
-		return null;
-	}
-}
-\end{lstlisting}
-
-\SuperPar Um sich auf den wesentlichen Punkt in diesem Abschnitt, die Fehlerbehandlung, zu konzentrieren, wird der redundante Kommentar und die Rückgabe eines null-Wertes ignoriert. Dies sollte in einem anderen Abschnitt näher behandelt werden. % TOODOO ADD Null value return descripton %
-Was man an diesem Beispiel gut erkennen kann, ist die Trennung der Aspekte. Es wird eine Methode zum Erstellen eines \textit{FileKey} Objektes aufgerufen. Anstatt die Fehlerbehandlung in der \textit{Create} Methode zu erledigen, wird sie außerhalb dieser Methode implementiert und führt daher zu keiner Vermischung der Aspekte. Dabei ergibt sich ein weiters Problem. Beim Aufruf der Methode \textit{Create} kann auf die Fehlerbehandlung vergessen werden, was im schlimmsten Fall zu einer unbehandelten Ausnahme führt. Es wäre daher vernünftiger die Fehlerbehandlung direkt in einen Wrapper in der Klasse \textit{FileKey} zu implementieren, der die Fehlerbehandlung vornimmt und danach die Methode \textit{Create} aufruft.
-
-\SuperPar Dies würde in den in Listing \ref{lst:AspectedErrorhandling2} und in Listing \ref{lst:AspectedErrorhandling3} gezeigten Änderung in der Klasse \textit{FileKey} resultieren.
-
-\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey vorher, label=lst:AspectedErrorhandling2]
-public static FileKey Create(string fullPath)
-{
-	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language={[Sharp]C}, caption=Fehlerbehandlung in der Klasse FileKey nachher, label=lst:AspectedErrorhandling3]
-private static FileKey CreateKey(string fullPath)
-{
-	return new FileKey(fullPath, FileUtilities.GetFileTimeStamp(fullPath));
-}
-				
-public static FileKey? Create(string fullPath)
-{
-	try
-	{
-		return Create(filePath);
-	}
-	catch (Exception)
-	{
-		return null;
-	}
-}
-\end{lstlisting}
-
-\SuperPar Der Aufruf würde der gleiche bleiben, da nur die \textit{Create} Methode im öffentlichen Gültigkeitsbereich zugänglich ist, jedoch könnte sichergestellt werden, dass eine Fehlerbehandlung stattfindet. Auf Grund der Tatsache, dass im Fehlerfall \textit{null} zurückgegeben werden sollte, gibt es eine kleine Änderungen an der Signatur, sodass mit dieser Variante ein \textit{FileKey?} zurückgegeben wird, was einem Strukturdatentyp entspricht der den Wert null annehmen kann. 
 
 \subsection{Rückgabe von Fehlercodes}
 
@@ -175,4 +112,32 @@ public virtual void Log(
 \end{lstlisting}
 
 \SuperPar Durch diese Änderung wird die Funktion um einiges kürzer und dadurch übersichtlicher. Es wird außerdem dadurch die Aufgabe der Überprüfung ausgelagert. Beim Aufrufen dieser Methode kann jetzt zusätzlich zu den bekannten \textit{LogLevels} auch ein spezieller Logger übergeben werden, welcher zum Beispiel in eine Datenbank schreibt. Die wichtigste Verbesserung ist hier, wie bereits erwähnt, die stark verbesserte Lesbarkeit. 
+
+
+\subsection{Rückgabe von Null}
+\begin{itemize}
+	\item Projekt: \textit{CoreFx}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{ProcessModuleCollection}
+	\item Betreffender Namespace: \textit{System.Diagnostics}
+\end{itemize}
+
+\SuperPar In modernen Programmierumgebungen wie Java und C\# stellen die sogenannten \textit{Nullreferenzausnahmen} eine der häufigsten Ausnahmefälle dar. Diese führen dazu, dass beim Zugriff auf ein Objekt, welches den Wert \textit{null} besitzt, ein Laufzeitfehler auftritt, welcher behandelt werden muss. Noch problematischer sind diese Ausnahmen im C++ - Bereich, da dort keine Ausnahme ausgelöst wird, falls das Objekt den Wert null besitzt, da jedes Objekt auf einen gewissen Speicherbereich verweist und dieser Speicherbereich aber vorhanden ist. In C++ führt der Zugriff auf ein \textit{Null-Objekt} zu einem Zugriff auf einen ungültigen Speicherbereich. Solche Fehler sind sehr schwer nachzuvollziehen und führen häufig zu großen Problemen wenn die Software bereits im Betrieb ist. Meist wird diesen Problem durch zahlreiche Überprüfungen ob der zurückgegebene Wert \textit{null} ist, vorgebeugt. Dies führt aber zu stark überladenen Methoden und kann es kann auch sehr schnell darauf vergessen werden diese Überprüfungen einzubauen.
+
+\SuperPar Diese Probleme und die Überladung des Codes mit Überprüfungen können durch das Verzichten auf die Rückgabe von Null Werten verhindert werden. Für Enumerationstypen wie Listen oder ähnlichem sollte eine leere Liste zurückgegeben werden. Meist wird für Listen nach dem Aufruf eine Form der Iteration durchgeführt. Entweder wird in einer \textit{for-Schleife} über die einzelnen Elemente der Liste iteriert, was bei einer leeren Liste einfach dazu führt, dass die Schleife nicht durchlaufen wird. Bei Objekten gibt es die Möglichkeit das sogenannte \textit{Nullobjectpattern} zu verwenden. Bei diesem Pattern wird statt des Wertes \textit{null} eine leere Implementierung des Objektes zurückgegeben. Ein Beispiel, wo ein solches \textit{Nullobjectpattern} Anwendung finden könnte wäre der Codeabschnitt in Listing \ref{lst:ReturnZero}. 
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Rückgabe eines Null Wertes, label=lst:ReturnZero]
+protected List<ProcessModule> InnerList
+{
+	get
+	{
+			if (_list == null)
+				_list = new List<ProcessModule>();
+		return _list;
+	}
+}
+\end{lstlisting}
+
+\SuperPar Hier wird zu erst intern überprüft, ob die Liste, welche in einer Membervariable gespeichert ist \textit{null} ist, wenn ja wird der Wert dieser auf eine leere Liste gesetzt und somit können \textit{Nullreferenzausnahmen} verhindert werden. 
+
 
