@@ -1,18 +1,15 @@
-[0] Config.pm:324> INFO - This is Biber 2.1
-[0] Config.pm:327> INFO - Logfile is '_DaBa.blg'
-[59] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[59] Biber.pm:333> INFO - Reading '_DaBa.bcf'
-[319] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
-[320] Biber.pm:645> INFO - Found 4 citekeys in bib section 0
-[344] Biber.pm:2977> INFO - Processing section 0
-[367] Biber.pm:3115> INFO - Looking for bibtex format file 'literatur.bib' for section 0
-[380] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[390] bibtex.pm:895> INFO - Found BibTeX data source 'literatur.bib'
-[403] Utils.pm:146> WARN - Datamodel: Entry 'CSHARPCoding' (literatur.bib): Invalid format '2016-1-2' of date field 'urldate' - ignoring
-[469] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[469] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[469] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'de-DE'
-[469] Biber.pm:2858> INFO - No sort tailoring available for locale 'de-DE'
-[475] bbl.pm:505> INFO - Writing '_DaBa.bbl' with encoding 'UTF-8'
-[492] bbl.pm:596> INFO - Output to _DaBa.bbl
-[493] Biber.pm:106> INFO - WARNINGS: 2
+This is BibTeX, Version 0.99dThe top-level auxiliary file: _DaBa.aux
+A level-1 auxiliary file: vorwort.aux
+A level-1 auxiliary file: kurzfassung.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Introduction_CCD.aux
+A level-1 auxiliary file: Analyses_Criterias.aux
+A level-1 auxiliary file: Analyses_Duplication.aux
+A level-1 auxiliary file: Analyses_BadStructure.aux
+A level-1 auxiliary file: Analyses_Naming.aux
+A level-1 auxiliary file: schluss.aux
+I found no \citation commands---while reading file _DaBa.aux
+I found no \bibdata command---while reading file _DaBa.aux
+I found no \bibstyle command---while reading file _DaBa.aux
+(There were 3 error messages)

@@ -5,10 +5,13 @@ In der Abbildung \ref{fig:cycle} ist ein Kreislauf dargestellt, der die drei Hau
 
 \begin{figure}[h]
 	\centering
-		\includegraphics[width=1.00\textwidth]{images/cycle.PNG}
+		\includegraphics[width=0.85\textwidth]{images/cycle.PNG}
 	\caption{CCD Zyklus}
 	\label{fig:cycle}
 \end{figure}
+
+\section{Woher kommt CCD?}
+\SuperPar Wie zahlreiche Ideen in der Softwareentwicklung gibt es auch die Idee des CCD seit vielen Jahren. 
 
 \section{Ziele von CCD}
 \SuperPar Die wichtigsten Ziele von CCD sind es, den Quellcode 
@@ -23,7 +26,8 @@ In der Abbildung \ref{fig:cycle} ist ein Kreislauf dargestellt, der die drei Hau
 \SuperPar Auf die Arbeit eines Programmierers oder einer Programmiererin umgemünzt bedeutet dieser Leitsatz, dass jede Klasse, welche man auscheckt oder betrachtet verbessert werden sollte. Dies muss nicht immer ein großes Refactoring oder ein verbessern der Gesamtstruktur sein. Es reicht meist schon, für eine Variable einen besseren Namen zu vergeben, oder einen unnötigen Kommentar zu entfernen. Robert C. Martin schreibt weiters, dass sich durch dieses vorgehen ein für die Softwareentwicklung ungewöhnlicher Trend ergibt. Der Quelltext wird über die Zeit besser. Er verbindet dieses Verhalten außerdem mit professionelem Verhalten. Ein professioneller, verantwortungsbewusster Programmierer versucht ständig, die Codebasis zu verbessern.
 
 \section{Smells und Heuristiken}
-\SuperPar Robert C. Martin beschreibt in \cite{CleanCode} eine Liste von Smells und Heuristken, welche Probleme beschreiben, die sehr häufige Ursachen für schlechten Code darstellen.
+\SuperPar Robert C. Martin beschreibt in \cite{CleanCode} eine Liste von Smells und Heuristken, welche Probleme beschreiben, die sehr häufige Ursachen für schlechten Code darstellen. In den folgenden Abschnitt werden diese in Tabellen gruppiert aufgelistet. 
+
 \subsection{Kommentare}
 
 \begin{table}[h]
@@ -160,6 +164,7 @@ In der Abbildung \ref{fig:cycle} ist ein Kreislauf dargestellt, der die drei Hau
 	\label{tab:SmellsUndHeuristiken_Umgebung}
 \end{table}
 
+\newpage
 \section{Coding Conventions}
 \label{cha:CodingConventions}
 Coding Conventions sind ein sehr effizientes Mittel projektweite, oder auch unternehmensweite Regeln zu definieren, wie einzelne Aspekte der Programmierung gestaltet werden sollten. Vor allem für Opensource Projekte ist dies ein sehr wichtiges Mittel wie ein durchgängiger Codierungsstil gewählt werden kann. Meist werden auch für Frameworks Coding Conventions definiert wie zum Beispiel für C\# \cite{CSHARPCoding}. Meist werden diese grundlegenden Konventionen von Unternehmen verwendet und nur teilweise angepasst, da es durch einen durchgängigen Programmierstil für eine Plattform leichter ist, dass sich neue Programmierer oder Programmiererinnen in die Codebasis einarbeiten. Ein wichtiger Aspekt der bei Coding Conventions beachtet werden muss, ist die Möglichkeit der automatischen Überprüfung dieser. Dazu werden in Abschnitt \ref{cha:CheckingCCDCriterias} einige Möglichkeiten erläutert, wie die Überprüfung dieser Kriterien erfolgen kann.

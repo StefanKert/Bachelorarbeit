@@ -13,7 +13,7 @@ folgenden Abschnitt werden einige wichtigen Punkte der Namensgebung aufgearbeite
 	\item Betreffender Namespace: \textit{log4net.Util}
 \end{itemize}
 
-\SuperPar Bei der Namensgebung kommt es immer wieder zu Unklarheiten und Problemen wodurch es oft nötig wird, mit Kommentaren zu beschreiben, wofür diese Komponente verwendet wird. Dabei werden diese Probleme umso größer, je größer der Gültigkeitsbereich dieses Namens ist. Ein Beispiel für eine solche schlechte Namensgebung in einem großen Gültigkeitsbereich in Log4net, ist die in Listing \ref{lst:BadName} dargestellte Klasse \textit{LogLog}. 
+\SuperPar Der Ausschnit in Listing \ref{lst:BadName}, der die Klasse \textit{LogLog} zeigt, ist ein Beispiel für eine schlecht gewählten Namen.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für schlechte Namensgebung, label=lst:BadName]
 /// <summary>
@@ -36,8 +36,13 @@ folgenden Abschnitt werden einige wichtigen Punkte der Namensgebung aufgearbeite
 	public sealed class LogLog
 \end{lstlisting}
 
-\SuperPar Grundsätzlich kann man anhand des Namens \textit{LogLog} keine genauen Aussagen machen, welche Aufgabe diese Klasse erfüllt. Ein Blick in den im Listing \ref{lst:BadName} stehenden Kommentar gibt Aufschluss darüber, dass das Logging über Log4Net für Log4Net Komponenten nicht möglich ist, wodurch es notwendig ist, eine eigene Klasse für das interne Logging zu implementieren. Der Kommentar könnte durch eine bessere Namensgebung für die Klasse überflüssig gemacht werden. Ein Beispiel für einen bessern Namen wäre \textit{Log4NetInternalLogging}, wodurch gleich klar wird, dass diese Klasse nur für das interne Logging zuständig ist. 
+\SuperPar Das Problem, welches sich bei dieser Klasse ergibt, ist die Nötigkeit eines Kommentares um klarzumachen, welche  Aufgabe die Klasse erfüllt. Durch den gewählten Namen \textit{LogLog} wird dieses keineswegs
 
+Grundsätzlich kann man anhand des Namens \textit{LogLog} keine genauen Aussagen machen, welche Aufgabe diese Klasse erfüllt. Ein Blick in den im Listing \ref{lst:BadName} stehenden Kommentar gibt Aufschluss darüber, dass das Logging über Log4Net für Log4Net Komponenten nicht möglich ist, wodurch es notwendig ist, eine eigene Klasse für das interne Logging zu implementieren. Der Kommentar könnte durch eine bessere Namensgebung für die Klasse überflüssig gemacht werden. Ein Beispiel für einen bessern Namen wäre \textit{Log4NetInternalLogging}, wodurch gleich klar wird, dass diese Klasse nur für das interne Logging zuständig ist. 
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für bessere Namensgebung, label=lst:GoodName]
+	public sealed class Log4NetInteralLogging
+\end{lstlisting}
 
 \subsection{Kapseln von Errorhandling in eigene Methoden}
 \begin{itemize}
@@ -103,4 +108,50 @@ public static FileKey? Create(string fullPath)
 \SuperPar Der Aufruf würde der gleiche bleiben, da nur die \textit{Create} Methode im öffentlichen Gültigkeitsbereich zugänglich ist, jedoch könnte sichergestellt werden, dass eine Fehlerbehandlung stattfindet. Auf Grund der Tatsache, dass im Fehlerfall \textit{null} zurückgegeben werden sollte, gibt es eine kleine Änderungen an der Signatur, sodass mit dieser Variante ein \textit{FileKey?} zurückgegeben wird, was einem Strukturdatentyp entspricht der den Wert null annehmen kann. 
 
 \subsection{Falsche Kommentare}
+\SuperPar Wie bereits in vorherigen Abschnitten beschrieben sind Kommentare ein sehr wirksames Mittel um Details zu klären, wieso etwas auf eine spezielle Art und Weise implementiert wurde. Oft gibt es Probleme mit Kommentaren, da diese über sehr lange Zeit im Code verbleiben und meist den Quelltext, welchen diese dokumentieren überdauern. Dadurch ergibt sich meist, dass der Kommentar entweder ungültig ist und im besten Fall nur etwas nicht mehr vorhandenes beschreibt. Im schlimmsten Fall kann dieses überdauern des eigentlichen Codes dazu führen, dass der Kommentar schlichtweg falsch ist und dieser für den Programmierer, welcher diesen Kommentar liest, keine Unterstützung bietet und diesen sogar falsche Informationen liefert. Aus diesem Grund gibt es seitens des CCD die Empfehlung nur die Kommentare zu schreiben, die unbedingt notwendig sind und wenn ein Kommentar geschrieben wird sollte dieser sehr gut sein. Sobald der Kommentar seine Gültigkeit verliert, sollte mit ihm vorgegangen werden wie mit allen sogenannten \"toten Codeabschnitten\". Er sollte einfach gelöscht werden. Ein Beispiel für einen solchen falschen Kommentar wird in Listing \ref{lst:WrongCommentBad} gezeigt.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Falscher Kommentar, label=lst:WrongCommentBad]
+        TTODOOOOO ADD SOURCE
+\end{lstlisting}
+
+
+
 \subsection{Verwendung von Magic Strings/Numbers}
+%https://github.com/aspnet/WebSockets/blob/dev/src/Microsoft.AspNetCore.WebSockets.Protocol/FrameHeader.cs
+\begin{itemize}
+	\item Projekt: \textit{ASP.Net Websockets}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{FrameHeader}
+	\item Betreffender Namespace: \textit{Microsoft.AspNetCore.WebSockets.Protocol}
+\end{itemize}
+
+\SuperPar Ein Problem welches sich sehr häufig ergibt sind sogenannte Magic Strings oder Magic Numbers. Es handelt sich dabei um Zeichenketten oder Zahlen die direkt in den Quelltext geschrieben werden. In Listing \ref{lst:MagicStringsNumbersBad} ist ein Beispiel für mehrere solcher Magic Numbers.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=MagicNumbers, label=lst:MagicStringsNumbersBad]
+        public FrameHeader(bool final, int opCode, bool masked, int maskKey, long dataLength){
+           	...
+            if (masked){
+                headerLength += 4;
+            }
+						....
+        }
+\end{lstlisting}
+
+\SuperPar Durch diese direkt geschriebenen Zahlen ergeben sich mehrere Probleme. Ein Problem besteht darin, dass es sehr schwierig wird nach den Zahlen zu suchen, denn angenommen man würde in der Klasse nach der Länge der maskierten Headerelemente suchen würde, müsste man nach der Zahl 4 suchen, wodurch sich aber sehr viele Ergebnisse ergeben würden. Weiters werden sich beim Ändern der Länge der maskierten Headerelemente Probleme geben, da diese Zahl eventuell auch noch an einer anderen Stelle verwendet wird und darauf vergessen werden kann diese auch zu Ändern. Der Lösungsvorschlag, welchen CCD hier bietet ist die Extrahierung der Zahlen in eine eigene Konstante. Für das Beispiel in Listing \ref{lst:MagicStringsNumbersBad}  würde sich der in Listing \ref{lst:MagicStringsNumbersGood} dargestellte Code ergeben.
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Magic number, label=lst:MagicStringsNumbersGood]
+				private const int _MASKED_HEADER_LENGTH = 4;
+	
+        public FrameHeader(bool final, int opCode, bool masked, int maskKey, long dataLength){
+						...
+            if (masked){
+                headerLength += _MASKED_HEADER_LENGTH;
+            }
+						....
+        }
+\end{lstlisting}
+
+\SuperPar Mit dem in Listing \ref{lst:MagicStringsNumbersGood} dargestellten Code ist es jetzt einerseits leicht möglich, nach der maskierten Header Länge zu suchen und den Wert für diese auch zu ändern. Ein weiterer Vorteil der sich aus dieser Extrahierung ergibt ist die Tatsache, dass es für Leser des Codes sehr leicht wird zu verstehen, was zu der eigentlichen Header Länge addiert wird. 
+
+
+
