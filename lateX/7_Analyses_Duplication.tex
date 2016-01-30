@@ -1,0 +1,158 @@
+\section{Vermeiden von Duplizierungen}
+Eines der größten Probleme bei der Entwicklung von Software stellt die Duplizierung von Code dar. Diese verbirgt sich dabei nicht immer nur auf Bibliothek-, oder Klassenebene, sondern auch in Methoden. Dabei muss man zwischen einfacher, und logischer Duplizierung unterscheiden. Bei der einfachen Duplizierung handelt es sich um schlichtweg gleichen Code. Meist wurde dieser kopiert und nur ein wenig angepasst. Die logische Duplizierung ist schwieriger zu erkennen, denn in diesem Fall sind die duplizierten Stellen vom Aufbau her unterschiedlich, sie gleichen sich aber in der Aufgabe welche diese erledigen. Oft treten solche logischen Duplizierungen auf, wenn bei der Benennung der vorhandenen Methoden beziehungsweise Klassen nicht auf eine ausreichend offensichtliche Namensgebung geachtet wurde. Ein sehr wichtiges Prinzip hinsichtlich Codeduplizierung ist das von Dave Thomas und Andy Hunt beschrieben DRY-Prinzip (Don´t Repeat Yourself \cite{Hunt1999}).
+Die Probleme, welche sich dadurch ergeben sind einerseits, dass Arbeiten doppelt erledigt werden müssen, andererseits kann im Falle eines Fehlers auf das Beheben dieses in einem duplizierten Abschnitt vergessen werden. Robert C. Martin bietet in seinem Buch Clean Code einige Möglichkeiten wodurch diese Probleme vermieden werden können. Diese sollten im folgenden Abschnitt näher betrachtet werden.
+
+\subsection{Duplizierung boolscher Ausdrücke}
+\label{cha:BadBoolStatements}
+\begin{itemize}
+	\item Projekt: \textit{Hibernate}
+	\item Programmiersprache: \textit{Java}
+	\item Betreffende Klasse: \textit{AbstractPropertyHolder}
+	\item Betreffendes Paket: \textit{org.hibernate.cfg}
+\end{itemize}
+
+\SuperPar Wie bereits erwähnt, treten Codeduplizierungen nicht nur auf Bibliothek-, bzw. Klassenebene auf, sonder meist in einem viel kleineren Kontext. Dies ist oft ein sehr subtiles Problem und kann nicht so leicht festgestellt werden. Oft lassen sich Duplizierungen in bei komplexen boolschen Ausdrücken finde. Diese werden oft von mehreren Funktionen benötigt und daher einfach in den einzelnen Funktionen verwendet. Ein Beispiel für eine solche Duplizierung befindet sich in den Listings \ref{lst:BoolStatement1} und  \ref{lst:BoolStatement2}.
+
+\begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 1 Zeile 255 - 264, label=lst:BoolStatement1]
+	@Override
+	public JoinColumn[] getOverriddenJoinColumn(String propertyName) {
+		JoinColumn[] result = getExactOverriddenJoinColumn( propertyName );
+		if (result == null && propertyName.contains(".collection&&element.")) {
+			...
+		}
+		return result;
+	}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 2 Zeile 305 - 313, label=lst:BoolStatement2]
+public JoinTable getOverriddenJoinTable(String propertyName) {
+	JoinTable result = getExactOverriddenJoinTable(propertyName);
+	if(result == null && propertyName.contains(".collection&&element.")){
+		...
+	}
+	return result;
+}
+\end{lstlisting}
+
+\SuperPar Konkret geht es in diesem Beispiel um den in Listing \ref{lst:BoolStatement3} beschriebenen boolschen Ausdruck der in dieser Klasse insgesamt drei mal vorkommt.
+
+\begin{lstlisting}[language=Java, caption=Boolscher Audruck, label=lst:BoolStatement3]
+result == null && propertyName.contains(".collection&&element.")
+\end{lstlisting}
+
+\SuperPar Wie man anhand dieser Listings leicht erkennen kann, wird dieser Ausdruck in beiden Methoden verwendet, wodurch sich eine Code Duplizierung ergibt. Dieses Problem kommt vor allem bei zukünftigen Änderungen zu Tragen. Wenn zum Beispiel für die Variable \textit{propertyName} eine \textit{XML-Zeichenkette} übergeben wird und die Überprüfung wie in Listing \ref{lst:OtherSyntaxForBool} dargestellt erfolgen müsste, würde dies eine Änderung in allen Funktionen welche dieses boolsche Statement verwenden nach sich ziehen. 
+
+\begin{lstlisting}[language=Java, caption=Boolscher Ausdruck neu, label=lst:OtherSyntaxForBool]
+ propertyName.contains("</collectionType><element>")
+\end{lstlisting}
+
+\SuperPar Falls beim Ändern der Überprüfung auf eine der Verwendungen vergessen wird, würde dies zu einem nur sehr schwer zu findenden Fehler führen. Ein weiteres Problem, das sich hier wie bereits oben beschrieben ergibt, ist die Tatsache, dass dieser boolsche Ausdruck ohne einen Kommentar oder ein mehrmaliges Lesen sehr schwer zu verstehen ist. CCD empfiehlt hier den boolschen Audruck in eine eigene Methode zu extrahieren. Dabei wird hier nur der zweite Teil des boolschen Ausdrucks extrahiert, da der erste Teil mit dem Nullcheck spezifisch für die einzelnen Methoden verwendet werden muss. Eine solche Methode könnte wie in Listing \ref{lst:BoolStatement4} aussehen.
+
+\begin{lstlisting}[language=Java, caption=Boolscher Ausdruck neu, label=lst:BoolStatement4]
+private bool isPlaceholderForCollectionAndElementInPropertyName(String propertyName) {
+	return propertyName.contains(".collection&&element.");
+}
+\end{lstlisting}
+
+\SuperPar Durch ein Extrahieren der Überprüfung des Parameters \textit{propertyName} kann für diese Methode ein eigener Name gewählt werden, der klar den Zweck dieser Überprüfung vermittelt wodurch die Codeduplizierung eliminiert wird. 
+
+\subsection{Redundante Kommentare}
+\begin{itemize}
+	\item Projekt: \textit{Log4Net}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{ConfigurationChangedEventArgs}
+	\item Betreffender Namespace: \textit{log4net.Repository}
+\end{itemize}
+
+\SuperPar Redundante Kommentare findet man sehr häufig in den verschiedensten Projekten. Ein Beispiel für einen solchen Kommentar lässt sich in Listing \ref{lst:RedundantComment}  finden.
+
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für überflüssige Kommentare, label=lst:RedundantComment]
+/// <summary>
+/// 
+/// </summary>
+/// <param name="configurationMessages"></param>
+public ConfigurationChangedEventArgs(ICollection configurationMessages)
+{
+		this.configurationMessages = configurationMessages;
+}
+\end{lstlisting}
+
+\SuperPar Oft werden für Methoden Kommentare geschrieben, welche nicht mehr als den Namen der Methode beinhalten. Dies verschlechtert die Lesbarkeit, führt zu einer unnötigen Aufblähung des Codes und stellt im Grunde genommen eine Codeduplizierung dar. Sehr häufig tritt dieses Problem bei Projekten auf, in denen es Coding Conventions gibt die vorschreiben, dass jede Methode einen sogenannten Methodenheader besitzen muss. Robert C. Martin schreibt hierzu (Clean Code, Seite 93 - 96), dass solche Regeln meist zu Verwirrung, Lügen und einer allgemeinen Unordnung führen.  Wenn man nun das in Listing \ref{lst:RedundantComment} stehende Beispiel betrachtet, fällt einen sofort der Kommentar auf, welcher keine richtigen Mehrwert für den Leser bringt. Wie Robert C. Martin erwähnt, führt dieser nur zu einer Unordnung und kann im schlimmsten Fall sogar zu einer fälschlichen Information führen, falls der Parameter umbenannt wird und der Kommentar dafür nicht angepasst wird. Auf Grund dieser Tatsache, sollte man laut Robert C. Martin auch auf solche Kommentare, sowie Regeln die einen solchen Methodenheader vorschreiben verzichten, da diese eben genau zu den genannten Probleme führen.
+
+\subsection{Duplizierung von Testcode}
+\begin{itemize}
+	\item Projekt: \textit{Log4Net}
+	\item Programmiersprache: \textit{C\#}
+	\item Betreffende Klasse: \textit{FixingTest}
+	\item Betreffender Namespace: \textit{log4net.Tests.Core}
+\end{itemize}
+\SuperPar Laut Robert C. Martin sollte auch Testcode den CCD Kriterien entsprechen. Dies ist umso wichtiger, da Testcode oft als Dokumentation für den getesteten Code dienst. Ein Entwickler der einen Code betrachtet der gut getestet ist, kann sich sofort ein Bild von den einzelnen Grenzfällen machen indem er die Tests betrachtet. Dort sollten die wichtigsten Grenzfälle abgedeckt sein und sie geben außerdem Aufschluss darüber wie die Methode verwendet werden kann. Ein sehr wichtiger Punkt im Zusammenhang mit Duplizierung ist, dass vor allem bei Tests darauf geachtet werden, dass diese keine Duplizierungen enthalten. Ein Beispiel für eine solche Duplizierung lässt sich in Listing \ref{lst:DuplicatedTest1} finden.
+
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Duplizierung in Tests, label=lst:DuplicatedTest1]
+		[Test]
+		public void TestUnfixedValues()
+		{
+			...
+			
+			LoggingEvent loggingEvent = new LoggingEvent(
+				loggingEventData.LocationInfo.GetType(),
+				LogManager.GetRepository(TEST_REPOSITORY),
+				loggingEventData.LoggerName,
+				loggingEventData.Level,
+				loggingEventData.Message,
+				new Exception("This is the exception"));
+			
+			...
+		}
+		
+			[Test]
+		public void TestAllFixedValues()
+		{
+			...
+			
+			LoggingEvent loggingEvent = new LoggingEvent(
+				loggingEventData.LocationInfo.GetType(),
+				LogManager.GetRepository(TEST_REPOSITORY),
+				loggingEventData.LoggerName,
+				loggingEventData.Level,
+				loggingEventData.Message,
+				new Exception("This is the exception"));
+
+			...
+		}
+\end{lstlisting}
+
+\SuperPar Das Problem welches sich hier ergibt ist die Instanzierung der Klasse \textit{LoggingEvent}. Über den Konstruktor werden die verschiedenen Parameter definiert und anschließend in der Klasse verwendet. Wenn sich die Anforderungen für die Klasse \textit{LoggingEvent} ändern,  müssen an allen Stellen, an denen der Konstruktor verwendet wird Änderungen vorgenommen werden. Roy Osherove zeigt in seinem Buch \cite{Osherove2013} eine Möglichkeit auf, wie mit solchen Initialisierungscode vorgegangen werden kann. Er empfiehlt, dass der Code welcher die zu testende Klasse instanziert bzw. initialisiert in eine eigene \textit{Factory} - Methode ausgelagert wird. Dies hat den Vorteil, dass die Duplizierung eliminiert wird und der Code wiederverwendet werden kann. Bei einer Änderung der Parameter des Konstruktors muss man in den Tests nur noch an einer Stelle Anpassungen vornehmen. In Listing \ref{lst:DuplicatedTestSolve} wird diese Variante dargestellt.
+
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Eliminerung der Duplizierung durch Factorymethode, label=lst:DuplicatedTestSolve]
+		private LoggingEvent GetDefaultLoggingEvent(LoggingEventData loggingEventData){
+			LoggingEvent loggingEvent = new LoggingEvent(
+				loggingEventData.LocationInfo.GetType(),
+				LogManager.GetRepository(TEST_REPOSITORY),
+				loggingEventData.LoggerName,
+				loggingEventData.Level,
+				loggingEventData.Message,
+				new Exception("This is the exception"));
+		}
+
+		[Test]
+		public void TestUnfixedValues()
+		{
+			...
+			LoggingEvent loggingEvent = GetDefaultLoggingEvent(loggingEventData);
+			...
+		}
+		
+			[Test]
+		public void TestAllFixedValues()
+		{
+			...
+					LoggingEvent loggingEvent = GetDefaultLoggingEvent(loggingEventData);
+			...
+		}
+\end{lstlisting}
+
+\SuperPar Wie man anhand dieses Beispiels leicht erkennen kann, lassen sich neben dem Eliminieren der Duplizierung auch noch einige Zeilen Code sparen und der Code wird um einiges übersichtlicher.

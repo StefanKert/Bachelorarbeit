@@ -1,0 +1,274 @@
+\chapter{Clean Code Development Grundlagen}
+\section{Was ist Clean Code?}
+Wie in der Einleitung bereits kurz angeschnitten beschäftigt sich CCD in erster Linie mit dem Schreiben von sauberem Code. Robert C. Martin hat zu diesem Thema mehrere bekannte Softwareentwickler befragt und deren Zitate zu sauberem Code wiedergegeben. Im folgenden sollen die wichtigsten Punkte aus den verschiedenen Zitaten wiedergegeben werden, da sie sehr zentrale Aussagen zum Thema Clean Code wiedergeben.
+
+\subsubsection{Bjarne Stroustrup}
+Der Erfinder von C++ Bjarne Stroustrup spricht davon, dass für ihn sauberer Code folgende Punkte erfüllen sollte:
+
+\begin{itemize}
+	\item Elegant
+	\item Effizient
+	\item Gradlinige Logik
+	\item Minimale Abhängikeiten
+	\item Vordefinierte Strategie für Fehlerbehandlung
+	\item Leistungsverhalten optimieren um Workarounds zu vermeiden
+\end{itemize}
+
+Bjarne Stroustrup spricht mit diesen Punkten schon einige sehr zentrale Aspekte des CCD an. Dabei spricht er davon, dass Code elegant sein sollte. Robert C. Martin teilt diese Meinung und geht dabei noch einen Schritt weiter und schreibt davon, dass guter Code einen Ausdruck des Wohlgefallens auf das Gesicht des Lesers zaubern sollte. 
+
+\subsubsection{Grady Booch}
+Grady Booch ist einer der Autoren des Buches \cite{Booch2004} und hält sich mit seinem Zitat zu sauberem Code sehr kurz. Er beschriebt, dass sich sauberer Code wie wohlgeschriebene Prosa lesen sollte, ähnlich wie ein gutes Buch. Der Code sollte keine Überraschungen für den Leser bringen und auch nicht den eigentlichen Zweck des Codes verschleiern. Wie auch Bjarne Stroustrup schreibt Grady Booch davon, dass Code geradlinig geschrieben sein sollte, wobei er sich dabei explizit auf Kontrollstrukturen bezieht.
+
+\subsubsection{Dave Thomas}
+Für Dave Thomas, den Gründer von Object Technology International,  sind folgende Punkte ausschlaggebend für sauberen Code:
+
+\begin{itemize}
+	\item Lesbar und gut zu verbessern von \textbf{anderen} Entwicklern
+	\item Vorhandensein von Unit- und Acceptance Tests
+	\item Bedeutungsvolle Namen
+	\item Eine Lösung für eine Aufgabe
+	\item Klares und minimales API
+\end{itemize}
+
+Hier sollte man sehr stark die für Dave Thomas wichtige Eigenschaft, dass der Code lesbar und gut zu verbessern für andere Entwickler ist hervorheben. Dieser Punkt ist sehr zentral im CCD und erstreckt sich auch über alle Teilbereiche von CCD. Im Gegensatz zu Bjarne Stroustrup erwähnt er auch nicht das Vorhandensein von Unit- bzw. Acceptance Tests. Auch dieser Punkt ist ein sehr zentraler im CCD, da es ohne Tests nur sehr aufwendig möglich ist die Funktionalität des Codes zu überprüfen, da dies meist manuell überprüft werden muss. Dies führt im Umkehrschluss meist dazu, dass Code seltener verbessert wird und dadurch mit der Zeit immer schlechter wird, was in weiterer Folge wieder dazu führt, dass der Code noch schwerer zu testen ist und daher nur selten Tests dafür geschrieben werden. 
+
+\subsubsection{Michael Feathers}
+Der Autor des Buches \cite{Feathers2013} Michael Feathers beschreibt in seiner Meinung zu Clean Code, dass es für ihn eine alles übergreifende Qualität gibt die andere Punkte überragt: 
+
+\begin{quotation}
+	Sauberer Code sieht immer so aus, als wäre er von jemanden geschrieben worden, dem dies wirklich wichtig war. Es fällt nichts ins Auge, wie man den Code verbessern könnte. Alle diese Dinge ahter der Autor des Codes bereits selbst durchdacht; und wenn Sie versuchen, sich Verbesserungen vorzustellen, landen Sie wieder an der Stelle, an der Sie gerade sind.
+\end{quotation}
+
+Dieses Zitat gibt sehr gut wieder, welchen Wert guter Code haben kann. Michael Feathers streicht dabei einen sehr wichtigen Punkt im Zusammenhang mit Clean Code heraus: Man sollte beim Lesen des Codes bemerken, dass es dem Autor wichtig war und dass sich der Autor Gedanken darüber gemacht hat während er diesen geschrieben hat. Der Code sollte mit Sorgfalt geschrieben werden.
+
+\subsubsection{Ron Jeffries}
+Ein weiteres Zitat welches Robert C. Martin für sein Buch eingeholt hat ist von dem Autor der Bücher \cite{Jeffries2000} und \cite{Jeffries2004} Ron Jeffries. Er fasst dabei die für ihn wichtigsten Punkte folgendermaßen zusammen:
+
+\begin{itemize}
+	\item Es werden alle Tests bestanden
+	\item Er enthält keine Duplizierungen
+	\item Es werden die Architektur bzw. Designentscheidungen gut wiedergegeben
+	\item Die Anzahl von Klassen und Methoden werden minimiert
+	\item Ausdruckskraft
+\end{itemize}
+
+Wie bereits in anderen Zitaten zu Clean Code erwähnt ist die Ausdruckskraft ein sehr zentraler Aspekt des CCD. Dabei geht es zum Beispiel um die Auswahl bedeutungsvoller Namen. Ron Jeffries erwähnt dabei, dass er die von ihm ausgewählten Namen mehrfach ändert bis er die finale Version hat. Weiters zeigt er eine sehr wichtige Möglichkeit auf, die sich durch die ständige Weiterentwicklung der Entwicklungsumgebungen wie Visual Studio und Eclipse aufgetan hat. Es ist sehr einfach möglich Namen zu ändern ohne, dass viele manuelle Änderungen vorgenommen werden müssen. Eine Namensänderung erfolgt über einen einfachen Befehl und die Entwicklungsumgebung übernimmt das Umbennen aller Referenzen auf diesen Namen. Ein weitere Möglichkeit die Ron Jeffries im Zusammenhang mit modernen Entwicklungsumgebungen erwähnt ist das Extrahieren von Methoden. Falls eine Methode mehr als einen Zweck erfüllt und aufgespalten werden muss ist dies mit dem \textit{Extract Method} Befehl in Entwicklungsumgebungen wie Visual Studio sehr einfach. Es werden dabei alle Variablen als Parameter aufgelistet, die von dem zu extrahierenden Abschnitt benötigt werden. Durch diese Möglichkeiten wird das Refacotring von Quellcode sehr stark vereinfacht, wodurch es schlussendlich leichter möglich ist Clean Code zu schreiben. Ron Jeffries schließt seine Aussage mit folgendem Zitat ab, welches die einzelnen von ihm angesprochenen Punkte sehr gut zusammenfasst:
+
+\begin{quotation}
+Reduzierung der Duplizierung, Steigerung der Ausdruckskraft und frühere Formulierung einfacher Abstraktionen machen für mich sauberen Code aus.
+\end{quotation}
+
+\subsubsection{Ward Cunningham}
+Das Zitat von dem Erfinder des Wikis und Fit, sowie dem Miterfinder des eXtreme Programming und treibende Kraft hinter den Design Patterns. Ward Cunningham sollte hier wortwörtlich zitiert werden, da sein Zitat die Zwecke von CCD sehr gut wiedergibt:
+
+\begin{quotation}
+	Sie wissen, dass Sie an sauberem Code arbeiten, wenn jede Routine, die Sie lesen, ziemlich genau so funktioniert, wie Sie es erwartet haben. Sie können den Code auch >>schöne<< nennen, wenn er die Sprache so aussehen lässt, als wäre sie für das Problem geschaffen worden.
+\end{quotation}
+
+Dieses Zitat fasst sehr schön zusammen was Clean Code bedeutet. Code der genau so funktioniert, wie man es erwartet. Eine sehr einfache Regel die jedoch meist nicht sehr einfach umzusetzen ist. Meist ist ein Indikator für das Missachten dieser Regel die Notwendigkeit einen erklärenden Kommentar zu schreiben. Code der genau so funktioniert, wie man es erwartet wird nahezu keine Kommentare benötigen, da es keine unerwarteten Überraschungen für den Leser geben wird wenn er diesen ausführt. Robert C. Martin streicht besonders den Teil der Aussage hervor, der sich auf die Schönheit des Codes bezieht. Er unterstreicht diese Aussage und ergänzt folgenden Satz:
+
+\begin{quotation}
+Es ist nicht die Sprache, die ein Programm einfach aussehen lässt. Es ist der Programmierer, der die Sprache einfach aussehen lässt.
+\end{quotation}
+
+Er bezieht sich dabei auf die Ausrede vieler Programmierer, dass die Sprache nicht für die Probleme konzipiert wurde, welche sie lösen sollte, jedoch ist es unsere Aufgabe den Code so zu gestalten, dass es so aussieht, als wäre genau dies der Fall.
+
+\section{Woher kommt CCD?}
+Wie zahlreiche Ideen in der Softwareentwicklung gibt es auch die Idee des CCD seit vielen Jahren. Alle der im vorherigen Abschnitt erwähnten Entwickler sind schon seit sehr vielen Jahren mit dem Programmieren von Code beschäftigt und haben sich dabei Regeln zu Grunde gelegt, wie sie Code möglichst wartbar, gut lesbar und wiederverwendbar gestalten können. CCD ist dabei wie erwähnt keine neue Idee, es ist eher eine Zusammenfassung vieler Regeln, welche sich in den letzten Jahren etabliert haben um gute Software zu gestalten.
+
+\SuperPar Eine Vorgehensweise, welche sich sehr stark damit beschäftigt Code so zu gestalten, dass er besser wiederverwendbar ist, ist die Verwendung von Patterns. Dazu gibt es das von der \textit{Gang of Four} geschrieben Buch \cite{Gamma1995}. Dieses Buch beschreibt zahlreiche Möglichkeiten, wie verschiedene Patterns in objektorientierten Programmiersprachen angewandt werden können um den Code besser zu gestalten. Dabei trägt die korrekte Verwendung dieser auch sehr stark zur Lesbarkeit des Codes bei. Wenn eines dieser Patterns im Code verwendet wird und die Klasse, welche dieses Pattern implementiert korrekt benannt ist, kann man bereits durch den Namen dieser Klasse darauf schließen wie sie funktionieren wird. Ein Beispiel hierfür wäre das Singleton. Ein Singleton hat die Aufgabe der Erzeugung und Verwaltung der einzigen Instanz einer Klasse zu übernehmen. Es kapselt dabei den Zugriff in einem globalen Gültigkeitsbereich über eine Methode \textit{getInstance()}. Der Leser der Klasse, welche dieses Singleton implementiert kann durch eine korrekte Benennung und das Vorhandensein der \textit{getInstance()} - Methode sofort darauf schließen, dass es sich dabei um ein Singleton handelt. Diese Eigenschaft von Patterns führt wie erwähnt dazu, dass der Code leichter zu lesen und einfacher zu verstehen ist. Voraussetzung dafür ist natürlich, dass die Patterns korrekt implementiert sind, ansonsten wäre die Grundvoraussetzung - der Code sollte genau so funktionieren, wie man es erwartet - nicht erfüllt und somit würde eine falsche Implementierung eines Patterns, dieses auch ad absurdum führen. Zusammengefasst lässt sich sagen, dass Design-Patterns die Idee von Clean Code sehr stark wiedergeben und diese auf einer abstrakteren Ebene wiedergeben. 
+
+\SuperPar Ein weiteres Buch, welches man als Vorgängen von CCD bezeichnen könnte ist \cite{Martin2002} von Robert C. Martin. In diesem Buch beschreibt er sehr zentrale Prinzipien in der modernen Softwareentwicklung. Im folgenden werden die wichtigsten dieser Prinzipien, welche heutzutage auch kurz als SOLID - Prinzipien bezeichnet werden, kurz beschrieben und ihr Vorteil hinsichtlich CCD erwähnt. Für die einzelnen Prinzipien gibt es meist verschiedene Definitionen, im folgenden werden jedoch die originalen Definitionen von Robert C. Martin verwendet, welche er unter \cite{Martin2016} publiziert hat. 
+
+\subsubsection{Single-Responsibility-Prinzip (SRP)}
+\begin{quotation}
+	A class should have one, and only one, reason to change.
+\end{quotation}
+
+Mit dem SRP werden sehr viele grundlegende Aspekte von CCD abgedeckt. Klassen, welche nur einen Zweck erfüllen und daher nur einen Grund haben sich zu ändern sind leichter zu Warten und zu Ändern, da sich der Programmierer auf die eine Aufgabe konzentrieren kann, welche diese Klasse erfüllt. Weiters wird das Testen dieser Klasse aus den selben Gründen vereinfacht. 
+
+\subsubsection{The Open Closed Principle (OCP)}
+\begin{quotation}
+	You should be able to extend a classes behavior, without modifying it.
+\end{quotation}
+
+Der Vorteil der sich aus diesem Prinzip für das CCD ergibt, ist die Tatsache, dass durch gut strukturierte und abgeschlossene Klassen, ein Hinzufügen von neuen Funktionalitäten leichter wird, da die bereits vorhandenen Komponenten verwendet werden können, diese jedoch nicht geändert werden müssen. Das Einhalten dieses Prinzips führt automatisch zu besser strukturierten und abgeschlossenen Klassen und schlussendlich auch zu einer leichteren Erfüllung des SRP.
+
+\subsubsection{The Liskov Substitution Principle (LSP)}
+\begin{quotation}
+	Derived classes must be substitutable for their base classes.
+\end{quotation}
+
+Bei einer korrekten Anwendung des LSP sollte Klassen so gestaltet sein, dass abgeleitete Klassen sich genau gleich verhalten, wie ihre Oberklassen, sodass es bei Verwendung der Oberklasse keine unerwarteten Ergebnisse gibt. Dies trägt vom Standpunkt des CCD aus sehr stark zu der Anforderung bei, dass Elemente sich genau so Verhalten sollten, wie man es sich erwartet.
+
+\subsubsection{The Interface Segregation Principle (ISP)}
+\begin{quotation}
+	Make fine grained interfaces that are client specific.
+\end{quotation}
+
+Durch fein granular definierte Interfaces wird der von Dave Thomas erwähnte Punkt von klaren und minimalen APIs erfüllt. Sehr minimal definierte Interfaces erfüllen außerdem das SRP und sind durch diese Granularität leichter zu verwenden. Ein weiterer positiver Aspekt von Interfaces welche das ISP erfüllen ist die leichtere Implementierung dieser.
+
+\subsubsection{The Dependency Inversion Principle(DIP)}
+\begin{quotation}
+	Depend on abstractions, not on concretions.
+\end{quotation}
+
+Zwei Dinge, welche durch DIP ermöglicht werden, sind die bessere Testbarkeit, da man die konkrete Implementierung durch eine Testimplementierung mit Dummydaten ersetzen kann und die Tatsache, dass die Grenzen zwischen den einzelnen Softwaresystemen besser abgetrennt sind. Weiters ergibt sich dadurch der Vorteil, dass bei Komponenten, welche noch nicht zur Verfügung stehen eine Dummyimplementierung verwendet werden kann. 
+
+\section{Smells und Heuristiken}
+Robert C. Martin beschreibt in \cite{Martin2008} eine Liste von Smells und Heuristken, welche Probleme beschreiben, die sehr häufige Ursachen für schlechten Code darstellen. In den folgenden Abschnitt werden diese in Tabellen gruppiert aufgelistet. 
+
+\subsubsection{Kommentare}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Ungeeignete Informationen\\
+			Überholte Kommentare  \\
+			Redundante Kommentare \\
+			Schlecht geschriebene Kommentare  \\
+			Auskommentierter Code \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Comments}
+\end{table}
+
+\subsubsection{Umgebung}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Ein Build erfordert mehr als einen Schritt \\
+			Test erfordern mehr als einen Schritt \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Umgebung}
+\end{table}
+
+\subsubsection{Funktionen}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Zu viele Argumente \\
+			Output-Argumente \\
+			Flag-Argumente \\
+			Tote Funktionen \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Functions}
+\end{table}
+
+\subsubsection{Allgemein}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Mehrere Sprachen in einer Quelldatei \\
+			Offensichtliches Verhalten ist nicht implementiert \\
+			Falsches Verhalten an den Grenzen \\
+			Übergangene Sicherungen \\
+			Duplizierung \\
+			Auf der falschen Abstraktionsebene codieren \\
+			Basisklasse hängt von abgeleiteten Klassen ab \\
+			Zu viele Informationen \\
+			Toter Code \\
+			Vertikale Trennung \\
+			Inkonsistenz \\
+			Müll \\
+			Künstliche Kopplung \\
+			Funktionsneid \\
+			Selektor-Argumente \\
+			Verdeckte Absicht \\
+			Falsche Zuständigkeit \\
+			Fälschlich als statisch deklarierte Methode \\
+			Aussagekräftige Variablen verwenden \\
+			Funktionsname sollte die Aktion ausdrücken \\
+			Den Algorithmus verstehen \\
+			Logische Abhängikeiten in phyische umwandeln \\
+			Polymorphismus statt If/Else oder Switch/Case verwenden \\
+			Konventionen beachten \\
+			Magische Zahlen durch benannte Konstanten ersetzen \\
+			Präzise sein \\
+			Struktur ist wichtiger als Konvention \\
+			Bedingungen einkapseln \\
+			Negative Bedingungen vermeiden \\
+			Eine Aufgabe pro Funktion! \\
+			Verborgene zeitliche Kopplungen \\
+			Keine Willkür \\
+			Grenzbedingungen einkapseln \\
+			In Funktionen nur eine Abstraktionsebene tiefer gehen \\
+			Konfigurierbare Daten hoch ansiedeln \\
+			Transitive Navigation vermeiden \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Common}
+\end{table}
+
+\subsubsection{Namen}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Deskriptive Namen wählen \\
+			Namen sollten der Abstraktionsebene entsprechen \\
+			Möglichst die Standardnomenklatur verwenden \\
+			Eindeutige Namen \\
+			Lange Namen für große Geltungsbereiche \\
+			Codierungen vermeiden \\
+			Namen sollten Nebeneffekte beschreiben \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Naming}
+\end{table}
+
+
+\subsubsection{Tests}
+
+\begin{table}[H]
+	\centering
+		 \begin{tabular}{ | l | }
+		 \hline
+			Name \\  \hline
+			Unzureichende Tests \\
+			Ein Coverage-Tool verwenden \\
+			Triviale Tests nicht überspringen \\
+			Ein ignorierter Test zeigt eine Mehrdeutigkeit auf \\
+			Grenzbedingungen testen \\
+			Bei Bugs die Nachbarschaft gründlich testen \\
+			Das Muster des Scheiterns zur Diagnose nutzen \\
+			Hinweise druch Coverage-Patterns \\
+			Testen sollten schnell sein \\ \hline
+		\end{tabular}
+	\label{tab:SmellsUndHeuristiken_Tests}
+\end{table}
+
+
+\section{Die Pfadfinder-Regel}
+Eine der grundlegendsten Regeln im CCD ist die sogenannte Pfadfinder-Regel. Robert C. Martin definiert diese in \cite{Martin2008} wie folgt:
+
+\begin{quote}
+	Hinterlasse den Campingplatz sauberer, als du ihn gefunden hast.
+\end{quote}
+
+\SuperPar Auf die Arbeit eines Programmierers oder einer Programmiererin umgemünzt bedeutet dieser Leitsatz, dass jede Klasse, welche man auscheckt oder betrachtet verbessert werden sollte. Dies muss nicht immer ein großes Refactoring oder ein verbessern der Gesamtstruktur sein. Es reicht meist schon, für eine Variable einen besseren Namen zu vergeben, oder einen unnötigen Kommentar zu entfernen. Robert C. Martin schreibt weiters, dass sich durch dieses vorgehen ein für die Softwareentwicklung ungewöhnlicher Trend ergibt. Der Quelltext wird über die Zeit besser. Er verbindet dieses Verhalten außerdem mit professionelem Verhalten. Ein professioneller, verantwortungsbewusster Programmierer versucht ständig, die Codebasis zu verbessern.
+
+\section{Coding Conventions}
+\label{cha:CodingConventions}
+Coding Conventions sind ein sehr effizientes Mittel projektweite, oder auch unternehmensweite Regeln zu definieren, wie einzelne Aspekte der Programmierung gestaltet werden sollten. Vor allem für Opensource Projekte ist dies ein sehr wichtiges Mittel wie ein durchgängiger Codierungsstil gewählt werden kann. Meist werden auch für Frameworks Coding Conventions definiert wie zum Beispiel für C\# \cite{Microsoft2016}. Meist werden diese grundlegenden Konventionen von Unternehmen verwendet und nur teilweise angepasst, da es durch einen durchgängigen Programmierstil für eine Plattform leichter ist, dass sich neue Programmierer oder Programmiererinnen in die Codebasis einarbeiten. Ein wichtiger Aspekt der bei Coding Conventions beachtet werden muss, ist die Möglichkeit der automatischen Überprüfung dieser. Dazu werden in Abschnitt \ref{cha:CheckingCCDCriterias} einige Möglichkeiten erläutert, wie die Überprüfung dieser Kriterien erfolgen kann.
+
+ 
+\section{Überprüfung der CCD Kriterien}
+\label{cha:CheckingCCDCriterias}
+Häufig stellt sich beim CCD die Frage, wie es möglich ist die einzelnen Kriterien zu überprüfen. Hierzu gibt es verschiedene Varianten. Es gibt einerseits die statische Codeanalyse, welche dafür Sorgen kann, dass die in Abschnitt \ref{cha:CodingConventions} beschriebenen Coding Conventions eingehalten werden. Ein sehr wirksames Mittel für die Überprüfung des Quellcodes allgemein sind Coding Reviews. Es sollte in den folgenden Abschnitten näher auf diese beiden Werkzeuge eingegangen werden.
+
+\subsection{Statische Codeanalyse}
+Die statische Codeanalyse bietet eine Möglichkeit zur Analyse des Quellcodes nach fix vorgegebenen Regeln. Dabei werden für ein Unternehmen, oder für ein Projekt die Abschnitt \ref{cha:CodingConventions} beschriebenen Coding Conventions festegelegt und an Hand dieser Regeln definiert. Ein Beispiel für solch eine Regel wäre das in C\# übliche \textit{I} vor einem Interfacenamen. Das Tool für die statische Codeanalyse würde im Falle einer Missachtung dieser Regel eine Warnung ausgeben und der Programmierer würde direkt darauf aufmerksam gemacht werden, dass er sich nicht an die Coding Conventions hält. Im .NET Bereich ist das wohl bekannteste statische Codeanalyse Tool NDepend (http://www.ndepend.com/). Mit diesem ist es neben den überprüfen der Coding Conventions auch möglich, zirkuläre Abhängigkeiten zwischen Klassen zu erkennen, zyklische Komplexitäten von Methoden zu analysieren und viele weitere Metriken zu erzeugen, die Aufschluss darüber geben, wie sauber der analysierte Code programmiert wurde. Im Java Bereich gibt es das sehr hilfreiche Tool JDepend (http://clarkware.com/software/JDepend.html) welches ähnlich aufgebaut ist wie NDepend.
+
+\subsection{Code Reviews}
+Code Reviews sind ein sehr wirksames Mittel um geschriebenen Code zu Überprüfen. Es handelt sich bei diesen Reviews um manuelle Überprüfungen, die meist von erfahreneren Entwicklern vorgenommen werden. Dabei ist einer der wichtigsten Punkte, dass das Review nicht durch die Person erfolgt, die den Quellcode produziert hat, sondern durch jemand anderen. Weiters gibt es die Möglichkeit ein sogenanntes Peer Review durchzuführen. Bei diesem führen die Person, die den Quellcode produziert hat und eine zweite Person das Review durch und besprechen den vorliegenden Code. An dieser Stelle sollte das Prinzip des Pair Programmings, das aus dem Extreme Programming kommt erwähnt werden. \cite{Beck2005} 

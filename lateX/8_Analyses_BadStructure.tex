@@ -1,8 +1,9 @@
-\section{Legacy Code}
+\section{Legacy Code vermeiden und refaktorieren}
 
-\SuperPar Sehr oft kommt es in der Softwareentwicklung zu einer sehr komplexen Struktur der einzelnen Komponenten. Klassen mit sehr vielen Funktionen. Funktionen, welche mehr als eine Aufgabe erfüllen und daher oft sehr lange werden. Nicht mehr benötigte Codeabschnitte, welche aus Angst vor einem Verlust dieser nicht gelöscht werden. Dies sind nur einige der Probleme, welche in der Softwareentwicklung auftreten können. Viele dieser Probleme sind leicht zu lösen. Durch moderne Versionsverwaltungssysteme ist es nicht mehr nötig Codeabschnitte, die nicht mehr benötigt werden auszukommentieren. Diese können einfach gelöscht werden. Einige Probleme, welche sich zum Beispiel bei Klassen mit sehr vielen Methoden ergeben, können nur durch Erfahrung und Übung erkannt werden. Es sollte bei Klassen und Funktionen vor allem darauf geachtet werden, dass diese nur genau einen Zweck erfüllen. Ein weiterer wichtiger Indikator, ob eine Komponente gut programmiert ist, ist die Testbarkeit dieser. Bei schlecht programmierten beziehungsweise geplante Klassen ist es nur sehr schwer - oder gar nicht - möglich diese zu Testen. Im folgenden Abschnitt werden die häufigsten Probleme für komplexe Strukturen beziehungsweise schwer zu verstehende Konstrukte aufgearbeitet.
+\SuperPar Bei Elementen die sehr lange in der Codebasis einer Software verbleiben kommt es oft dazu, dass der Quellcode immer schlechter zu lesen wird. Oft wird diese Art von Code dann als Legacy Code bezeichnet. Features werden hinzugefügt, für z.B. Performanceschwierigkeiten wird ein Workaround eingebaut, der die Struktur weiter verschlechtert. Falls es Tests gibt, was bei Legacy Code meist nicht der Fall ist, sind diese durch die zahlreichen Änderungen die vorgenommen werden müssen immer schwerer zu warten und werden meist einfach gelöscht oder nicht mehr ausgeführt. Da die meisten problematischen Elemente in einer Codebasis Legacy Code sind sollte in diesem Abschnitt darauf eingegangen werden, wie CCD dabei unterstützen kann, Legacy Code zu vermeiden und Legacy Code zu refaktorieren.
 
 \subsection{Auskommentierter Code}
+\label{cha:CommentedCode}
 \begin{itemize}
 	\item Projekt: \textit{Hibernate}
 	\item Programmiersprache: \textit{Java}
@@ -10,8 +11,7 @@
 	\item Betreffendes Paket: \textit{org.hibernate.cfg}
 \end{itemize}
 
-
-\SuperPar Code der nicht mehr benötigt wird, wird häufig einfach auskommentiert und bleibt danach über lange Zeit im Quellcode bestehen. Dies wäre jedoch bei den modernen Versionsverwaltungssystemen gar nicht mehr notwendig, da diese eine genaue Auflistung der gelöschten, geänderten oder hinzugefügten Abschnitte anbieten. Es ist mit diesen auch leicht möglich Abschnitte, die man gelöscht hat, wieder aufzufinden, sowie diese wiederherzustellen. Code der nicht mehr benötigt wird sollte daher einfach gelöscht werden und mit einer vernünftigen Commit Message versehen werden. Im Hibernate Framework ist eine Klasse die einen solchen auskommentierten Codeabschnitt enthält die \textit{BindHelper} Klasse. Eine sehr problematische Stelle befindet sich in dieser Klasse in Zeile 421. Dort gibt es den in Listing \ref{lst:CommentedCode} beschriebenen Codeabschnitt.
+\SuperPar Code der nicht mehr benötigt wird, wird häufig einfach auskommentiert und bleibt danach über lange Zeit im Quellcode bestehen. Dies wäre jedoch bei den modernen Versionsverwaltungssystemen gar nicht mehr notwendig, da diese eine genaue Auflistung der gelöschten, geänderten oder hinzugefügten Abschnitte anbieten. Es ist mit diesen auch leicht möglich Abschnitte, die man gelöscht hat, wieder aufzufinden, sowie diese wiederherzustellen. Code der nicht mehr benötigt wird sollte daher einfach gelöscht werden und mit einer vernünftigen Commit Message versehen werden. Eine sehr problematische Beispiel dafür befindet sich in dem in Listing \ref{lst:CommentedCode} gezeigten Codeabschnitt.
 
 \begin{lstlisting}[language=Java, caption=Beispiele für auskommentierten Code, label=lst:CommentedCode]
 /*FIXME cannot use subproperties becasue the caller needs top level properties
@@ -23,11 +23,10 @@
 }*/ 
 \end{lstlisting}
 
-\SuperPar Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden müsste. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder in einem Issue Tracking System genau mitdokumentiert werden, wo der Fehler auftritt und Möglichkeiten diesen zu beheben, oder den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftreten wird und er somit vergessen wird, wodurch sich vermutlich weitere Probleme ergeben. Auch Robert C. Martin schlägt in seinem Buch eine sehr pragmatische Lösung vor: Auskommentierter Code sollte immer gelöscht werden, da er zusätzlich zu den genannten Gründen auch den Quellcode unnötig aufbläht.
+\SuperPar Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden müsste. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder eine genaue Dokumentation dieses Fehlers in einem Issue Tracking System erfolgen, oder versucht werden den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftreten wird und er somit vergessen wird. Auch Robert C. Martin schlägt in seinem Buch eine sehr pragmatische Lösung vor: Auskommentierter Code sollte immer gelöscht werden, da er zusätzlich zu den genannten Gründen den Quellcode unnötig aufbläht.
 
 \subsection{Rückgabe von Fehlercodes}
-
-\SuperPar In den modernen Programmiersprachen wie C++, C\# oder Java, gibt es die Möglichkeit, für einen fehlgeschlagenen Vorgang eine Ausnahme zu werfen. In den etwas älteren Programmiersprachen, wie zum Beispiel C, gab es diese Möglichkeit noch nicht. Daher wurden in solchen Situationen sogenannte Fehlercodes zurückgegeben, was dazu führte, dies führte zu mehreren Problemen: 
+\SuperPar In den modernen Programmiersprachen wie C++, C\# oder Java, gibt es die Möglichkeit, für einen fehlgeschlagenen Vorgang eine Ausnahme zu werfen. In den etwas älteren Programmiersprachen, wie zum Beispiel C, gab es diese Möglichkeit noch nicht. Daher wurden in solchen Situationen sogenannte Fehlercodes zurückgegeben, was zu folgenden Problemen führen konnte:
 
 \begin{itemize}
 	\item Beim Aufruf dieser Methode muss darauf geachtet werden, dass alle möglichen Fehlercodes abgedeckt werden. 
@@ -35,7 +34,7 @@
 	\item Durch die Rückgabe eines Fehlercodes ist es nicht mehr möglich einen Wert zurückzugegeben, wodurch meist Parameter als Outputparameter verwendet werden, welche den gewünschten Wert zurückliefern.
 \end{itemize}
 
-\SuperPar In den modernen Programmiersprachen gibt es wie bereits beschrieben die Möglichkeit von Ausnahmen. Diese Ausnahmen werden dabei im Fehlerfall ausgelöst und schließlich im aufrufenden Bereich behandelt. Diesen Ausnahmen kann eine Fehlermeldung zugeordnet werden und es gibt die Möglichkeit über den sogenannten Stacktrace nachzuvollziehen, an welcher Stelle im Code der Fehler aufgetreten. Weiters ist es durch dieses System ohne weiters Möglich bei der Funktion einen normalen Rückgabewert zu definieren, da die Ausnahme nicht als Rückgabewert definiert werden muss. Durch diese Möglichkeiten ergeben sich zahlreiche Vorteile gegenüber Fehlercodes und daher sollte bei Verwendung von moderneren Programmiersprachen auf Fehlercodes unbedingt verzichtet werden.
+\SuperPar Die sogenannten Ausnahmen stellen für diese Problemen einen sehr guten Lösungsansatz dar. Im Fehlerfall wird eine Ausnahme ausgelöst und schließlich im aufrufenden, oder in einem hierarchisch höheren Bereich behandelt. Diesen Ausnahmen kann eine Fehlermeldung zugeordnet werden und es gibt die Möglichkeit über den sogenannten Stacktrace nachzuvollziehen, an welcher Stelle im Code der Fehler aufgetreten. Weiters ist es durch dieses System ohne weiteres möglich bei der Funktion einen normalen Rückgabewert zu definieren, da die Ausnahme nicht als Rückgabewert definiert werden muss. Durch diese Möglichkeiten ergeben sich zahlreiche Vorteile gegenüber Fehlercodes und daher sollte bei Verwendung von moderneren Programmiersprachen auf Fehlercodes unbedingt verzichtet werden.
 
 \subsection{Switch Statements}
 \begin{itemize}
@@ -44,8 +43,7 @@
 	\item Betreffende Klasse: \textit{CommandLogger }
 	\item Betreffender Namespace: \textit{Microsoft.Data.Entity.Design.Internal}
 \end{itemize}
-
-\SuperPar Ein Konstrukt das sich in sehr vielen Bibliotheken finden lässt sind \textit{Switch-Statements}. Über diese wird meist geregelt, welche Aktionen abhängig von einer Eingabe durchgeführt werden. Dies führt zu einer Vermischung der Aspekte. Die Funktion, welche diese Überprüfungen vornimmt hat dadurch mindestens zwei Aufgaben. Einerseits wird die Eingabe überprüft und abhängig davon eine Aktion vorgenommen. Dies führt im Weiteren auch zu einer schlechteren Testbarkeit. In objektorientierten Programmiersprachen können die meisten \textit{Switch-Statements} durch einfache Abstrahierungen ersetzt werden. Ein gutes Beispiel, wo diese Verbesserung angewandt werden könnte wird in Listing \ref{lst:SwitchStatement} gezeigt.
+\SuperPar Ein Konstrukt das sich in sehr vielen Bibliotheken finden lässt, sind \textit{Switch-Statements}. Ein Beispiel für ein solches Konstrukt lässt sich in  Listing \ref{lst:SwitchStatement} finden.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Switch Statement; label=lst:SwitchStatement]
 public virtual void Log(
@@ -84,7 +82,7 @@ public virtual void Log(
 }
 \end{lstlisting}
 
-\SuperPar Hier wird überpüft, welches \textit{LogLevel} übergeben wird und anschließend wird die jeweilige Methode aufgerufen. Hier wäre es jedoch einfach möglich, statt dem \textit{LogLevel}  ein Objekt zu übergeben, welches das in Listing \ref{lst:LogInterface} dargestellte Interface implementiert.
+\SuperPar In dem gezeigten Fall wird abhängig von der Eingabe geregelt, welche Ausgabe erfolgen sollte. Dies ist eine Vermischung der Aspekte und wiederspricht dem SRP, da im ersten Schritt die Eingabe überprüft und abhängig davon eine Aktion vorgenommen wird. Dieses Missachten des SRP resultiert in einer schlechteren Testbarkeit. Ein weiteres Prinzip, welches in diesem Fall verletzt wird ist das OCP, da beim Hinzufügen eines weiteren \textit{LogLevel} der vorhandene Code geändert werden muss, was bedeutet, dass die Klasse nicht geschlossen für Änderungen ist. Robert C. Martin empfiehlt hier, dass diese Verzweigung durch Abstrahierungen aufgelöst werden könnte. In dem konkreten Fall wäre es möglich statt dem \textit{LogLevel} ein Objekt zu übergeben, welches das in Listing \ref{lst:LogInterface} dargestellte Interface implementiert.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für ein Log Interface, label=lst:LogInterface]
 public interface ILogger
@@ -111,8 +109,7 @@ public virtual void Log(
 }
 \end{lstlisting}
 
-\SuperPar Durch diese Änderung wird die Funktion um einiges kürzer und dadurch übersichtlicher. Es wird außerdem dadurch die Aufgabe der Überprüfung ausgelagert. Beim Aufrufen dieser Methode kann jetzt zusätzlich zu den bekannten \textit{LogLevels} auch ein spezieller Logger übergeben werden, welcher zum Beispiel in eine Datenbank schreibt. Die wichtigste Verbesserung ist hier, wie bereits erwähnt, die stark verbesserte Lesbarkeit. 
-
+\SuperPar Durch diese Änderung wird die Funktion um einiges kürzer und dadurch übersichtlicher. Es wird weiterhin die Aufgabe der Überprüfung ausgelagert und die Klasse ist geschlossen für Änderungen aber offen für Erweiterungen, was dem SRP und dem OCP entspricht. Beim Aufrufen dieser Methode kann jetzt zusätzlich zu den bekannten \textit{LogLevels} auch ein spezieller Logger übergeben werden, welcher zum Beispiel in eine Datenbank schreibt. Die wichtigste Verbesserung ist hier, wie bereits erwähnt, die stark verbesserte Lesbarkeit. 
 
 \subsection{Rückgabe von Null}
 \begin{itemize}
@@ -141,3 +138,12 @@ protected List<ProcessModule> InnerList
 \SuperPar Hier wird zu erst intern überprüft, ob die Liste, welche in einer Membervariable gespeichert ist \textit{null} ist, wenn ja wird der Wert dieser auf eine leere Liste gesetzt und somit können \textit{Nullreferenzausnahmen} verhindert werden. 
 
 
+\subsection{Zu viele Parameter für Funktionen}
+\begin{itemize}
+	\item Projekt: \textit{HBase}
+	\item Programmiersprache: \textit{Jave}
+	\item Betreffende Klasse: \textit{HalfStoreFileReader}
+	\item Betreffendes Package: \textit{org.apache.hadoop.hbase.io;}
+\end{itemize}
+
+\SuperPar Häufig lässt sich in Legacy System

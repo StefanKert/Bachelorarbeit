@@ -5,6 +5,8 @@
 \usepackage{cmbright}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
+\usepackage{float}
+\restylefloat{table}
 \definecolor{bluekeywords}{rgb}{0,0,1}
 \definecolor{greencomments}{rgb}{0,0.5,0}
 \definecolor{redstrings}{rgb}{0.64,0.08,0.08}
@@ -46,8 +48,8 @@
 \bibliography{literatur}  
 \begin{document}
 \title{Clean Code Development - Grundlagen und Anwendung}
-\author{Stefan Kert}
-\studiengang{Software Engneering}
+\author{Ing. Stefan Kert}
+\studiengang{Software Engineering}
 \studienort{Hagenberg}
 \abgabedatum{2016}{07}{14}	
 \nummer{S1310307019} 
@@ -56,19 +58,19 @@
 \maketitle
 \tableofcontents
 
-\include{vorwort}		% ggfs. weglassen
-\include{kurzfassung}		
-\include{abstract}			
+\include{2_kurzfassung}		
+\include{3_abstract}			
 
 \mainmatter 
 
-\include{Introduction}
-\include{Introduction_CCD}
-\include{Analyses_Criterias}
-\include{Analyses_Duplication}
-\include{Analyses_BadStructure}
-\include{Analyses_Naming}
-\include{schluss}
+\include{4_Introduction}
+\include{5_Introduction_CCD}
+\input{6_Analyses_Criterias}
+\input{7_Analyses_Duplication}
+\input{8_Analyses_Legacy}
+\input{9_Analyses_Naming}
+\input{10_Analyses_Environment}
+\include{11_schluss}
 
 \appendix
 
