@@ -36,6 +36,22 @@
       \field{title}{Extreme programming explained: Embrace change}
       \field{year}{2005}
     \endentry
+    \entry{Feathers2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=2855afd48412fc77268f258a0ccf7a9c}{Feathers}{F\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{2855afd48412fc77268f258a0ccf7a9c}
+      \strng{fullhash}{2855afd48412fc77268f258a0ccf7a9c}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Working Effectively with Legacy Code}
+      \field{year}{2013}
+    \endentry
     \entry{Hunt1999}{book}{}
       \name{author}{2}{}{%
         {{hash=10383d05f32f2a21518b493a3c546e5c}{Hunt}{H\bibinitperiod}{Andrew}{A\bibinitperiod}{}{}{}{}}%
@@ -85,6 +101,38 @@
       \field{title}{Extreme Programming Installed (XP)}
       \field{year}{2000}
     \endentry
+    \entry{Gamma1995}{book}{}
+      \name{author}{1}{}{%
+        {{hash=31aa9915b356e73b5b0685b7e7f0a9be}{John}{J\bibinitperiod}{Gamma\bibnamedelimb Erich;\bibnamedelimb Helm\bibnamedelimb Richard;\bibnamedelimb Johnson\bibnamedelimb Ralph;\bibnamedelima Vlissides}{G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Addison Wesley}%
+      }
+      \strng{namehash}{31aa9915b356e73b5b0685b7e7f0a9be}
+      \strng{fullhash}{31aa9915b356e73b5b0685b7e7f0a9be}
+      \field{sortinit}{J}
+      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Design Patterns. Elements of Reusable Object-Oriented Software}
+      \field{year}{1995}
+    \endentry
+    \entry{Booch2004}{book}{}
+      \name{author}{1}{}{%
+        {{hash=eb64687729966b1c454f003fd795964b}{Kelli}{K\bibinitperiod}{Booch\bibnamedelimb Grady;\bibnamedelimb Maksimchuk\bibnamedelimb Robert;\bibnamedelimb Engle\bibnamedelimb Michael;\bibnamedelimb Young\bibnamedelimb Bobbi;\bibnamedelimb Conallen\bibnamedelimb Jim;\bibnamedelima Houston}{B\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional;}%
+      }
+      \strng{namehash}{eb64687729966b1c454f003fd795964b}
+      \strng{fullhash}{eb64687729966b1c454f003fd795964b}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Object-Oriented Analysis and Design with Applications}
+      \field{year}{2007}
+    \endentry
     \entry{Martin2002}{book}{}
       \name{author}{1}{}{%
         {{hash=4931846e75da8be6bca9cac98c006a70}{Martin}{M\bibinitperiod}{Robert\bibnamedelima C.}{R\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
@@ -132,7 +180,7 @@
       \verb{url}
       \verb http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
       \endverb
-      \warn{\item Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '2016-1-30' of date field 'urldate' - ignoring}
+      \warn{\item Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '30.1.2016' of date field 'urldate' - ignoring}
     \endentry
     \entry{Microsoft2016}{online}{}
       \name{author}{1}{}{%
@@ -150,7 +198,7 @@
       \verb{url}
       \verb https://msdn.microsoft.com/en-us/library/ff926074.aspx
       \endverb
-      \warn{\item Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2016-1-2' of date field 'urldate' - ignoring}
+      \warn{\item Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2.1.2016' of date field 'urldate' - ignoring}
     \endentry
     \entry{Osherove2013}{book}{}
       \name{author}{1}{}{%
@@ -168,7 +216,7 @@
       \field{title}{The Art of Unit Testing}
       \field{year}{2013}
     \endentry
-    \entry{Wilson2016}{article}{}
+    \entry{Wilson2016}{online}{}
       \name{author}{1}{}{%
         {{hash=6d40b783574b8379aa618fec98341f75}{Wilson}{W\bibinitperiod}{George}{G\bibinitperiod}{}{}{James;\bibnamedelima Kelling}{J\bibinitperiod\bibinitdelim K\bibinitperiod}}%
       }

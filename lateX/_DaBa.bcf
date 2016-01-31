@@ -2238,19 +2238,22 @@
     <bcf:datasource type="file" datatype="bibtex">literatur.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Martin2008</bcf:citekey>
-    <bcf:citekey order="2">Wilson2016</bcf:citekey>
-    <bcf:citekey order="3">Jeffries2000</bcf:citekey>
-    <bcf:citekey order="4">Jeffries2004</bcf:citekey>
-    <bcf:citekey order="5">Gamma1995</bcf:citekey>
-    <bcf:citekey order="6">Martin2002</bcf:citekey>
-    <bcf:citekey order="7">Martin2016</bcf:citekey>
-    <bcf:citekey order="8">Martin2008</bcf:citekey>
-    <bcf:citekey order="9">Martin2008</bcf:citekey>
-    <bcf:citekey order="10">Microsoft2016</bcf:citekey>
-    <bcf:citekey order="11">Beck2005</bcf:citekey>
-    <bcf:citekey order="12">Hunt1999</bcf:citekey>
-    <bcf:citekey order="13">Osherove2013</bcf:citekey>
+    <bcf:citekey order="1">Wilson2016</bcf:citekey>
+    <bcf:citekey order="2">Martin2008</bcf:citekey>
+    <bcf:citekey order="3">Martin2008</bcf:citekey>
+    <bcf:citekey order="4">Booch2004</bcf:citekey>
+    <bcf:citekey order="5">Feathers2013</bcf:citekey>
+    <bcf:citekey order="6">Jeffries2000</bcf:citekey>
+    <bcf:citekey order="7">Jeffries2004</bcf:citekey>
+    <bcf:citekey order="8">Gamma1995</bcf:citekey>
+    <bcf:citekey order="9">Martin2002</bcf:citekey>
+    <bcf:citekey order="10">Martin2016</bcf:citekey>
+    <bcf:citekey order="11">Martin2008</bcf:citekey>
+    <bcf:citekey order="12">Martin2008</bcf:citekey>
+    <bcf:citekey order="13">Microsoft2016</bcf:citekey>
+    <bcf:citekey order="14">Beck2005</bcf:citekey>
+    <bcf:citekey order="15">Hunt1999</bcf:citekey>
+    <bcf:citekey order="16">Osherove2013</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>

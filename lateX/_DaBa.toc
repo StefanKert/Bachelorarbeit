@@ -48,7 +48,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Single-Responsibility-Prinzip (SRP)}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{The Open Closed Principle (OCP)}{7}{section.2.2}
+\contentsline {subsubsection}{The Open Closed Principle (OCP)}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{The Liskov Substitution Principle (LSP)}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
@@ -56,7 +56,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{The Dependency Inversion Principle(DIP)}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Smells und Heuristiken}{8}{section.2.3}
+\contentsline {section}{\numberline {2.3}Smells und Heuristiken}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Kommentare}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
