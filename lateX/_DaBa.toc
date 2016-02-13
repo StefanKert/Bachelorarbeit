@@ -24,108 +24,110 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Problemstellung}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Theorie der zerbrochenen Fenster}{2}{subsection.1.1.1}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}L\IeC {\"o}sungsvorschlag}{2}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Clean Code Development Grundlagen}{3}{chapter.2}
+\contentsline {section}{\numberline {1.3}Ziele}{2}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Was ist Clean Code?}{3}{section.2.1}
+\contentsline {chapter}{\numberline {2}Clean Code Development}{4}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Bjarne Stroustrup}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Was ist Clean Code?}{4}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Grady Booch}{4}{section.2.1}
+\contentsline {subsubsection}{Bjarne Stroustrup}{4}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dave Thomas}{4}{section.2.1}
+\contentsline {subsubsection}{Grady Booch}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Michael Feathers}{4}{section.2.1}
+\contentsline {subsubsection}{Dave Thomas}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Ron Jeffries}{5}{section.2.1}
+\contentsline {subsubsection}{Michael Feathers}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Ward Cunningham}{6}{section.2.1}
+\contentsline {subsubsection}{Ron Jeffries}{6}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Woher kommt CCD?}{6}{section.2.2}
+\contentsline {subsubsection}{Ward Cunningham}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Single-Responsibility-Prinzip (SRP)}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Smells und Heuristiken}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{The Open Closed Principle (OCP)}{8}{section.2.2}
+\contentsline {subsubsection}{Kommentare}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{The Liskov Substitution Principle (LSP)}{8}{section.2.2}
+\contentsline {subsubsection}{Umgebung}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{The Interface Segregation Principle (ISP)}{8}{section.2.2}
+\contentsline {subsubsection}{Funktionen}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{The Dependency Inversion Principle(DIP)}{8}{section.2.2}
+\contentsline {subsubsection}{Allgemein}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Smells und Heuristiken}{9}{section.2.3}
+\contentsline {subsubsection}{Namen}{9}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Kommentare}{9}{section.2.3}
+\contentsline {subsubsection}{Tests}{9}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Umgebung}{9}{section.2.3}
+\contentsline {subsubsection}{Zus\IeC {\"a}tzliche Smells und Heuristiken}{10}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Funktionen}{9}{section.2.3}
+\contentsline {section}{\numberline {2.3}Die Pfadfinder-Regel}{10}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Allgemein}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Nutzen moderner Werkzeuge zur Softwareentwicklung}{10}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Namen}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.4.1}Testen, Erzeugen und Verteilen von Software}{11}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tests}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.4.2}Werkzeuge f\IeC {\"u}r das Refactoring}{11}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Die Pfadfinder-Regel}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.3}Coding Conventions}{11}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Coding Conventions}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.4.4}\IeC {\"U}berpr\IeC {\"u}fung der CCD Kriterien}{12}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}\IeC {\"U}berpr\IeC {\"u}fung der CCD Kriterien}{12}{section.2.6}
+\contentsline {subsubsection}{Statische Codeanalyse}{12}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.1}Statische Codeanalyse}{12}{subsection.2.6.1}
+\contentsline {subsubsection}{Code Reviews}{12}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.2}Code Reviews}{13}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.5}Woher kommt CCD?}{13}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Anwendung der Clean Code Development Kriterien}{14}{chapter.3}
+\contentsline {subsubsection}{Single-Responsibility-Prinzip (SRP)}{14}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Vermeiden von Duplizierungen}{14}{section.3.1}
+\contentsline {subsubsection}{The Open Closed Principle (OCP)}{14}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Duplizierung boolscher Ausdr\IeC {\"u}cke}{15}{subsection.3.1.1}
+\contentsline {subsubsection}{The Liskov Substitution Principle (LSP)}{14}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Redundante Kommentare}{17}{subsection.3.1.2}
+\contentsline {subsubsection}{The Interface Segregation Principle (ISP)}{15}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Duplizierung von Testcode}{17}{subsection.3.1.3}
+\contentsline {subsubsection}{The Dependency Inversion Principle(DIP)}{15}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Legacy Code vermeiden und refaktorieren}{20}{section.3.2}
+\contentsline {chapter}{\numberline {3}Anwendungsbeispiele f\IeC {\"u}r Clean Code Development}{16}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Auskommentierter Code}{20}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.1}Vermeiden von Duplizierungen}{17}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}R\IeC {\"u}ckgabe von Fehlercodes}{21}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.1.1}Duplizierung boolscher Ausdr\IeC {\"u}cke}{18}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Switch Statements}{21}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.1.2}Redundante Kommentare}{19}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}R\IeC {\"u}ckgabe von Null}{23}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.1.3}Duplizierung von Testcode}{20}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Zu viele Parameter / Flag Argumente in Funktionen}{25}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.2}Legacy Code vermeiden und refaktorieren}{22}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Ausdrucksstarker Code}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.2.1}Auskommentierter Code}{23}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Schlecht gew\IeC {\"a}hlte Namen}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2.2}Ausnahmen sind besser als Fehler-Codes}{24}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Vermischung von Errorhandling mit Logik}{28}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.2.3}Polymorphismus statt If/Else oder Switch/Case verwenden}{26}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Falsche Kommentare}{30}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.2.4}Keine Null zur\IeC {\"u}ckgeben}{28}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Verwendung von Magic Strings/Numbers}{30}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.2.5}Zu viele Parameter / Flag Argumente in Funktionen}{30}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Nutzen moderner Werkzeuge zur Softwareentwicklung}{31}{section.3.4}
+\contentsline {section}{\numberline {3.3}Ausdrucksstarker Code}{32}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Testen, Erzeugen und Verteilen von Software}{31}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.3.1}Deskriptive Namen w\IeC {\"a}hlen}{32}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Werkzeuge f\IeC {\"u}r das Refactoring}{32}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.3.2}Try/Catch - Bl\IeC {\"o}cke extrahieren}{33}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Schlussbemerkungen}{33}{chapter.4}
+\contentsline {subsection}{\numberline {3.3.3}\IeC {\"U}berholte Kommentare}{35}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Fazit zu CCD}{33}{section.4.1}
+\contentsline {subsection}{\numberline {3.3.4}Magische Zahlen durch benannte Konstanten ersetzen}{35}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}CCD im allt\IeC {\"a}glichen Gebrauch}{34}{section.4.2}
+\contentsline {chapter}{\numberline {4}Schlussbemerkungen}{37}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Quellenverzeichnis}{35}{appendix*.5}
+\contentsline {section}{\numberline {4.1}Fazit zu CCD}{37}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatur}{35}{section*.6}
+\contentsline {section}{\numberline {4.2}Pers\IeC {\"o}nliche Erfahrungen mit CCD}{38}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online-Quellen}{35}{section*.6}
+\contentsline {chapter}{Quellenverzeichnis}{39}{appendix*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literatur}{39}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online-Quellen}{39}{section*.6}

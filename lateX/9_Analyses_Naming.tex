@@ -1,8 +1,8 @@
 \section{Ausdrucksstarker Code}
-Sehr häufig kommt es in der Softwareentwicklung zu Unklarheiten. Der Autor hat es beim Schreiben des Codes verabsäumt, diesen so zu gestalten, dass der Leser ohne gröbere Probleme den Zweck dieses erkennen kann. Dies führt oft zu Missverständnissen wie der betrachtete Code eingesetzt werden sollte, oder bei Änderungen zieht dies meist ein längeres Studium des zu ändernden Codes nach sich. Zahlreiche Probleme mit Unklarheiten könnten durch eine vernünftige Namensgebung behoben werden. Daher ist die Namensgebung ein sehr zentraler und wichtiger Aspekt. Robert C. Martin geht dabei sogar soweit, dass er die Namensgebung in der Programmierung mit der Namensgebung für Kinder vergleicht. Damit versucht er dem Leser klar zu machen, welche Rolle die Namensgebung in der Programmierung spielt. Im
+Sehr häufig kommt es in der Softwareentwicklung zu Unklarheiten. Der Programmierer hat es beim Schreiben des Codes verabsäumt, diesen so zu gestalten, dass der Leser ohne gröbere Probleme den Zweck dieses erkennen kann. Dies führt oft zu Missverständnissen wie der betrachtete Code eingesetzt werden sollte, oder bei Änderungen zieht dies meist ein längeres Studium des zu ändernden Codes nach sich. Zahlreiche Probleme mit Unklarheiten könnten durch eine vernünftige Namensgebung behoben werden. Daher ist die Namensgebung ein sehr zentraler und wichtiger Aspekt. Robert C. Martin geht dabei sogar soweit, dass er die Namensgebung in der Programmierung mit der Namensgebung für Kinder vergleicht. Damit versucht er dem Leser klar zu machen, welche Rolle die Namensgebung in der Programmierung spielt. Im
 folgenden Abschnitt werden einige wichtigen Punkte hinsichtlich der Gestaltung von ausdrucksvollen Code gezeigt.
 
-\subsection{Schlecht gewählte Namen}
+\subsection{Deskriptive Namen wählen}
 \begin{itemize}
 	\item Projekt: \textit{Log4Net}
 	\item Programmiersprache: \textit{C\#}
@@ -41,7 +41,7 @@ Es wäre ein leichtes, die Ausdruckskraft dieses Codes, durch eine Änderung des
 	public sealed class Log4NetInteralLogging
 \end{lstlisting}
 
-\subsection{Vermischung von Errorhandling mit Logik}
+\subsection{Try/Catch - Blöcke extrahieren}
 \begin{itemize}
 	\item Projekt: \textit{Roslyn}
 	\item Programmiersprache: \textit{C\#}
@@ -49,7 +49,7 @@ Es wäre ein leichtes, die Ausdruckskraft dieses Codes, durch eine Änderung des
 	\item Betreffender Namespace: \textit{Microsoft.CodeAnalysis.CompilerServer}, \textit{Roslyn.Utilities}
 \end{itemize}
 
-\SuperPar Das behandeln von Fehlern und Ausnahmen ist ein sehr zentraler Aspekt eines jeden Programmes. Eine richige und gut implementierte Strategie zur Fehlerbehandlung kann sehr viel Einfluss auf die Wartbarkeit eines Programmes haben. Oft wird dabei Logik und Fehlerbehandlung vermischt, was meist zu einer Verschlechterung der Lesbarkeit und damit zu einer verminderten Ausdruckskraft führt. Da es bei der Fehlerbehandlung um einen eigenen Aspekt geht, sollte diese in eine eigene Methode ausgelagert werden. Diese Methode ist dabei ein Wrapper für die zu behandelte Methode. Ein Beispiel aus dem Quelltext von Roslyn ist die in Listing \ref{lst:AspectedErrorhandling1} gezeigte Methode.
+\SuperPar Das behandeln von Fehlern und Ausnahmen ist ein sehr zentraler Aspekt eines jeden Programmes. Eine richige und gut implementierte Strategie zur Fehlerbehandlung kann sehr viel Einfluss auf die Wartbarkeit eines Programmes haben. Oft wird dabei Logik und Fehlerbehandlung vermischt, was meist zu einer Verschlechterung der Lesbarkeit und damit zu einer verminderten Ausdruckskraft führt. Da es bei der Fehlerbehandlung um einen eigenen Aspekt geht, sollte diese in eine eigene Methode ausgelagert werden. Diese Methode ist dabei ein Wrapper für die zu behandelte Methode. Ein Beispiel aus dem Quellcode von Roslyn ist die in Listing \ref{lst:AspectedErrorhandling1} gezeigte Methode.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für getrennten Aspket der Fehlerbehandlung, label=lst:AspectedErrorhandling1]
 private FileKey? GetUniqueFileKey(string filePath)
@@ -86,7 +86,7 @@ public static FileKey? Create(string fullPath)
 {
 	try
 	{
-		return Create(filePath);
+		return CreateKey(filePath);
 	}
 	catch (Exception)
 	{
@@ -97,10 +97,10 @@ public static FileKey? Create(string fullPath)
 
 \SuperPar Der Aufruf würde der gleiche bleiben, da nur die \textit{Create} Methode im öffentlichen Gültigkeitsbereich zugänglich ist, jedoch könnte sichergestellt werden, dass eine Fehlerbehandlung stattfindet. Auf Grund der Tatsache, dass im Fehlerfall \textit{null} zurückgegeben werden sollte, gibt es eine kleine Änderungen an der Signatur, sodass mit dieser Variante ein \textit{FileKey?} zurückgegeben wird, was einem Strukturdatentyp entspricht der den Wert null annehmen kann. 
 
-\subsection{Falsche Kommentare}
-\SuperPar Wie bereits in vorherigen Abschnitten beschrieben sind Kommentare ein sehr wirksames Mittel um Details zu klären, wieso etwas auf eine spezielle Art und Weise implementiert wurde. Oft gibt es Probleme mit Kommentaren, da diese über sehr lange Zeit im Code verbleiben und meist den Quelltext, welchen diese dokumentieren überdauern, was dazu führt, dass der Kommentar entweder ungültig ist und im besten Fall nur etwas nicht mehr vorhandenes beschreibt, oder im schlimmsten Fall dazu führt, dass der Kommentar schlichtweg falsch ist und dieser für den Programmierer, welcher diesen Kommentar liest, keine Unterstützung bietet und diesem sogar falsche Informationen liefert. Aus diesem Grund gibt es seitens des CCD die Empfehlung nur die Kommentare zu schreiben, die unbedingt notwendig sind und wenn ein Kommentar geschrieben wird sollte dieser sehr gut sein. Sobald der Kommentar seine Gültigkeit verliert, sollte mit ihm vorgegangen werden wie mit allen sogenannten \"toten Codeabschnitten\". Er sollte einfach gelöscht werden. 
+\subsection{Überholte Kommentare}
+\SuperPar Wie bereits in vorherigen Abschnitten beschrieben sind Kommentare ein sehr wirksames Mittel um Details zu klären, wieso etwas auf eine spezielle Art und Weise implementiert wurde. Oft gibt es Probleme mit Kommentaren, da diese über sehr lange Zeit im Code verbleiben und meist den Quellcode, welchen diese dokumentieren überdauern, was dazu führt, dass der Kommentar entweder ungültig ist und im besten Fall nur etwas nicht mehr vorhandenes beschreibt, oder im schlimmsten Fall dazu führt, dass der Kommentar schlichtweg falsch ist und dieser für den Programmierer, welcher diesen Kommentar liest, keine Unterstützung bietet und diesem sogar falsche Informationen liefert. Aus diesem Grund gibt es seitens des CCD die Empfehlung nur die Kommentare zu schreiben, die unbedingt notwendig sind und wenn ein Kommentar geschrieben wird sollte dieser sehr gut sein. Sobald der Kommentar seine Gültigkeit verliert, sollte mit ihm vorgegangen werden wie mit allen sogenannten toten Codeabschnitten. Er sollte einfach gelöscht werden. 
 
-\subsection{Verwendung von Magic Strings/Numbers}
+\subsection{Magische Zahlen durch benannte Konstanten ersetzen}
 %https://github.com/aspnet/WebSockets/blob/dev/src/Microsoft.AspNetCore.WebSockets.Protocol/FrameHeader.cs
 \begin{itemize}
 	\item Projekt: \textit{ASP.Net Websockets}
@@ -109,7 +109,7 @@ public static FileKey? Create(string fullPath)
 	\item Betreffender Namespace: \textit{Microsoft.AspNetCore.WebSockets.Protocol}
 \end{itemize}
 
-\SuperPar Ein Problem welches in vielen Quelltexten zu finden ist sind Magic Strings und Magic Numbers. Es handelt sich dabei um Zeichenketten oder Zahlen die direkt in den Quelltext geschrieben werden. In Listing \ref{lst:MagicStringsNumbersBad} ist ein Beispiel für eine Magic Number.
+\SuperPar Ein Problem welches in vielen Projekten zu finden ist sind Magische Zahlen. Es handelt sich dabei um Zahlliterale die direkt in den Quellcode geschrieben werden. In Listing \ref{lst:MagicStringsNumbersBad} ist ein Beispiel für eine Magische Zahl.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=MagicNumbers, label=lst:MagicStringsNumbersBad]
         public FrameHeader(bool final, int opCode, bool masked, int maskKey, long dataLength){
@@ -121,7 +121,7 @@ public static FileKey? Create(string fullPath)
         }
 \end{lstlisting}
 
-\SuperPar Durch diese direkt geschriebenen Zahlen ergeben sich mehrere Probleme. Ein Problem besteht darin, dass es sehr schwierig wird nach den Zahlen zu suchen, denn angenommen man würde in der Klasse nach der Länge der maskierten Headerelemente suchen würde, müsste man nach der Zahl 4 suchen, wodurch sich aber sehr viele Ergebnisse ergeben würden. Weiters werden sich beim Ändern der Länge der maskierten Headerelemente Probleme geben, da diese Zahl eventuell auch noch an einer anderen Stelle verwendet wird und darauf vergessen werden kann diese auch zu Ändern. Der Lösungsvorschlag, welchen CCD hier bietet ist die Extrahierung der Zahlen in eine eigene Konstante. Für das Beispiel in Listing \ref{lst:MagicStringsNumbersBad}  würde sich der in Listing \ref{lst:MagicStringsNumbersGood} dargestellte Code ergeben.
+\SuperPar Durch die Verwendung eines Zahlliterals in Programmanweisungen ergeben sich mehrere Probleme. Ein Problem besteht darin, dass es sehr schwierig wird nach den Zahlen zu suchen, denn angenommen man würde in der Klasse nach der Länge der maskierten Headerelemente suchen würde, müsste man nach der Zahl 4 suchen, wodurch sich aber sehr viele Ergebnisse ergeben würden. Weiters werden sich beim Ändern der Länge der maskierten Headerelemente Probleme geben, da diese Zahl eventuell auch noch an einer anderen Stelle verwendet wird und darauf vergessen werden kann diese auch zu Ändern. Der Lösungsvorschlag, welchen CCD hier bietet ist die Extrahierung der Zahlen in eine eigene Konstante. Für das Beispiel in Listing \ref{lst:MagicStringsNumbersBad}  würde sich der in Listing \ref{lst:MagicStringsNumbersGood} dargestellte Code ergeben.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Magic number, label=lst:MagicStringsNumbersGood]
 				private const int _MASKED_HEADER_LENGTH = 4;
