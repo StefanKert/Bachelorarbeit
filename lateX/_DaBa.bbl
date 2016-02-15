@@ -36,6 +36,19 @@
       \field{title}{Extreme programming explained: Embrace change}
       \field{year}{2005}
     \endentry
+    \entry{Koschke2007}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=60a49fc1805b146fba635e515654ce8f}{E.}{E\bibinitperiod}{Koschke\bibnamedelimb R.\bibnamedelimi ;\bibnamedelimb Antoniol\bibnamedelimb G.\bibnamedelimi ;\bibnamedelimb Krinke\bibnamedelimb J.\bibnamedelimi ;\bibnamedelima Merlo}{K\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim ;\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{60a49fc1805b146fba635e515654ce8f}
+      \strng{fullhash}{60a49fc1805b146fba635e515654ce8f}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Comparison and Evaluation of Clone Detection Tools}
+      \field{year}{2007}
+    \endentry
     \entry{Feathers2013}{book}{}
       \name{author}{1}{}{%
         {{hash=2855afd48412fc77268f258a0ccf7a9c}{Feathers}{F\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
@@ -62,6 +75,22 @@
       \verb http://fit.c2.com/
       \endverb
       \warn{\item Datamodel: Entry 'Fit2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+    \endentry
+    \entry{Martin1997}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3f723d8ec527ffe06029300852a2fb7c}{Frank}{F\bibinitperiod}{Martin\bibnamedelimb Robert\bibnamedelimb C.;\bibnamedelimb Riehle\bibnamedelimb Dirk;\bibnamedelima Buschmann}{M\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{3f723d8ec527ffe06029300852a2fb7c}
+      \strng{fullhash}{3f723d8ec527ffe06029300852a2fb7c}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pattern Languages of Program Design 3}
+      \field{year}{1997}
     \endentry
     \entry{Hunt1999}{book}{}
       \name{author}{2}{}{%
@@ -177,6 +206,19 @@
       \field{title}{Object-Oriented Analysis and Design with Applications}
       \field{year}{2007}
     \endentry
+    \entry{Lehman1980}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=c32073101fbaf7f7e24b224d41391ad0}{Lehman}{L\bibinitperiod}{Meir\bibnamedelima M}{M\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c32073101fbaf7f7e24b224d41391ad0}
+      \strng{fullhash}{c32073101fbaf7f7e24b224d41391ad0}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Programs, Life Cycles, and Laws of Software Evolution}
+      \field{year}{1980}
+    \endentry
     \entry{Martin2002}{book}{}
       \name{author}{1}{}{%
         {{hash=4931846e75da8be6bca9cac98c006a70}{Martin}{M\bibinitperiod}{Robert\bibnamedelima C.}{R\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
@@ -270,6 +312,17 @@
       \field{title}{The Art of Unit Testing}
       \field{year}{2013}
     \endentry
+    \entry{Pair2016}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Pair Programming}
+      \verb{url}
+      \verb http://www.extremeprogramming.org/rules/pair.html
+      \endverb
+      \warn{\item Datamodel: Entry 'Pair2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+    \endentry
     \entry{Wiki2016}{online}{}
       \field{sortinit}{W}
       \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
@@ -297,8 +350,20 @@
       \endverb
       \warn{\item Datamodel: Entry 'Wilson2016' (literatur.bib): Invalid format '2016-1-16' of date field 'date' - ignoring}
     \endentry
+    \entry{Lin2007}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=0736b9ac4656e541142df3d536187e7b}{Zhou}{Z\bibinitperiod}{Lin\bibnamedelimb Tan;\bibnamedelimb Ding\bibnamedelimb Yuan;\bibnamedelimb Gopal\bibnamedelimb Krishna;\bibnamedelima Yuanyuan}{L\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim Y\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{0736b9ac4656e541142df3d536187e7b}
+      \strng{fullhash}{0736b9ac4656e541142df3d536187e7b}
+      \field{sortinit}{Z}
+      \field{sortinithash}{fdda4caaa6b5fa63e0c081dcb159543a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{iComment: Bugs or Bad Comments?}
+      \field{year}{2007}
+    \endentry
   \endsortlist
-  \missing{Lehmann1980}
 \endrefsection
 \endinput
 

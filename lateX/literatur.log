@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.25)  13 FEB 2016 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.4)  15 FEB 2016 07:29
 entering extended mode
-**./literatur.bib
+**literatur.bib
 (literatur.bib
-LaTeX2e <2015/10/01> patch level 2
+LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 
 ! LaTeX Error: Missing \begin{document}.
@@ -434,7 +434,6 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no , in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no b in font nullfont!
@@ -450,7 +449,6 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
-Missing character: There is no , in font nullfont!
 Missing character: There is no D in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -465,7 +463,6 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no , in font nullfont!
 Missing character: There is no F in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -3010,17 +3007,17 @@ Missing character: There is no 8 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 )
 ! Emergency stop.
-<*> ./literatur.bib
-                   
+<*> literatur.bib
+                 
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
- 9 strings out of 493634
- 129 string characters out of 3135238
- 53604 words of memory out of 3000000
- 3493 multiletter control sequences out of 15000+200000
+ 9 strings out of 493673
+ 129 string characters out of 3143957
+ 53455 words of memory out of 3000000
+ 3456 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 18i,2n,12p,122b,60s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,2n,12p,120b,60s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -1,5 +1,8 @@
+\newpage
 \section{Vermeiden von Duplizierungen}
-Eines der größten Probleme bei der Entwicklung von Software stellt die Duplizierung von Code dar. Diese verbirgt sich dabei nicht immer nur auf Bibliothek-, oder Klassenebene, sondern auch in Methoden. Bei Duplizierungen wird zwischen vier Typen unterschieden. Diese erstrecken sich von der lexikalischen bis zur semantischen Duplizierung. Oft treten Duplizierungen auf, wenn bei der Benennung der vorhandenen Methoden beziehungsweise Klassen nicht auf eine ausreichend offensichtliche Namensgebung geachtet wurde. Ein sehr wichtiges Prinzip hinsichtlich Codeduplizierung ist das von Dave Thomas und Andy Hunt beschrieben DRY-Prinzip (Don´t Repeat Yourself \cite{Hunt1999}).
+Eines der größten Probleme bei der Entwicklung von Software stellt die Duplizierung von Code dar. Diese verbirgt sich dabei nicht immer nur auf Bibliothek-, oder Klassenebene, sondern auch in Methoden. Bei Duplizierungen wird grundsätzlich zwischen vier Typen unterschieden. Diese erstrecken sich von der lexikalischen bis zur semantischen Duplizierung. Diese unterschiedlichen Formen von Duplizierungen sind hinlänglich beschrieben \cite{Koschke2007} und es wird daher hier nicht näher auf die einzelnen Formen eingegangen.
+
+Oft treten Duplizierungen auf, wenn bei der Benennung der vorhandenen Methoden beziehungsweise Klassen nicht auf eine ausreichend offensichtliche Namensgebung geachtet wurde. Ein sehr wichtiges Prinzip hinsichtlich der Vermeidung von Codeduplizierung, ist das von Dave Thomas und Andy Hunt beschrieben DRY-Prinzip (Don´t Repeat Yourself \cite{Hunt1999}).
 Die Probleme, welche sich dadurch ergeben sind einerseits, dass Arbeiten doppelt erledigt werden müssen, andererseits kann im Falle eines Fehlers auf das Beheben dieses in einem duplizierten Abschnitt vergessen werden. Robert C. Martin bietet in seinem Buch Clean Code einige Möglichkeiten wodurch diese Probleme vermieden werden können. Diese sollten im folgenden Abschnitt näher betrachtet werden.
 
 \subsection{Duplizierung boolscher Ausdrücke}
@@ -11,7 +14,7 @@ Die Probleme, welche sich dadurch ergeben sind einerseits, dass Arbeiten doppelt
 	\item Betreffendes Paket: \textit{org.hibernate.cfg}
 \end{itemize}
 
-\SuperPar Wie bereits erwähnt, treten Codeduplizierungen nicht nur auf Bibliothek-, bzw. Klassenebene auf, sonder meist in einem viel kleineren Kontext. Dies ist oft ein sehr subtiles Problem und kann nicht so leicht festgestellt werden. Oft lassen sich Duplizierungen in bei komplexen boolschen Ausdrücken finde. Diese werden oft von mehreren Funktionen benötigt und daher einfach in den einzelnen Funktionen verwendet. Ein Beispiel für eine solche Duplizierung befindet sich in den Listings \ref{lst:BoolStatement1} und  \ref{lst:BoolStatement2}.
+\SuperPar Wie bereits erwähnt, treten Codeduplizierungen nicht nur auf Bibliothek-, bzw. Klassenebene auf, sondern meist in einem viel kleineren Kontext. Dies ist oft ein sehr subtiles Problem und kann nicht so leicht festgestellt werden. Oft lassen sich Duplizierungen in bei komplexen boolschen Ausdrücken finde. Diese werden oft von mehreren Funktionen benötigt und daher einfach in den einzelnen Funktionen verwendet. Ein Beispiel für eine solche Duplizierung befindet sich in den Listings \ref{lst:BoolStatement1} und  \ref{lst:BoolStatement2}.
 
 \begin{lstlisting}[language=Java, caption=Komplexe boolsche Ausdrücke 1 Zeile 255 - 264, label=lst:BoolStatement1]
 	@Override
@@ -46,7 +49,7 @@ result == null && propertyName.contains(".collection&&element.")
  result == null && propertyName.contains("</collectionType><element>")
 \end{lstlisting}
 
-\SuperPar Falls beim Ändern der Überprüfung auf eine der Verwendungen vergessen wird, würde dies zu einem nur sehr schwer zu findenden Fehler führen. Ein weiteres Problem, das sich hier wie bereits oben beschrieben ergibt, ist die Tatsache, dass dieser boolsche Ausdruck ohne einen Kommentar oder ein mehrmaliges Lesen sehr schwer zu verstehen ist. CCD empfiehlt hier den boolschen Audruck in eine eigene Methode zu extrahieren. Eine solche Methode könnte wie in Listing \ref{lst:BoolStatement4} aussehen.
+\SuperPar Falls beim Ändern der Überprüfung auf eine der Verwendungen vergessen wird, würde dies zu einem nur sehr schwer zu findenden Fehler führen. Ein weiteres Problem, das sich hier wie bereits oben beschrieben ergibt, ist die Tatsache, dass dieser boolsche Ausdruck ohne einen Kommentar oder ein mehrmaliges Lesen sehr schwer zu verstehen ist. CCD empfiehlt hier den boolschen Ausdruck in eine eigene Methode zu extrahieren. Eine solche Methode könnte wie in Listing \ref{lst:BoolStatement4} aussehen.
 
 \begin{lstlisting}[language=Java, caption=Boolscher Ausdruck neu, label=lst:BoolStatement4]
 private bool isPlaceholderForCollectionAndElementInPropertyName(object result, String propertyName) {
@@ -54,7 +57,7 @@ private bool isPlaceholderForCollectionAndElementInPropertyName(object result, S
 }
 \end{lstlisting}
 
-\SuperPar Durch ein Extrahieren der Überprüfung des Parameters \textit{propertyName} kann für diese Methode ein eigener Name gewählt werden, der klar den Zweck dieser Überprüfung vermittelt wodurch die Codeduplizierung eliminiert wird. 
+\SuperPar Durch ein Extrahieren der Überprüfung des Parameters \textit{propertyName} und des Null-Checks kann für diese Methode ein eigener Name gewählt werden, der klar den Zweck dieser Überprüfung vermittelt wodurch die Codeduplizierung eliminiert wird. 
 
 \subsection{Redundante Kommentare}
 \begin{itemize}
@@ -87,7 +90,7 @@ public ConfigurationChangedEventArgs(ICollection configurationMessages)
 	\item Betreffende Klasse: \textit{FixingTest}
 	\item Betreffender Namespace: \textit{log4net.Tests.Core}
 \end{itemize}
-\SuperPar Laut Robert C. Martin sollte auch Testcode den CCD Kriterien entsprechen. Dies ist umso wichtiger, da Testcode oft als Dokumentation für den getesteten Code dienst. Ein Entwickler der einen Code betrachtet der gut getestet ist, kann sich sofort ein Bild von den einzelnen Grenzfällen machen indem er die Tests betrachtet. Dort sollten die wichtigsten Grenzfälle abgedeckt sein und sie geben außerdem Aufschluss darüber wie die Methode verwendet werden kann. Ein sehr wichtiger Punkt im Zusammenhang mit Duplizierung ist, dass vor allem bei Tests darauf geachtet werden, dass diese keine Duplizierungen enthalten. Ein Beispiel für eine solche Duplizierung lässt sich in Listing \ref{lst:DuplicatedTest1} finden.
+\SuperPar Laut Robert C. Martin sollte auch Testcode den CCD Kriterien entsprechen. Dies ist umso wichtiger, da Testcode oft als Dokumentation für den getesteten Code dienst. Ein Programmierer/eine Programmiererin der einen Code betrachtet der gut getestet ist, kann sich sofort ein Bild von den einzelnen Grenzfällen machen indem er die Tests betrachtet. Dort sollten die wichtigsten Grenzfälle abgedeckt sein und sie geben außerdem Aufschluss darüber wie die Methode verwendet werden kann. Ein sehr wichtiger Punkt im Zusammenhang mit Duplizierung ist, dass vor allem bei Tests darauf geachtet werden, dass diese keine Duplizierungen enthalten. Ein Beispiel für eine solche Duplizierung lässt sich in Listing \ref{lst:DuplicatedTest1} finden.
 
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Duplizierung in Tests, label=lst:DuplicatedTest1]
@@ -124,7 +127,7 @@ public ConfigurationChangedEventArgs(ICollection configurationMessages)
 		}
 \end{lstlisting}
 
-\SuperPar Das Problem welches sich hier ergibt ist die Instanzierung der Klasse \textit{LoggingEvent}. Über den Konstruktor werden die verschiedenen Parameter definiert und anschließend in der Klasse verwendet. Wenn sich die Anforderungen für die Klasse \textit{LoggingEvent} ändern,  müssen an allen Stellen, an denen der Konstruktor verwendet wird Änderungen vorgenommen werden. Roy Osherove zeigt in seinem Buch \cite{Osherove2013} eine Möglichkeit auf, wie mit solchen Initialisierungscode vorgegangen werden kann. Er empfiehlt, dass der Code welcher die zu testende Klasse instanziert bzw. initialisiert in eine eigene \textit{Factory} - Methode ausgelagert wird. Dies hat den Vorteil, dass die Duplizierung eliminiert wird und der Code wiederverwendet werden kann. Bei einer Änderung der Parameter des Konstruktors muss man in den Tests nur noch an einer Stelle Anpassungen vornehmen. In Listing \ref{lst:DuplicatedTestSolve} wird diese Variante dargestellt.
+\SuperPar Das Problem welches sich hier ergibt ist die Instanziierung der Klasse \textit{LoggingEvent}. Über den Konstruktor werden die verschiedenen Parameter definiert und anschließend in der Klasse verwendet. Wenn sich die Anforderungen für die Klasse \textit{LoggingEvent} ändern,  müssen an allen Stellen, an denen der Konstruktor verwendet wird Änderungen vorgenommen werden. Roy Osherove zeigt in seinem Buch \cite{Osherove2013} eine Möglichkeit auf, wie mit solchen Initialisierungscode vorgegangen werden kann. Er empfiehlt, dass der Code welcher die zu testende Klasse instanziiert bzw. initialisiert in eine eigene \textit{Factory} - Methode ausgelagert wird. Dies hat den Vorteil, dass die Duplizierung eliminiert wird und der Code wiederverwendet werden kann. Bei einer Änderung der Parameter des Konstruktors muss man in den Tests nur noch an einer Stelle Anpassungen vornehmen. In Listing \ref{lst:DuplicatedTestSolve} wird diese Variante dargestellt.
 
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Eliminerung der Duplizierung durch Factorymethode, label=lst:DuplicatedTestSolve]
