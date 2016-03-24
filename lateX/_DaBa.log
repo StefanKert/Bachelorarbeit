@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.4)  15 FEB 2016 09:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.12.4)  28 FEB 2016 14:02
 entering extended mode
 **_DaBa.tex
 (_DaBa.tex
@@ -1292,77 +1292,6 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg"
 File: biblatex.cfg 
 )))))
-("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\cmbright.sty"
-Package: cmbright 2005/04/13 v8.1 (WaS)
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 29.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmbr/m/n on input line 29.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmbr/m/n on input line 29.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 30.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/lmm/m/it --> OML/cmbrm/m/it on input line 30.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/lmm/b/it --> OML/cmbrm/m/it on input line 30.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmbrm/m/it --> OML/cmbrm/b/it on input line 31.
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 32.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> OMS/cmbrs/m/n on input line 32.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> OMS/cmbrs/m/n on input line 32.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> OT1/cmbr/m/sl on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> OT1/cmbr/m/sl on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> OT1/cmbr/bx/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmbr/bx/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/cmtl/m/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/cmtl/m/n on input line 35.
-LaTeX Font Info:    Redeclaring math symbol \alpha on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \beta on input line 38.
-LaTeX Font Info:    Redeclaring math symbol \gamma on input line 39.
-LaTeX Font Info:    Redeclaring math symbol \delta on input line 40.
-LaTeX Font Info:    Redeclaring math symbol \epsilon on input line 41.
-LaTeX Font Info:    Redeclaring math symbol \zeta on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \eta on input line 43.
-LaTeX Font Info:    Redeclaring math symbol \theta on input line 44.
-LaTeX Font Info:    Redeclaring math symbol \iota on input line 45.
-LaTeX Font Info:    Redeclaring math symbol \kappa on input line 46.
-LaTeX Font Info:    Redeclaring math symbol \lambda on input line 47.
-LaTeX Font Info:    Redeclaring math symbol \mu on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \nu on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \xi on input line 50.
-LaTeX Font Info:    Redeclaring math symbol \pi on input line 51.
-LaTeX Font Info:    Redeclaring math symbol \rho on input line 52.
-LaTeX Font Info:    Redeclaring math symbol \sigma on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \tau on input line 54.
-LaTeX Font Info:    Redeclaring math symbol \upsilon on input line 55.
-LaTeX Font Info:    Redeclaring math symbol \phi on input line 56.
-LaTeX Font Info:    Redeclaring math symbol \chi on input line 57.
-LaTeX Font Info:    Redeclaring math symbol \psi on input line 58.
-LaTeX Font Info:    Redeclaring math symbol \omega on input line 59.
-LaTeX Font Info:    Redeclaring math symbol \varepsilon on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \vartheta on input line 61.
-LaTeX Font Info:    Redeclaring math symbol \varpi on input line 62.
-LaTeX Font Info:    Redeclaring math symbol \varrho on input line 63.
-LaTeX Font Info:    Redeclaring math symbol \varsigma on input line 64.
-LaTeX Font Info:    Redeclaring math symbol \varphi on input line 65.
-LaTeX Info: Redefining \LaTeX on input line 129.
-LaTeX Info: Redefining \LaTeXe on input line 139.
-LaTeX Font Info:    Try loading font information for T1+cmbr on input line 144.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\t1cmbr.fd"
-File: t1cmbr.fd 2005/04/13 v8.1 (WaS)
-))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -1370,8 +1299,6 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-\@float@every@table=\toks37
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -1400,7 +1327,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
 File: english.lbx 2015/10/21 v3.1 biblatex localization (PK/JW/AB)
 ))
-(4_Introduction.aux) (5_Introduction_CCD.aux) (11_schluss.aux))
+(4_Introduction.aux) (5_Introduction_CCD.aux) (11_schluss.aux) (messbox.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
@@ -1424,7 +1351,11 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 49.
 
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count330
@@ -1432,12 +1363,12 @@ LaTeX Font Info:    ... okay on input line 49.
 \scratchbox=\box36
 \nofMPsegments=\count331
 \nofMParguments=\count332
-\everyMPshowfont=\toks38
+\everyMPshowfont=\toks37
 \MPscratchCnt=\count333
 \MPscratchDim=\dimen147
 \MPnumerator=\count334
 \makeMPintoPDFobject=\count335
-\everyMPtoPDFconversion=\toks39
+\everyMPtoPDFconversion=\toks38
 )
 \AtBeginShipoutBox=\box37
 Package hyperref Info: Link coloring OFF on input line 49.
@@ -1469,126 +1400,140 @@ Package biblatex Info: ... file '_DaBa.bbl' found.
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Fit2016':
 (biblatex)                - Datamodel: Entry 'Fit2016' (literatur.bib): Invalid
- format '2016-2-12' of date field 'date' - ignoring.
+ format '2016-2-12' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'JDepend2016':
 (biblatex)                - Datamodel: Entry 'JDepend2016' (literatur.bib): Inv
-alid format '2016-2-12' of date field 'date' - ignoring.
+alid format '2016-2-12' of date field 'urldate' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'Jenkins2016':
+(biblatex)                - Datamodel: Entry 'Jenkins2016' (literatur.bib): Inv
+alid format '2016-2-22' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'JSHint2016':
 (biblatex)                - Datamodel: Entry 'JSHint2016' (literatur.bib): Inva
-lid format '2016-2-12' of date field 'date' - ignoring.
+lid format '2016-2-12' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'JSLint2016':
 (biblatex)                - Datamodel: Entry 'JSLint2016' (literatur.bib): Inva
-lid format '2016-2-12' of date field 'date' - ignoring.
+lid format '2016-2-12' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Martin2016':
 (biblatex)                - Datamodel: Entry 'Martin2016' (literatur.bib): Inva
-lid format '2016-1-30' of date field 'date' - ignoring.
+lid format '2016-1-30' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Microsoft2016':
 (biblatex)                - Datamodel: Entry 'Microsoft2016' (literatur.bib): I
-nvalid format '2016-2-1' of date field 'date' - ignoring.
+nvalid format '2016-2-1' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'NDepend2016':
 (biblatex)                - Datamodel: Entry 'NDepend2016' (literatur.bib): Inv
-alid format '2016-2-12' of date field 'date' - ignoring.
+alid format '2016-2-12' of date field 'urldate' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'Thomas2016':
+(biblatex)                - Datamodel: Entry 'Thomas2016' (literatur.bib): Inva
+lid format '2016-2-26' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Pair2016':
 (biblatex)                - Datamodel: Entry 'Pair2016' (literatur.bib): Invali
-d format '2016-2-12' of date field 'date' - ignoring.
+d format '2016-2-12' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Wiki2016':
 (biblatex)                - Datamodel: Entry 'Wiki2016' (literatur.bib): Invali
-d format '2016-2-12' of date field 'date' - ignoring.
+d format '2016-2-12' of date field 'urldate' - ignoring.
 
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Wilson2016':
 (biblatex)                - Datamodel: Entry 'Wilson2016' (literatur.bib): Inva
-lid format '2016-1-16' of date field 'date' - ignoring.
+lid format '2016-1-16' of date field 'urldate' - ignoring.
 
 )
 Package biblatex Info: Reference section=0 on input line 49.
 Package biblatex Info: Reference segment=0 on input line 49.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
-LaTeX Font Info:    Try loading font information for OT1+cmbr on input line 58.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\ot1cmbr.fd"
-File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
+(babel)             in language  on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 60.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<ot1.cmap>>
-LaTeX Font Info:    Try loading font information for OML+cmbrm on input line 58
-.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 60.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\omlcmbrm.fd"
-File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oml.cmap>>
-LaTeX Font Info:    Try loading font information for OMS+cmbrs on input line 58
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 60.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\omscmbrs.fd"
-File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
-
-LaTeX Font Warning: Font shape `T1/cmbr/m/sc' undefined
-(Font)              using `T1/cmbr/m/n' instead on input line 58.
-
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 <images/logo.pdf, id=163, 269.93045pt x 269.93045pt>
 File: images/logo.pdf Graphic file (type pdf)
  <use images/logo.pdf>
-Package pdftex.def Info: images/logo.pdf used on input line 58.
+Package pdftex.def Info: images/logo.pdf used on input line 60.
 (pdftex.def)             Requested size: 85.35805pt x 85.35826pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 
 [1
 
@@ -1596,66 +1541,69 @@ Package babel Info: Redefining ngerman shorthand "~
 
 {C:/Users/Stefan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/l
 ogo.pdf>]
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 60.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
  [2]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 58.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 59.
+(babel)             in language  on input line 61.
  [3
 
-] (_DaBa.toc
+]
+(_DaBa.toc
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 115.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 113.
+(babel)             in language  on input line 115.
  [4
 
 ])
 \tf@toc=\write5
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
  [5] (2_kurzfassung.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 3.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 63.
  [6
 
 
@@ -1666,18 +1614,19 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 64.
  [7
 
 
 
-] (4_Introduction.tex
+]
+(4_Introduction.tex
 Kapitel 1.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -1688,13 +1637,13 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 13.
 [1
 
 
@@ -1702,35 +1651,34 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 16.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 16.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 17.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 17.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 22.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 22.
  [2]
-LaTeX Font Info:    Try loading font information for TS1+cmbr on input line 22.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\ts1cmbr.fd"
-File: ts1cmbr.fd 2005/04/13 v8.1 (WaS)
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 25.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 66.
+(babel)             in language  on input line 68.
  [3]
 (5_Introduction_CCD.tex
 Kapitel 2.
@@ -1743,13 +1691,13 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 23.
+(babel)             in language  on input line 21.
 [4
 
 
@@ -1764,6 +1712,17 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 45.
  [5]
+Overfull \hbox (1.07733pt too wide) in paragraph at lines 60--61
+[]\T1/lmr/m/n/10.95 Reduzierung der Du-pli-zie-rung, Stei-ge-rung der Aus-druck
+s-kraft
+ []
+
+
+Overfull \hbox (2.04799pt too wide) in paragraph at lines 60--61
+\T1/lmr/m/n/10.95 und frü-he For-mu-lie-rung ein-fa-cher Ab-strak-tio-nen ma-ch
+en für mich
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1772,7 +1731,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 65.
- [6]
+[6]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 78.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1796,31 +1755,37 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 121.
  [8]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 162.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 162.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 162.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 162.
  [9]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 190.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 190.
+
+Overfull \hbox (0.5288pt too wide) in paragraph at lines 194--195
+[]\T1/lmr/m/n/10.95 Hinterlasse den Cam-ping-platz sau-be-rer, als du ihn ge-fu
+n-den hast. 
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 199.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 199.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 199.
+(babel)             in language  on input line 202.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 199.
- [10]
+(babel)             in language  on input line 202.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 199.
+(babel)             in language  on input line 202.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 199.
+(babel)             in language  on input line 202.
+[10]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 203.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1878,28 +1843,27 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 244.
  [14])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 69.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 69.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 69.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 67.
- [15]
-(6_Analyses_Criterias.tex
+(babel)             in language  on input line 69.
+ [15] (6_Analyses_Criterias.tex
 Kapitel 3.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 [16
 
 
@@ -1918,110 +1882,109 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 7.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 7.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 19.
-LaTeX Font Info:    Try loading font information for T1+cmtl on input line 19.
+nput line 18.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 18.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\cmbright\t1cmtl.fd"
-File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Package csquotes Info: Input encoding change on input line 19.
+Package csquotes Info: Input encoding change on input line 18.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+)
+Package csquotes Info: Input encoding change on input line 29.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 31.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 31.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 31.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 28.
+(babel)             in language  on input line 31.
  [18]
-Package csquotes Info: Input encoding change on input line 30.
+Package csquotes Info: Input encoding change on input line 41.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 42.
+Package csquotes Info: Input encoding change on input line 47.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 48.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
-)
-Package csquotes Info: Input encoding change on input line 54.
+Package csquotes Info: Input encoding change on input line 53.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 60.
  [19]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 62.
+(babel)             in language  on input line 61.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 62.
-Package csquotes Info: Input encoding change on input line 73.
+(babel)             in language  on input line 61.
+Package csquotes Info: Input encoding change on input line 72.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 86.
+(babel)             in language  on input line 85.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 86.
+(babel)             in language  on input line 85.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 86.
+(babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 86.
+(babel)             in language  on input line 88.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 88.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 88.
  [20]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 86.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 86.
-Package csquotes Info: Input encoding change on input line 96.
+Package csquotes Info: Input encoding change on input line 95.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 123.
+(babel)             in language  on input line 127.
  [21]
-Package csquotes Info: Input encoding change on input line 133.
+Package csquotes Info: Input encoding change on input line 132.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
-)
+)) (8_Analyses_Legacy.tex
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 157.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 157.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 157.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 157.
- [22])
-(8_Analyses_Legacy.tex
+(babel)             in language  on input line 1.
+[22]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2030,35 +1993,35 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 14.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 14.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 14.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 14.
+ [23]
 Package csquotes Info: Input encoding change on input line 15.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 19.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 19.
-
-[23]
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 27.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 34.
  [24]
 Package csquotes Info: Input encoding change on input line 38.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package csquotes Info: Input encoding change on input line 58.
@@ -2067,13 +2030,13 @@ Package csquotes Info: Input encoding change on input line 58.
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 64.
  [25]
 Package csquotes Info: Input encoding change on input line 78.
 
@@ -2090,28 +2053,28 @@ Package csquotes Info: Input encoding change on input line 99.
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 101.
  [26]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 138.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 138.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 138.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 138.
+ [27]
 Package csquotes Info: Input encoding change on input line 138.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 141.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 141.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 141.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 141.
- [27]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 156.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2149,39 +2112,44 @@ Package csquotes Info: Input encoding change on input line 202.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
+Package csquotes Info: Input encoding change on input line 214.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 228.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 228.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 235.
+(babel)             in language  on input line 238.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 235.
+(babel)             in language  on input line 238.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 235.
+(babel)             in language  on input line 238.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 235.
+(babel)             in language  on input line 238.
  [30]
-Package csquotes Info: Input encoding change on input line 236.
+Package csquotes Info: Input encoding change on input line 239.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 246.
+Package csquotes Info: Input encoding change on input line 249.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 261.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 261.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 261.
+(babel)             in language  on input line 264.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 261.
+(babel)             in language  on input line 264.
  [31]
-Package csquotes Info: Input encoding change on input line 262.
+Package csquotes Info: Input encoding change on input line 265.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
@@ -2191,108 +2159,108 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 8.
 [32]
-Package csquotes Info: Input encoding change on input line 15.
+Package csquotes Info: Input encoding change on input line 14.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 40.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 39.
+
+Overfull \hbox (3.2998pt too wide) in paragraph at lines 44--45
+[]\T1/lmr/m/n/10.95 Betreffender Na-me-space: \T1/lmr/m/it/10.95 Mi-cro-soft.Co
+deAnalysis.CompilerServer\T1/lmr/m/n/10.95 , \T1/lmr/m/it/10.95 Ros-
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 48.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 48.
+[33]
+Package csquotes Info: Input encoding change on input line 49.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+)
+Package csquotes Info: Input encoding change on input line 67.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+)
+Package csquotes Info: Input encoding change on input line 74.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 76.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 76.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 76.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 50.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 50.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 50.
- [33]
-Package csquotes Info: Input encoding change on input line 54.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
-)
-Package csquotes Info: Input encoding change on input line 72.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
-)
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 76.
  [34]
-Package csquotes Info: Input encoding change on input line 79.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
-)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 100.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 100.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 97.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 97.
  [35]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 103.
+(babel)             in language  on input line 98.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 103.
-Package csquotes Info: Input encoding change on input line 114.
+(babel)             in language  on input line 98.
+Package csquotes Info: Input encoding change on input line 109.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 126.
+Package csquotes Info: Input encoding change on input line 121.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
  [36])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
  [37]
 (11_schluss.tex
 Kapitel 4.
@@ -2304,121 +2272,119 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
-
-Overfull \hbox (0.43759pt too wide) in paragraph at lines 9--10
-[]\T1/cmbr/m/n/10.95 ProjektleiterIn: Die Zu-frie-den-heit der Mit-glie-der ei-
-nes Ent-wick-lungs-teams
- []
-
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 14.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 15.
 [38
 
 
 ])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 74.
  [39]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 77.
+(hyperref)                be the same. Added a new anchor on input line 79.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 [40
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 77.
+LaTeX Warning: Empty bibliography on input line 79.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 77.
+(babel)             in language  on input line 80.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 77.
-[41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
- (_DaBa.aux (2_kurzfassung.aux) (3_abstract.aux) (4_Introduction.aux)
-(5_Introduction_CCD.aux) (11_schluss.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+(babel)             in language  on input line 80.
+[41] (messbox.tex
+LaTeX Font Info:    External font `cmex7' loaded for size
+(Font)              <5> on input line 10.
+)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 80.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 80.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 80.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 80.
+ [42
+
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
+ (_DaBa.aux (2_kurzfassung.aux) (3_abstract.aux)
+(4_Introduction.aux) (5_Introduction_CCD.aux) (11_schluss.aux) (messbox.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 82.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 82.
 Package rerunfilecheck Info: File `_DaBa.out' has not changed.
-(rerunfilecheck)             Checksum: 1880E23826A79EA3BD9491839AF095AD;7293.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
+(rerunfilecheck)             Checksum: 980594D685DDBFB886FDEBED7EE8D652;7278.
 Package logreq Info: Writing requests to '_DaBa.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 23717 strings out of 493673
- 360384 string characters out of 3143957
- 906590 words of memory out of 3000000
- 26062 multiletter control sequences out of 15000+200000
- 20885 words of font info for 51 fonts, out of 3000000 for 9000
+ 23844 strings out of 493673
+ 362973 string characters out of 3143957
+ 903769 words of memory out of 3000000
+ 26145 multiletter control sequences out of 15000+200000
+ 84025 words of font info for 67 fonts, out of 3000000 for 9000
  1029 hyphenation exceptions out of 8191
- 67i,12n,96p,2030b,3627s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dp
-i600\ebmr10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\publi
-c\cmbright\dpi600\ebbx10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\public\cmbright\dpi600\ebtl10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\public\cmbright\dpi600\ebmr8.pk> <C:\Users\Stefan\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi720\ebbx10.pk> <C:\Users\St
-efan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi657\tbmr10.pk>
- <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi8
-64\ebbx10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\
-cmbright\dpi1244\ebbx10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\public\cmbright\dpi657\ebmo10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\public\cmbright\dpi657\ebbx10.pk> <C:\Users\Stefan\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi1493\ebbx10.pk> <C:\Users\S
-tefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi657\ebmr10.pk
-> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cmbright\dpi
-864\ebmr10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public
-\cmbright\dpi720\ebmr10.pk> <C:\Users\Stefan\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\public\cmbright\dpi1037\ebbx10.pk>
-Output written on _DaBa.pdf (48 pages, 432628 bytes).
+ 67i,12n,96p,2017b,3563s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on _DaBa.pdf (49 pages, 543574 bytes).
 PDF statistics:
- 1661 PDF objects out of 1728 (max. 8388607)
- 446 named destinations out of 1000 (max. 500000)
+ 1059 PDF objects out of 1200 (max. 8388607)
+ 448 named destinations out of 1000 (max. 500000)
  338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

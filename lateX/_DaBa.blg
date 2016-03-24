@@ -1,27 +1,29 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is '_DaBa.blg'
-[71] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[71] Biber.pm:333> INFO - Reading '_DaBa.bcf'
-[372] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
-[374] Biber.pm:645> INFO - Found 24 citekeys in bib section 0
-[398] Biber.pm:2977> INFO - Processing section 0
-[421] Biber.pm:3115> INFO - Looking for bibtex format file 'literatur.bib' for section 0
-[455] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[484] bibtex.pm:895> INFO - Found BibTeX data source 'literatur.bib'
-[498] Utils.pm:146> WARN - Datamodel: Entry 'Wilson2016' (literatur.bib): Invalid format '2016-1-16' of date field 'date' - ignoring
-[504] Utils.pm:146> WARN - Datamodel: Entry 'Wiki2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[505] Utils.pm:146> WARN - Datamodel: Entry 'Fit2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[507] Utils.pm:146> WARN - Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2016-2-1' of date field 'date' - ignoring
-[508] Utils.pm:146> WARN - Datamodel: Entry 'NDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[509] Utils.pm:146> WARN - Datamodel: Entry 'JDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[509] Utils.pm:146> WARN - Datamodel: Entry 'JSHint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[510] Utils.pm:146> WARN - Datamodel: Entry 'JSLint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[511] Utils.pm:146> WARN - Datamodel: Entry 'Pair2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring
-[518] Utils.pm:146> WARN - Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '2016-1-30' of date field 'date' - ignoring
-[836] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[836] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[836] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'de-DE'
-[836] Biber.pm:2858> INFO - No sort tailoring available for locale 'de-DE'
-[901] bbl.pm:505> INFO - Writing '_DaBa.bbl' with encoding 'UTF-8'
-[996] bbl.pm:596> INFO - Output to _DaBa.bbl
-[999] Biber.pm:106> INFO - WARNINGS: 11
+[59] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[59] Biber.pm:333> INFO - Reading '_DaBa.bcf'
+[316] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.8, expected version 2.7
+[317] Biber.pm:645> INFO - Found 27 citekeys in bib section 0
+[341] Biber.pm:2977> INFO - Processing section 0
+[363] Biber.pm:3115> INFO - Looking for bibtex format file 'literatur.bib' for section 0
+[401] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[432] bibtex.pm:895> INFO - Found BibTeX data source 'literatur.bib'
+[446] Utils.pm:146> WARN - Datamodel: Entry 'Wilson2016' (literatur.bib): Invalid format '2016-1-16' of date field 'urldate' - ignoring
+[451] Utils.pm:146> WARN - Datamodel: Entry 'Thomas2016' (literatur.bib): Invalid format '2016-2-26' of date field 'urldate' - ignoring
+[453] Utils.pm:146> WARN - Datamodel: Entry 'Wiki2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[454] Utils.pm:146> WARN - Datamodel: Entry 'Fit2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[457] Utils.pm:146> WARN - Datamodel: Entry 'Jenkins2016' (literatur.bib): Invalid format '2016-2-22' of date field 'urldate' - ignoring
+[459] Utils.pm:146> WARN - Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2016-2-1' of date field 'urldate' - ignoring
+[460] Utils.pm:146> WARN - Datamodel: Entry 'NDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[461] Utils.pm:146> WARN - Datamodel: Entry 'JDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[462] Utils.pm:146> WARN - Datamodel: Entry 'JSHint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[463] Utils.pm:146> WARN - Datamodel: Entry 'JSLint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[464] Utils.pm:146> WARN - Datamodel: Entry 'Pair2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring
+[468] Utils.pm:146> WARN - Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '2016-1-30' of date field 'urldate' - ignoring
+[787] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[787] UCollate.pm:66> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[787] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'de-DE'
+[788] Biber.pm:2858> INFO - No sort tailoring available for locale 'de-DE'
+[855] bbl.pm:505> INFO - Writing '_DaBa.bbl' with encoding 'UTF-8'
+[931] bbl.pm:596> INFO - Output to _DaBa.bbl
+[934] Biber.pm:106> INFO - WARNINGS: 13

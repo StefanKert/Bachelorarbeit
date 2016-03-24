@@ -74,7 +74,7 @@
       \verb{url}
       \verb http://fit.c2.com/
       \endverb
-      \warn{\item Datamodel: Entry 'Fit2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Fit2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Martin1997}{book}{}
       \name{author}{1}{}{%
@@ -118,7 +118,7 @@
       \verb{url}
       \verb http://clarkware.com/software/JDepend.html
       \endverb
-      \warn{\item Datamodel: Entry 'JDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'JDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Jeffries2004}{book}{}
       \name{author}{1}{}{%
@@ -152,6 +152,17 @@
       \field{title}{Extreme Programming Installed (XP)}
       \field{year}{2000}
     \endentry
+    \entry{Jenkins2016}{online}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{ec3950a647c092421b9fcca6d819504a}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Jenkins - Continuous Integration}
+      \verb{url}
+      \verb https://jenkins-ci.org/
+      \endverb
+      \warn{\item Datamodel: Entry 'Jenkins2016' (literatur.bib): Invalid format '2016-2-22' of date field 'urldate' - ignoring}
+    \endentry
     \entry{Gamma1995}{book}{}
       \name{author}{1}{}{%
         {{hash=31aa9915b356e73b5b0685b7e7f0a9be}{John}{J\bibinitperiod}{Gamma\bibnamedelimb Erich;\bibnamedelimb Helm\bibnamedelimb Richard;\bibnamedelimb Johnson\bibnamedelimb Ralph;\bibnamedelima Vlissides}{G\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
@@ -177,7 +188,7 @@
       \verb{url}
       \verb http://jshint.com/
       \endverb
-      \warn{\item Datamodel: Entry 'JSHint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'JSHint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{JSLint2016}{online}{}
       \field{sortinit}{J}
@@ -188,7 +199,7 @@
       \verb{url}
       \verb http://www.jslint.com/
       \endverb
-      \warn{\item Datamodel: Entry 'JSLint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'JSLint2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Booch2004}{book}{}
       \name{author}{1}{}{%
@@ -266,7 +277,7 @@
       \verb{url}
       \verb http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod
       \endverb
-      \warn{\item Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '2016-1-30' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Martin2016' (literatur.bib): Invalid format '2016-1-30' of date field 'urldate' - ignoring}
     \endentry
     \entry{Microsoft2016}{online}{}
       \name{author}{1}{}{%
@@ -280,10 +291,11 @@
       \field{labeltitlesource}{title}
       \field{langid}{german}
       \field{title}{C\# Coding Conventions}
+      \field{year}{2016}
       \verb{url}
       \verb https://msdn.microsoft.com/en-us/library/ff926074.aspx
       \endverb
-      \warn{\item Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2016-2-1' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Microsoft2016' (literatur.bib): Invalid format '2016-2-1' of date field 'urldate' - ignoring}
     \endentry
     \entry{NDepend2016}{online}{}
       \field{sortinit}{N}
@@ -294,7 +306,18 @@
       \verb{url}
       \verb http://c2.com/cgi/wiki
       \endverb
-      \warn{\item Datamodel: Entry 'NDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'NDepend2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Thomas2016}{online}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Object Technology International}
+      \verb{url}
+      \verb https://www-03.ibm.com/software/ca/en/ottawalab/roots.html
+      \endverb
+      \warn{\item Datamodel: Entry 'Thomas2016' (literatur.bib): Invalid format '2016-2-26' of date field 'urldate' - ignoring}
     \endentry
     \entry{Osherove2013}{book}{}
       \name{author}{1}{}{%
@@ -321,7 +344,7 @@
       \verb{url}
       \verb http://www.extremeprogramming.org/rules/pair.html
       \endverb
-      \warn{\item Datamodel: Entry 'Pair2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Pair2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Wiki2016}{online}{}
       \field{sortinit}{W}
@@ -332,7 +355,7 @@
       \verb{url}
       \verb http://c2.com/cgi/wiki
       \endverb
-      \warn{\item Datamodel: Entry 'Wiki2016' (literatur.bib): Invalid format '2016-2-12' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Wiki2016' (literatur.bib): Invalid format '2016-2-12' of date field 'urldate' - ignoring}
     \endentry
     \entry{Wilson2016}{online}{}
       \name{author}{1}{}{%
@@ -348,7 +371,23 @@
       \verb{url}
       \verb http://manhattan-institute.org/pdf/_atlantic_monthly-broken_windows.pdf
       \endverb
-      \warn{\item Datamodel: Entry 'Wilson2016' (literatur.bib): Invalid format '2016-1-16' of date field 'date' - ignoring}
+      \warn{\item Datamodel: Entry 'Wilson2016' (literatur.bib): Invalid format '2016-1-16' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{Wolff2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=42b48b91ec04dc8b258db592d08ee9e9}{Wolff}{W\bibinitperiod}{Eberhard}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {dpunkt.verlag GmbH}%
+      }
+      \strng{namehash}{42b48b91ec04dc8b258db592d08ee9e9}
+      \strng{fullhash}{42b48b91ec04dc8b258db592d08ee9e9}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Continuous Delivery: Der pragmatische Einstieg}
+      \field{year}{2014}
     \endentry
     \entry{Lin2007}{inproceedings}{}
       \name{author}{1}{}{%

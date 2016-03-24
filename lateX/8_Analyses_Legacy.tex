@@ -1,5 +1,5 @@
 \section{Legacy Code vermeiden und refaktorieren}
-Bei Elementen die sehr lange in der Codebasis einer Software verbleiben kommt es oft dazu, dass der Quellcode immer schlechter zu lesen wird. Oft wird diese Art von Code dann als Legacy Code \cite{Feathers2013} bezeichnet. Features werden hinzugefügt, für z.B. Performanceschwierigkeiten wird ein Workaround eingebaut, der die Struktur weiter verschlechtert. Falls es Tests gibt, was bei Legacy Code meist nicht der Fall ist, sind diese durch die zahlreichen Änderungen die vorgenommen werden müssen immer schwerer zu warten und werden meist einfach gelöscht oder nicht mehr ausgeführt. Da die meisten problematischen Elemente in einer Codebasis Legacy Code sind sollte in diesem Abschnitt darauf eingegangen werden, wie CCD dabei unterstützen kann, Legacy Code zu vermeiden und Legacy Code zu refaktorieren.
+Als Legacy Code \cite{Feathers2013} werden Quellcodeabschnitte bezeichnet, die sich bereits sehr lange in der Codebasis befinden und auf Grund von schlechter Lesbarkeit und schlechter Wartbarkeit nur sehr selten geändert werden. Die Probleme, die sich mit Legacy Code ergeben sind sehr vielseitig. Ein Beispiel für ein solches Problem sind langsame Funktionen. Obwohl die betroffenen Funktionen am Anfang meist keine Performanceschwierigkeiten hatte, wurde diese durch die vielen Änderungen im Code und das Hinzufügen von neuen Features immer langsamer. Um die Geschwindigkeit wieder auf ein erträgliches Niveau zu heben, wird nun versucht einen Workaround zu finden, der die Struktur des Codes weiter verschlechtert. Ein weiteres Problem, welches sich im Zusammenhang mit Legacy Code sehr häufig ergibt, ist das Fehlen von Tests. Durch ein Fehlen von Tests wird sehr häufig auf ein Ändern dieses Codes verzichtet, da man nicht gewährleisten kann, dass die Funktionalität nach der Änderung noch korrekt ist. In einigen Fällen gibt es auch Tests, welche entweder falsche Fälle überprüfen, oder schlichtweg nichts überprüfen. Vor allem Tests, die etwas falsches Überprüfen sind sehr schlecht für eine Codebasis, da diese in vielen Fällen ein falsches Vertrauen vermitteln. Diese und weitere Probleme mit Tests sind sehr ausführlich in \textit{The Art of Unit Testing} \cite{Osherove2013} beschrieben. Da viele problematische Elemente in einer Codebasis Legacy Code sind, sollte in diesem Abschnitt darauf eingegangen werden, wie CCD dabei unterstützen kann, Legacy Code zu vermeiden und Legacy Code zu refaktorieren.
 
 \subsection{Auskommentierter Code}
 \label{cha:CommentedCode}
@@ -10,9 +10,9 @@ Bei Elementen die sehr lange in der Codebasis einer Software verbleiben kommt es
 	\item Betreffendes Paket: \textit{org.hibernate.cfg}
 \end{itemize}
 
-\SuperPar Code der nicht mehr benötigt wird, wird häufig einfach auskommentiert und bleibt danach über lange Zeit im Quellcode bestehen. Dies wäre jedoch bei den modernen Versionsverwaltungssystemen gar nicht mehr notwendig, da diese eine genaue Auflistung der gelöschten, geänderten oder hinzugefügten Abschnitte anbieten. Es ist mit diesen auch leicht möglich Abschnitte, die man gelöscht hat, wieder aufzufinden, sowie diese wiederherzustellen. Code der nicht mehr benötigt wird sollte daher einfach gelöscht werden und mit einer vernünftigen Commit Message versehen werden. Eine sehr problematische Beispiel dafür befindet sich in dem in Listing \ref{lst:CommentedCode} gezeigten Codeabschnitt.
+\SuperPar Code der nicht mehr benötigt wird, wird häufig einfach auskommentiert und bleibt danach über lange Zeit im Quellcode bestehen. Dies wäre jedoch bei den modernen Versionsverwaltungssystemen nicht mehr notwendig, da diese eine genaue Auflistung der gelöschten, geänderten oder hinzugefügten Abschnitte anbieten. Es ist mit diesen auch leicht möglich, Abschnitte, die gelöscht wurden, wieder aufzufinden, sowie diese wiederherzustellen. Code der nicht mehr benötigt wird sollte daher gelöscht und mit einer aussagekräftigen Commit Message versehen werden. Eine Beispiel, in dem Quellcode einfach auskommentiert wurde, statt diesen zu löschen, befindet sich in dem in Listing \ref{lst:CommentedCode} gezeigten Codeabschnitt.
 
-\begin{lstlisting}[language=Java, caption=Beispiele für auskommentierten Code, label=lst:CommentedCode]
+\begin{lstlisting}[language=Java, caption=Beispiel für auskommentierten Code, label=lst:CommentedCode]
 /*FIXME cannot use subproperties becasue the caller needs top level properties
 //if (property.isComposite()) {
 //	Iterator subProperties = ((Component)property.getValue()).getPropertyIterator();
@@ -22,20 +22,20 @@ Bei Elementen die sehr lange in der Codebasis einer Software verbleiben kommt es
 }*/ 
 \end{lstlisting}
 
-\SuperPar Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt der behoben werden müsste. Anstatt diesen Fehler zu beheben wurde der Code einfach auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder eine genaue Dokumentation dieses Fehlers in einem Issue Tracking System erfolgen, oder versucht werden den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftreten wird und er somit vergessen wird. Auch Robert C. Martin schlägt in seinem Buch eine sehr pragmatische Lösung vor: Auskommentierter Code sollte immer gelöscht werden, da er zusätzlich zu den genannten Gründen den Quellcode unnötig aufbläht.
+\SuperPar Der Kommentar deutet darauf hin, dass es in diesem Codeabschnitt einen Fehler gibt, der behoben werden müsste. Anstatt diesen Fehler zu beheben, wurde der Code auskommentiert und nach einigen Wochen weiß niemand mehr, dass es diesen Fehler gibt. Hier sollte entweder eine genaue Dokumentation dieses Fehlers in einem Issue Tracking System erfolgen, oder versucht werden den Fehler direkt zu beheben. Diesen einfach stehen zu lassen und die fehlerhafte Codestelle auszukommentieren, ist dabei wohl der schlechteste Weg, da so der Fehler nicht mehr auftritt und somit auf die Behebung vergessen wird. Auch Robert C. Martin schlägt in seinem Buch eine sehr pragmatische Lösung vor: Auskommentierter Code sollte immer gelöscht werden, da er zusätzlich zu den genannten Gründen den Quellcode unnötig aufbläht.
 
 \subsection{Ausnahmen sind besser als Fehler-Codes}
-In den modernen Programmiersprachen wie C++, C\# oder Java, gibt es die Möglichkeit, für einen fehlgeschlagenen Vorgang eine Ausnahme zu werfen. In den etwas älteren Programmiersprachen, wie zum Beispiel C, gab es diese Möglichkeit noch nicht. Daher wurden in solchen Situationen sogenannte Fehler-Codes zurückgegeben, was zu folgenden Problemen führen konnte:
+In modernen Programmiersprachen wie C++, C\# oder Java, gibt es die Möglichkeit, für einen fehlgeschlagenen Vorgang eine Ausnahme auszulösen. In den etwas älteren Programmiersprachen, wie zum Beispiel C, gab es diese Möglichkeit noch nicht. Daher wurden in solchen Situationen sogenannte Fehler-Codes zurückgegeben, was zu folgenden Problemen führt:
 
 \begin{itemize}
 	\item Beim Aufruf dieser Methode muss darauf geachtet werden, dass alle möglichen Fehler-Codes abgedeckt werden. 
-	\item Da diese Fehler-Codes meist ganzzahlige Werte darstellen, ist es auch sehr schwierig, diesen eine gewisse Semantik zuordnen. Meist werden für diese ganzzahligen Werte dann Konstanten definiert, welche dann im Quellcode, oder der Dokumentation beschrieben werden. 
-	\item Durch die Rückgabe eines Fehler-Codes ist es nicht mehr möglich einen Wert zurückzugegeben, wodurch meist Parameter als Outputparameter verwendet werden, welche den gewünschten Wert zurückliefern.
+	\item Da diese Fehler-Codes meist ganzzahlige Werte darstellen, ist es auch sehr schwierig, diesen eine gewisse Semantik zuzuordnen. Meist werden für diese ganzzahligen Werte dann Konstanten definiert, welche dann im Quellcode, oder der Dokumentation beschrieben werden. 
+	\item Durch die Rückgabe eines Fehler-Codes ist es nicht mehr möglich einen Wert zurückzugeben, wodurch meist Parameter als Outputparameter verwendet werden, welche den gewünschten Wert zurückliefern.
 \end{itemize}
 
-\SuperPar Die sogenannten Ausnahmen stellen für diese Problemen einen sehr guten Lösungsansatz dar. Im Fehlerfall wird eine Ausnahme ausgelöst und schließlich im aufrufenden, oder in einem hierarchisch höheren Bereich behandelt. Diesen Ausnahmen kann eine Fehlermeldung zugeordnet werden und es gibt die Möglichkeit über den sogenannten Stacktrace nachzuvollziehen, an welcher Stelle im Code der Fehler aufgetreten. Weiters ist es durch dieses System ohne weiteres möglich bei der Funktion einen normalen Rückgabewert zu definieren, da die Ausnahme nicht als Rückgabewert definiert werden muss. Durch diese Möglichkeiten ergeben sich zahlreiche Vorteile gegenüber Fehler-Codes und daher sollte bei Verwendung von moderneren Programmiersprachen auf Fehler-Codes unbedingt verzichtet werden. Robert C. Martin liefert in Clean Code \cite[Seite 78]{Martin2008} das in Listing \ref{lst:ErrorCodes} gezeigte Beispiel.
+\SuperPar Die sogenannten Ausnahmen stellen für diese Problemen einen sehr guten Lösungsansatz dar. Im Fehlerfall wird eine Ausnahme ausgelöst und schließlich im Aufrufenden, oder in einem hierarchisch höheren Bereich behandelt. Diesen Ausnahmen kann eine Fehlermeldung zugeordnet werden und es gibt die Möglichkeit, über den sogenannten Stacktrace nachzuvollziehen, an welcher Stelle im Code der Fehler aufgetreten ist. Ebenso ist es durch dieses System ohne weiteres möglich bei der Funktion einen normalen Rückgabewert zu definieren, da die Ausnahme nicht als Rückgabewert definiert werden muss. Durch diese Möglichkeiten ergeben sich zahlreiche Vorteile gegenüber Fehler-Codes. Daher sollte bei der Verwendung von moderneren Programmiersprachen auf Fehler-Codes verzichtet werden. Robert C. Martin liefert in Clean Code \cite[Seite 78]{Martin2008} das in Listing \ref{lst:ErrorCodes} gezeigte Beispiel.
 
-\begin{lstlisting}[language={Java}, caption=Beispiele für die Verwendung von Fehler-Codes, label=lst:ErrorCodes]
+\begin{lstlisting}[language={Java}, caption=Beispiel für die Verwendung von Fehler-Codes, label=lst:ErrorCodes]
 if(deletPage(page) == E_OK){
     if(registry.deleteReference(page.name) == E_OK){
         if(configKeys.deleteKey(page.name.makeKey()) == E_OK){
@@ -53,9 +53,9 @@ if(deletPage(page) == E_OK){
 }
 \end{lstlisting}
 
-\SuperPar Hier sind einige der beschriebenen Probleme bereits sehr gut zu erkennen. Das größte Problem an dieser Form der Implementierung besteht in der tiefen Verschachtelung der einzelnen Verzweigungen, wodurch die Lesbarkeit sehr stark verschlechtert wird. Bei dieser Art der Implementierung ist es zudem sehr schwierig die Reihenfolge zu ändern. Wenn bei einem späteren betrachten der Methode erkannt wird, dass die Aufrufe möglicherweise in einer umgekehrten Reihenfolge stattfinden müssen, da zu erst die \textit{Keys} und die \textit{References} gelöscht werden müssen, würde eine Änderung der Struktur der Funktion nötig machen. Was in der in Listing \ref{lst:ErrorCodes2} gezeigten Funktion resultieren würde. 
+\SuperPar Hier sind einige der beschriebenen Probleme bereits sehr gut zu erkennen. Das größte Problem an dieser Form der Implementierung besteht in der tiefen Verschachtelung der einzelnen Verzweigungen, wodurch die Lesbarkeit verschlechtert wird. Bei dieser Art der Implementierung ist es zudem sehr schwierig die Reihenfolge zu ändern. Wenn bei einem späteren betrachten der Methode erkannt wird, dass die Aufrufe möglicherweise in einer umgekehrten Reihenfolge stattfinden müssen, da zu erst die \textit{Keys} und die \textit{References} gelöscht werden müssen, würde dies eine Änderung der Struktur der Funktion nötig machen, was in der in Listing \ref{lst:ErrorCodes2} gezeigten Funktion resultieren würde. 
 
-\begin{lstlisting}[language={Java}, caption=Geänderte Reihenfolge der Funktion, label=lst:ErrorCodes2]
+\begin{lstlisting}[language={Java}, caption=Geänderte Reihenfolge der Aufrufe, label=lst:ErrorCodes2]
 if(configKeys.deleteKey(page.name.makeKey()) == E_OK){
     if(registry.deleteReference(page.name) == E_OK){
         if(deletPage(page) == E_OK){
@@ -73,9 +73,9 @@ if(configKeys.deleteKey(page.name.makeKey()) == E_OK){
 }
 \end{lstlisting}
 
-\SuperPar Für diese grundsätzlich kleine Änderung sind sehr viele Schritte notwendig, welche wiederum sehr schnell zu Fehlern führen können. Wenn statt den Fehler-Codes Ausnahmen verwendet werden ergibt sich für das Beispiel in Listing \ref{lst:ErrorCodes} der in Listing \ref{lst:ExceptionInsteadOfErrorCodes} gezeigte Quellcode.
+\SuperPar Für diese grundsätzlich kleine Änderung, sind sehr viele Schritte notwendig, welche wiederum sehr schnell zu Fehlern führen können. Wenn statt den Fehler-Codes Ausnahmen verwendet werden ergibt sich für das Beispiel in Listing \ref{lst:ErrorCodes} der in Listing \ref{lst:ExceptionInsteadOfErrorCodes} gezeigte Quellcode.
 
-\begin{lstlisting}[language={Java}, caption=Beispiele für die Verwendung von Ausnahmen statt Fehler-Codes, label=lst:ExceptionInsteadOfErrorCodes]
+\begin{lstlisting}[language={Java}, caption=Beispiel für die Verwendung von Ausnahmen statt Fehler-Codes, label=lst:ExceptionInsteadOfErrorCodes]
 try {
     deletePage(page);
     registry.deleteReference(page.name);
@@ -85,7 +85,7 @@ try {
 }
 \end{lstlisting}
 
-\SuperPar Durch das ersetzen der Fehler-Codes durch Ausnahmen, können die Überprüfungen auf die Fehler-Codes entfernt werden, wodurch sich die Lesbarkeit der Funktion sehr stark verbessert. Es ist nun einfach möglich zu erkennen, welche Schritte durchgeführt werden und eine Änderung dieser Funktion ist sehr leicht zu bewerkstelligen. 
+\SuperPar Durch das ersetzen der Fehler-Codes durch Ausnahmen, können die Überprüfungen auf die Fehler-Codes entfernt werden, wodurch sich die Lesbarkeit der Funktion verbessert. Es ist nun einfach möglich zu erkennen, welche Schritte durchgeführt werden und eine Änderung dieser Funktion ist sehr leicht zu bewerkstelligen. 
 
 \subsection{Polymorphismus statt If/Else oder Switch/Case verwenden}
 \begin{itemize}
@@ -96,7 +96,7 @@ try {
 \end{itemize}
 \SuperPar Ein Konstrukt das sich in sehr vielen Bibliotheken finden lässt, sind \textit{Switch-Statements}. Ein Beispiel für ein solches Konstrukt lässt sich in  Listing \ref{lst:SwitchStatement} finden.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Switch Statement, label=lst:SwitchStatement]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für Switch Statement, label=lst:SwitchStatement]
 public virtual void Log(
 	LogLevel logLevel,
 	int eventId,
@@ -133,9 +133,9 @@ public virtual void Log(
 }
 \end{lstlisting}
 
-\SuperPar In dem gezeigten Fall wird abhängig von der Eingabe geregelt, welche Ausgabe erfolgen sollte. Dies ist eine Vermischung der Aspekte und widerspricht dem SRP, da im ersten Schritt die Eingabe überprüft und abhängig davon eine Aktion vorgenommen wird. Dieses Missachten des SRP resultiert in einer schlechteren Testbarkeit. Ein weiteres Prinzip, welches in diesem Fall verletzt wird ist das OCP, da beim Hinzufügen eines weiteren \textit{LogLevel} der vorhandene Code geändert werden muss, was bedeutet, dass die Klasse nicht geschlossen für Änderungen ist. Robert C. Martin empfiehlt hier, dass diese Verzweigung durch Abstrahierungen aufgelöst werden könnte. In dem konkreten Fall wäre es möglich statt dem \textit{LogLevel} ein Delegaten zu übergeben, welcher die gewünschte Logfunktionalität aufruft, wodurch sich der in Listing \ref{lst:WithoutSwitch} dargestellte Quellcode ergibt.
+\SuperPar In dem gezeigten Fall wird abhängig von der Eingabe geregelt, welche Ausgabe erfolgen sollte. Dies ist eine Vermischung der Aspekte und widerspricht dem SRP, da im ersten Schritt die Eingabe überprüft und abhängig davon eine Aktion vorgenommen wird. Dieses Missachten des SRP resultiert in einer schlechteren Testbarkeit. Ein weiteres Prinzip, welches in diesem Fall verletzt wird ist das OCP, da beim Hinzufügen eines weiteren \textit{LogLevel} der vorhandene Code geändert werden muss, was bedeutet, dass die Klasse nicht geschlossen für Änderungen ist. Robert C. Martin empfiehlt hier, dass diese Verzweigung durch Abstrahierungen aufgelöst werden könnte. In dem konkreten Fall wäre es möglich, statt dem \textit{LogLevel} ein Delegaten zu übergeben, welcher die gewünschte Logfunktionalität aufruft, wodurch sich der in Listing \ref{lst:WithoutSwitch} dargestellte Quellcode ergibt.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Switch Statement, label=lst:WithoutSwitch]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für Verwendung eines Delegaten statt eines Switch Statements, label=lst:WithoutSwitch]
 public virtual void Log(
 	Action<string> writeLog,
 	int eventId,
@@ -151,7 +151,7 @@ public virtual void Log(
 }
 \end{lstlisting}
 
-\SuperPar Durch diese Änderung wird die Funktion um einiges kürzer und dadurch übersichtlicher. Es wird weiterhin die Aufgabe der Überprüfung ausgelagert und die Klasse ist geschlossen für Änderungen aber offen für Erweiterungen, was dem SRP und dem OCP entspricht. Beim Aufrufen dieser Methode kann jetzt zusätzlich zu Funktionen, welche sich auf die einzelnen \textit{LogLevels} beziehen, auch eine spezielle Log-Funktion übergeben werden, welche zum Beispiel in eine Datenbank schreibt. Die wichtigste Verbesserung ist hier, wie bereits erwähnt, die stark verbesserte Lesbarkeit.
+\SuperPar Durch diese Änderung wird die Funktion um einiges kürzer und dadurch übersichtlicher. Es wird weiterhin die Aufgabe der Überprüfung ausgelagert und die Klasse ist geschlossen für Änderungen, aber offen für Erweiterungen, was dem SRP und dem OCP entspricht. Beim Aufrufen dieser Methode kann jetzt zusätzlich zu Funktionen, welche sich auf die einzelnen \textit{LogLevels} beziehen, auch eine spezielle Log-Funktion übergeben werden. Beispielsweise könnte eine Funktion übergeben werden, die in eine Datenbank loggt. 
 
 \subsection{Keine Null zurückgeben}
 \begin{itemize}
@@ -161,11 +161,11 @@ public virtual void Log(
 	\item Betreffender Namespace: \textit{System.Diagnostics}
 \end{itemize}
 
-\SuperPar In modernen Programmierumgebungen wie Java und C\# stellen die sogenannten \textit{Nullreferenzausnahmen} eine der häufigsten Ausnahmefälle dar. Diese führen dazu, dass beim Zugriff auf ein Objekt, welches den Wert \textit{null} besitzt, ein Laufzeitfehler auftritt, welcher behandelt werden muss. Noch problematischer sind diese Ausnahmen im C++ - Bereich, da dort keine Ausnahme ausgelöst wird, falls das Objekt den Wert null besitzt, da jedes Objekt auf einen gewissen Speicherbereich verweist und dieser Speicherbereich aber vorhanden ist. In C++ führt der Zugriff auf ein \textit{Null-Objekt} zu einem Zugriff auf einen ungültigen Speicherbereich. Solche Fehler sind sehr schwer nachzuvollziehen und führen häufig zu großen Problemen wenn die Software bereits im Betrieb ist. Meist wird diesen Problem durch zahlreiche Überprüfungen ob der zurückgegebene Wert \textit{null} ist, vorgebeugt. Dies führt aber zu stark überladenen Methoden und kann es kann auch sehr schnell darauf vergessen werden diese Überprüfungen einzubauen.
+\SuperPar In modernen Programmierumgebungen wie Java und C\# stellen die sogenannten \textit{NullReference-Exceptions} eine der häufigsten Ausnahmefälle dar. Diese treten auf, wenn auf ein Objekt, welches den Wert \textit{null} besitzt, zugegriffen wird. Noch problematischer sind diese Ausnahmen in Programmen die in C++ geschrieben sind. Dort wird bei einem Zugriff auf ein Objekt, welches nicht instanziiert ist, keine Ausnahme ausgelöst. In C++ führt der Zugriff auf ein \textit{Null-Objekt} zu einem Zugriff auf einen ungültigen Speicherbereich. Solche Fehler sind sehr schwer nachzuvollziehen und führen häufig zu großen Problemen, wenn die Software bereits im Betrieb ist. Meist werden diese Problemen durch \textit{Null-Checks} verhindert. Diese \textit{Null-Checks} führen häufig zu stark überladenen Methoden und es kann leicht darauf vergessen werden diese Überprüfungen einzubauen.
 
 \SuperPar Diese Probleme und die Überladung des Codes mit Überprüfungen können durch das Verzichten auf die Rückgabe von Null Werten verhindert werden. Für Listen beispielsweise sollte eine leere List zurückgegeben werden. Meist wird für Listen nach dem Aufruf eine Form der Iteration durchgeführt. Entweder wird in einer \textit{for-Schleife} über die einzelnen Elemente der Liste iteriert, was bei einer leeren Liste einfach dazu führt, dass die Schleife nicht durchlaufen wird. Der Codeabschnitt in Listing \ref{lst:ReturnZero} zeigt ein Beispiel für diese Vorgehensweise.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Rückgabe einer leeren Liste statt eines Null Wertes, label=lst:ReturnZero]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für Rückgabe einer leeren Liste statt eines Null Wertes, label=lst:ReturnZero]
 protected List<ProcessModule> InnerList
 {
 	get
@@ -177,7 +177,7 @@ protected List<ProcessModule> InnerList
 }
 \end{lstlisting}
 
-\SuperPar Hier wird zu erst intern überprüft, ob die Liste, welche in einer Membervariable gespeichert ist \textit{null} ist, wenn ja wird der Wert dieser auf eine leere Liste gesetzt und somit können \textit{Nullreferenzausnahmen} verhindert werden. Im Zusammenhang mit Objekten gibt es die Möglichkeit das sogenannte \textit{Null Object pattern} \cite{Martin1997} zu verwenden. Bei diesem Pattern wird statt des Wertes \textit{null} eine leere Implementierung des Objektes zurückgegeben. Ein Beispiel, für ein Implementierung des \textit{Null Object pattern} ist in Listing \ref{lst:NullObjectPattern} dargestellt.
+\SuperPar Hier wird bei einem Zugriff auf die Liste überprüft, ob diese den Wert \textit{null} besitzt. Wenn dies der Fall ist, wird eine leere Liste instanziiert und gesetzt. Durch diese Überprüfung besitzt die Membervariable \textit{\_list} immer einen Wert, wodurch \textit{NullReference-Exceptions} verhindert werden. Im Zusammenhang mit Objekten gibt es die Möglichkeit, das sogenannte \textit{Null Object pattern} \cite{Martin1997} zu verwenden. Bei diesem Pattern wird statt des Wertes \textit{null} eine leere Implementierung des Objektes zurückgegeben. Ein Beispiel, für ein Implementierung des \textit{Null Object pattern} ist in Listing \ref{lst:NullObjectPattern} dargestellt.
 
 \begin{lstlisting}[language={[Sharp]C}, caption=Null Object pattern, label=lst:NullObjectPattern]
 public interface IVehicle {
@@ -197,9 +197,9 @@ public class NullVehicle : IVehicle {
 }
 \end{lstlisting}
 
-\SuperPar Die Klasse \textit{NullVehicle} implementiert das Interface \textit{IVehicle}, welches nur eine Methode enthält. In Listing \ref{lst:UsageNullObjectPattern} wird nun dargestellt, wie eine Variante mit Rückgabe des \textit{Null Object pattern} und eine mit Rückgabe von \textit{null} dargestellt:
+\SuperPar Die Klasse \textit{NullVehicle} implementiert das Interface \textit{IVehicle}, welches nur eine Methode enthält. In Listing \ref{lst:ReturnOfNullValueForVehicle} lässt sich die Variante mit der Rückgabe eines \textit{null}-Wertes finden und in Listing \ref{lst:UsageNullObjectPattern} ist die Rückgabe des \textit{Null Object patterns} dargestellt.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Anwendung des Null Object pattern, label=lst:UsageNullObjectPattern]
+\begin{lstlisting}[language={[Sharp]C}, caption=Rückgabe eines null Wertes, label=lst:ReturnOfNullValueForVehicle]
 public IVehicle GetVehicle(VehicleType vehicleType){
     if(vehicleType == VehicleType.Fast){
         return new FastVehicle();
@@ -208,14 +208,17 @@ public IVehicle GetVehicle(VehicleType vehicleType){
         return null; 
     }
 }
+\end{lstlisting}
 
+
+\begin{lstlisting}[language={[Sharp]C}, caption=Rückgabe des Null Object patterns, label=lst:UsageNullObjectPattern]
 public IVehicle GetVehicle(VehicleType vehicleType){
     if(vehicleType == VehicleType.Fast){
         return new FastVehicle();
     }
     else {
 				// Here we return our Null Object pattern.
-        return NullVehicle();
+        return new NullVehicle();
     }
 }
 \end{lstlisting}
@@ -230,10 +233,10 @@ public IVehicle GetVehicle(VehicleType vehicleType){
 	\item Betreffendes Package: \textit{org.apache.hadoop.hbase.io;}
 \end{itemize}
 
-\SuperPar Häufig lassen sich in Legacy Systemen Funktionen finden die mehr als ein vernünftiges Maß an Parametern haben. Robert C. Martin grenzt die maximale Anzahl an Parametern die verwendet werden sollten mit drei ab. Dabei erwähnt er explizit, dass niladische Methoden (kein Parameter) die besten Methoden sind, gefolgt von den monadischen (ein Parameter), den dyadischen (zwei Parameter) und den triadischen (drei Parameter), welche jedoch auch möglichst vermieden werden sollten. Polyadische (mehr als drei Parameter) sollten seiner Meinung nach unbedingt geändert werden. Ein Beispiel für eine solche polyadische Funktion lässt sich in Listing
+\SuperPar Häufig lassen sich in Legacy Systemen Funktionen finden die mehr als ein vernünftiges Maß an Parametern haben. Robert C. Martin grenzt die maximale Anzahl an Parametern, die verwendet werden sollten, mit drei ab. Dabei erwähnt er explizit, dass niladische Methoden (kein Parameter) die besten Methoden sind, gefolgt von den monadischen (ein Parameter), den dyadischen (zwei Parameter) und den triadischen (drei Parameter), welche jedoch auch möglichst vermieden werden sollten. Polyadische (mehr als drei Parameter) sollten seiner Meinung nach unbedingt geändert werden. Ein Beispiel für eine solche polyadische Funktion lässt sich in Listing
  \ref{lst:PolyadischFunction} finden.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Rückgabe eines Null Wertes, label=lst:PolyadischFunction]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für eine Polyadische Funktion, label=lst:PolyadischFunction]
   public static boolean create(final Configuration conf, final FileSystem fs,
       final Path dstFamilyPath, final TableName linkedTable, final String linkedRegion,
       final String hfileName, final boolean createBackRef) throws IOException {
@@ -241,9 +244,9 @@ public IVehicle GetVehicle(VehicleType vehicleType){
 	}
 \end{lstlisting}
 
-\SuperPar Zusätzlich zu dem Problem, dass diese Funktion viel zu viele Parameter besitzt, kann davon ausgegangen werden, dass diese Funktion auch das SRP verletzt. Vor allem der boolsche Parameter \textit{createBackRef} deutet drauf hin, da sogenannte Flag-Argumente ein Indiz für die Verletzung des SRP auf Funktionsebene sind. Robert C. Martin geht dabei sogar soweit, dass er Flag-Argumente als schreckliche Technik bezeichnet. Im ersten Schritt sollte also das Flag-Argument entfernt werden. Eine Möglichkeit dieses Flag-Argument aufzulösen besteht darin, die Funktion in zwei Funktionen aufzuspalten, was in dem im Listing  \ref{lst:NoFlagArgument} resultieren.
+\SuperPar Zusätzlich zu dem Problem, dass diese Funktion viel zu viele Parameter besitzt, kann davon ausgegangen werden, dass diese Funktion auch das SRP verletzt. Vor allem der boolsche Parameter \textit{createBackRef} deutet drauf hin, da sogenannte Flag-Argumente ein Indiz für die Verletzung des SRP auf Funktionsebene sind. Robert C. Martin geht dabei sogar soweit, dass er Flag-Argumente als schreckliche Technik bezeichnet. Im ersten Schritt sollte also das Flag-Argument entfernt werden. Eine Möglichkeit dieses Flag-Argument aufzulösen besteht darin, die Funktion in zwei Funktionen aufzuspalten. Dies resultiert in dem in Listing  \ref{lst:NoFlagArgument} dargestellten Code.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Eliminierung des Flag Arguments, label=lst:NoFlagArgument]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für Eliminierung eines Flag Arguments, label=lst:NoFlagArgument]
    public static boolean create(final Configuration conf, final FileSystem fs,
       final Path dstFamilyPath, final TableName linkedTable, final String linkedRegion,
       final String hfileName) throws IOException {
@@ -257,15 +260,14 @@ public IVehicle GetVehicle(VehicleType vehicleType){
 	}
 \end{lstlisting}
 
-\SuperPar Durch diese kleine Änderung könnte bereits ein Parameter entfernt werden und durch die Auftrennung in zwei Funktionen können diese beiden Funktion jeweils einzelne Aufgaben erledigen. Zur Vermeidung der restlichen Parameter bietet Robert C. Martin eine sehr einfache, aber effiziente Lösung an, den meist deuten Funktionen, die viele Parameter besitzen daraufhin, dass die Parameter eigentlich zusammengefasst werden sollten. Die Parameter \textit{dstFamilyPath}, \textit{linkedTable}, \textit{linkedRegion} und \textit{hfileName} sollten in ein eigenes Objekt ausgelagert werden. Der Zugriff auf die einzelnen Parameter würde nun über diese Objekt erfolgen und die Anzahl der Parameter könnte auf drei reduziert werden. Das Ergebnis dieses Refactorings könnte wie in Listing \ref{lst:TriadischFunction} aussehen:
+\SuperPar Durch diese Änderung kann bereits ein Parameter entfernt werden und durch die Auftrennung in zwei Funktionen können diese beiden Funktion jeweils einzelne Aufgaben erledigen. Zur Vermeidung der restlichen Parameter bietet Robert C. Martin eine sehr einfache, aber effiziente Lösung an. Die Parameter \textit{dstFamilyPath}, \textit{linkedTable}, \textit{linkedRegion} und \textit{hfileName} sollten in ein eigenes Objekt ausgelagert werden. Der Zugriff auf die einzelnen Parameter würde nun über diese Objekt erfolgen und die Anzahl der Parameter könnte auf drei reduziert werden. Das Ergebnis dieses Refactorings ist in Listing \ref{lst:TriadischFunction} dargestellt.
 
-\begin{lstlisting}[language={[Sharp]C}, caption=Beispiele für Rückgabe eines Null Wertes, label=lst:TriadischFunction]
+\begin{lstlisting}[language={[Sharp]C}, caption=Beispiel für Triadische Funktion, label=lst:TriadischFunction]
    public static boolean create(final Configuration conf, final FileSystem fs, HFileLinkPreferences preferences) throws IOException {
 		...
 	}
 	
-	public static boolean createBackReference(final Configuration conf, final FileSystem fs,
-      final Path dstFamilyPath, final TableName linkedTable, final String linkedRegion, HFileLinkPreferences preferences) throws IOException {
+	public static boolean createBackReference(final Configuration conf, final FileSystem fs, HFileLinkPreferences preferences) throws IOException {
 		...
 	}
 \end{lstlisting}

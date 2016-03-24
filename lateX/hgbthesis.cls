@@ -180,7 +180,7 @@
 	\vskip 4mm%
 	{\large in \@studienort}%
 	\vskip 16mm%
-	{\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
+	{\large \@semester}\\
 \end{center}%
   \vfil%
 \end{german}
@@ -211,7 +211,6 @@
 	\vskip 4mm%
 	{\large in \@studienort}%
 	\vskip 16mm%
-	{\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
 \end{center}%
   \vfil%
 \end{german}
@@ -242,7 +241,6 @@
 	\vskip 4mm%
 	{\large in \@studienort}%
 	\vskip 16mm%
-	{\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
 \end{center}%
   \vfil%
 \end{german}
@@ -275,7 +273,6 @@
 	\vskip 4mm%
 	{\large in \@studienort}%
 	\vskip 16mm%
-	{\large im \monthname[\value{@abgabemonat}] \arabic{@abgabejahr}}%
 \end{center}%
   \vfil%
 \end{german}
@@ -371,17 +368,6 @@ This work is published under the conditions of the
 \thispagestyle{plain}
 \rule{0mm}{1mm}
 \begin{center}
-%
-\vspace{40mm} 
-{Diese Arbeit entstand im Rahmen des Gegenstands}\\
-\vspace{6mm} 
-{\Large\sf \@gegenstand\\ \mbox{}}\\
-\medskip
-im\\
-\bigskip
-{\@semester}\\
-%
-\vspace{45mm} 
 %{Betreuer:}\\
 {\@betreuerBez:}\\
 \vspace{3mm} 

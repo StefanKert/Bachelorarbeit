@@ -1,12 +1,15 @@
 \documentclass[bachelor,german]{hgbthesis}
+
+\RequirePackage[utf8]{inputenc}		
+\graphicspath{{images/}}    
+\logofile{logo}						
+\bibliography{literatur}
+
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
-\usepackage{cmbright}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
-\usepackage{float}
-\restylefloat{table}
 \definecolor{bluekeywords}{rgb}{0,0,1}
 \definecolor{greencomments}{rgb}{0,0.5,0}
 \definecolor{redstrings}{rgb}{0.64,0.08,0.08}
@@ -42,18 +45,17 @@
   stringstyle=\color{redstrings},
   basicstyle=\ttfamily\small
 }
-\RequirePackage[utf8]{inputenc}		
-\graphicspath{{images/}}    
-\logofile{logo}						
-\bibliography{literatur}  
+  
 \begin{document}
+
 \title{Clean Code Development - Grundlagen und Anwendung}
 \author{Ing. Stefan Kert}
 \studiengang{Software Engineering}
 \studienort{Hagenberg}
-\abgabedatum{2016}{07}{14}	
-\nummer{S1310307019} 
+\nummer{S1310307019-A} 
+\semester{Wintersemester 2015} 
 \betreuer{Dipl.Ing.(FH) Dr. Josef Pichler} 
+
 \frontmatter
 \maketitle
 \tableofcontents
@@ -74,4 +76,7 @@
 \appendix
 
 \MakeBibliography
+
+\include{messbox}
+
 \end{document}
